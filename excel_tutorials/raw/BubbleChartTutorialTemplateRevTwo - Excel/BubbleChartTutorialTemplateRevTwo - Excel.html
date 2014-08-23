@@ -1,0 +1,946 @@
+
+<html>
+
+<head>
+<title>How to make a bubble chart in Excel, online and free with Plotly</title>
+
+<link rel="shortcut icon" href="/static/img/ploticons/16px_444444_PNG/plot.png">
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?kit=chteh0fSOiSrmusp8u43YAdDjahd2IAEL5IFmyNQJ7o');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c2{border-bottom-width:0pt;border-top-style:solid;width:215.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c8{border-bottom-width:0pt;border-top-style:solid;width:216pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c26{border-bottom-width:0pt;border-top-style:solid;width:216pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c39{border-bottom-width:0pt;border-top-style:solid;width:243.8pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c5{border-bottom-width:0pt;border-top-style:solid;width:216.8pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c41{border-bottom-width:0pt;border-top-style:solid;width:188.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c20{vertical-align:baseline;color:#000000;font-size:11pt;font-style:italic;font-family:"Open Sans";text-decoration:none;font-weight:normal}.c9{line-height:1.5;padding-top:0pt;widows:2;orphans:2;text-align:left;direction:ltr;padding-bottom:0pt}.c19{vertical-align:baseline;color:#000000;font-size:12pt;font-style:normal;font-family:"Arial";text-decoration:none;font-weight:normal}.c0{vertical-align:baseline;color:#434343;font-size:12pt;font-style:normal;font-family:"Open Sans";text-decoration:none;font-weight:normal}.c18{vertical-align:baseline;color:#000000;font-size:11pt;font-style:normal;font-family:"Open Sans";text-decoration:none;font-weight:normal}.c6{line-height:1.5;widows:2;orphans:2;direction:ltr;page-break-after:avoid}.c10{line-height:1.5;widows:2;orphans:2;direction:ltr}.c13{color:#1d3b84;font-size:18pt;font-family:"Open Sans";font-weight:normal}.c21{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c4{color:#1d3b84;font-size:48pt;font-family:"Open Sans"}.c38{widows:2;orphans:2;direction:ltr}.c15{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c36{padding-top:0pt;text-align:center;padding-bottom:0pt}.c43{margin-right:auto;border-collapse:collapse;margin-left:auto}.c23{margin-right:auto;border-collapse:collapse}.c17{color:#1d3b84;font-size:18pt;font-weight:normal}.c3{color:#434343;font-size:12pt;font-family:"Open Sans"}.c12{color:#434343;font-size:14pt;font-family:"Open Sans"}.c22{font-size:12pt;font-family:"Consolas"}.c29{margin:0;padding:0}.c33{padding-left:0pt;margin-left:36pt}.c1{color:inherit;text-decoration:inherit}.c31{color:#1d3b84;font-size:18pt}.c7{font-size:12pt;font-family:"Open Sans"}.c28{font-size:14pt;font-family:"Open Sans"}.c40{font-size:18pt}.c25{height:0pt}.c16{height:11pt}.c37{padding-top:10pt}.c34{font-weight:bold}.c11{color:#447adb}.c42{text-align:center}.c27{color:#000000}.c32{height:244pt}.c24{text-decoration:underline}.c35{color:#1d3b84}.c14{color:#1155cc}.c30{font-family:"Open Sans"}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+</style>
+
+<link rel="stylesheet" type="text/css" href="css/css_override.css">
+<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+
+<meta name= "description" content="A tutorial on how to make bubble charts in Excel, online and for free with Plotly">
+
+</head>
+
+<body class="c15">
+
+<div>
+
+<p class="c16 c38">
+
+<span>
+</span></p>
+</div><h1 class="c6"><a name="h.x6kp9fud1zuf"></a>
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 76.00px;">
+
+<a href="images/image08.png" data-lightbox="image-10">
+
+<img alt="" src="images/image08.png" style="width: 624.00px; height: 76.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></h1><h1 class="c6"><a name="h.40yjqrtgo9ck"></a>
+
+</span>
+
+<span class="c7 c11"><a class="c1" href="/learn">< Back to all chart tutorials</a>
+</span></h1><h1 class="c6"><a name="h.t62y66ciwnw"></a>
+
+<span class="c4">How to make a
+</span>
+
+<span class="c4 c34">Bubble Chart in Excel
+</span>
+
+<p class="c10">
+<iframe src="https://plot.ly/~cimar/211/576/500" width="576.00" height="500" frameborder="0" scrolling="no"></iframe>
+</p>
+
+<p class="c10">
+
+<span class="c3">Follow along below to make a bubble chart of your own. If you&rsquo;re unfamiliar with bubble charts, check out this post: 
+</span>
+
+<span class="c7 c11 c24"><a class="c1" href="http://blog.plot.ly/post/71637573256/the-power-of-bubble-charts">http://blog.plot.ly/post/71637573256/the-power-of-bubble-charts</a>
+</span></p><h2 class="c6"><a name="h.gbznpiihyim3"></a>
+
+<span class="c31 c30">Step 1:
+</span>
+
+<span class="c13">&nbsp;Upload your Excel data to Plotly's grid
+</span></h2><a href="#" name="2d7a8147d098e82b639070ac643f885b62c0152c"></a><a href="#" name="0"></a>
+<table cellpadding="0" cellspacing="0" class="c23"><tbody>
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">Open the data file for this tutorial in Excel. You can download the file here in
+</span>
+
+<span class="c7 c11 c24"><a class="c1" href="https://www.dropbox.com/s/9a4xvg5opx65m4l/Bubble%20Chat%20Data%20copy.xls?raw=1">xls</a></span>
+
+<span class="c3">or
+</span>
+
+<span class="c7 c11 c24"><a class="c1" href="https://www.dropbox.com/s/wnq5oxzpgzlel5p/Bubble%20Chat%20Data.xlsx?raw=1">xlsx</a></span>
+
+<span class="c3">formats.
+</span>
+
+</p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 164.00px;">
+
+<a href="images/image24.png" data-lightbox="image-24">
+
+<img alt="" src="images/image24.png" style="width: 273.00px; height: 164.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c19">
+</span></p>
+</td>
+</tr>
+
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">Head to Plotly's Workspace at
+</span>
+
+<span class="c7 c11 c24"><a class="c1" href="https://plot.ly/plot">https://plot.ly/plot</a></span>
+
+<span class="c3">and sign into your free Plotly account. Go to "Import," click "Upload a file," then choose your Excel file to upload. Your Excel file will now open in Plotly's grid. For more about Plotly's grid, see the tutorial: 
+</span>
+
+<span class="c7 c11 c24"><a class="c1" href="https://plot.ly/add-data-to-the-plotly-grid/">https://plot.ly/add-data-to-the-plotly-grid/</a></span>
+
+</p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 133.00px; height: 88.00px;">
+
+<a href="images/image22.png" data-lightbox="image-22">
+
+<img alt="" src="images/image22.png" style="width: 133.00px; height: 88.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c19">
+</span></p>
+</td>
+</tr>
+
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">Select &ldquo;Bubble charts&rdquo; from the 
+</span>
+
+<span class="c7 c11">MAKE A PLOT
+</span>
+
+<span class="c7 c14">&nbsp;
+</span>
+
+<span class="c0">menu.
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 221.00px; height: 334.00px;">
+
+<a href="images/image10.png" data-lightbox="image-10">
+
+<img alt="" src="images/image10.png" style="width: 221.00px; height: 334.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c0">Click the &ldquo;Size by&rdquo; option in the sidebar, and the &ldquo;Text&rdquo; option.
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 124.00px; height: 129.00px;">
+
+<a href="images/image02.png" data-lightbox="image-02">
+
+<img alt="" src="images/image02.png" style="width: 124.00px; height: 129.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c0">For every set of x and y coordinates you select, select a column of values to set the size of the markers...
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 126.67px;">
+
+<a href="images/image19.png" data-lightbox="image-19">
+
+<img alt="" src="images/image19.png" style="width: 273.00px; height: 126.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c0">...and a column of text notations for every marker, (text notations are not required to make a bubble chart.)
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 132.00px;">
+
+<a href="images/image03.png" data-lightbox="image-03">
+
+<img alt="" src="images/image03.png" style="width: 273.00px; height: 132.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">Click the blue plot button in the sidebar to create the chart. &nbsp;(For more help with the grid see: 
+</span>
+
+<span class="c22 c11 c24"><a class="c1" href="https://plot.ly/add-data-to-the-plotly-grid/">https://plot.ly/add-data-to-the-plotly-grid/</a>
+</span>
+
+<span class="c0">)
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 175.00px;">
+
+<a href="images/image15.png" data-lightbox="image-15">
+
+<img alt="" src="images/image15.png" style="width: 273.00px; height: 181.00px; margin-left: 0.00px; margin-top: -6.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c10 c16">
+
+<span>
+</span></p><h2 class="c6 c37"><a name="h.pjmuxph8y5qc"></a>
+
+<span class="c30 c31">Step 2: 
+</span>
+
+<span class="c13">Sizing and Log Axis
+</span></h2>
+
+<p class="c10 c16">
+
+<span>
+</span></p><a href="#" name="3ed675fbffd4cdc8293b09ae325e2e516c0cbaeb"></a><a href="#" name="1"></a>
+<table cellpadding="0" cellspacing="0" class="c23"><tbody>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">Your plot should look something like this. &nbsp;Open the 
+</span>
+
+<span class="c7 c11">TRACES
+</span>
+
+<span class="c7 c14">&nbsp;
+</span>
+
+<span class="c0">popover in the toolbar.
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 133.33px;">
+
+<a href="images/image13.png" data-lightbox="image-13">
+
+<img alt="" src="images/image13.png" style="width: 273.00px; height: 133.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 270.00px; height: 40.00px;">
+
+<a href="images/image11.png" data-lightbox="image-11">
+
+<img alt="" src="images/image11.png" style="width: 501.16px; height: 520.37px; margin-left: 9.25px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c32">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">This is what the &ldquo;Style&rdquo; tab of the 
+</span>
+
+<span class="c7 c11">TRACES
+</span>
+
+<span class="c0">&nbsp;popover should look like for &ldquo;All Traces (Bubble)&rdquo;.
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c21 c12">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">We&rsquo;ve set the &ldquo;Size&rdquo; field to scale the bubbles&rsquo; diameter, not area. &nbsp;And we&rsquo;ve evened out the pixel-to-value ratio (the higher the value in the box, the smaller the bubbles will be).
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c12 c21">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">We&rsquo;ve also increased the weight of the white bubble outlines.
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 249.33px;">
+
+<a href="images/image20.png" data-lightbox="image-20">
+
+<img alt="" src="images/image20.png" style="width: 273.00px; height: 249.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c32">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">Now, open the 
+</span>
+
+<span class="c7 c11">AXES
+</span>
+
+<span class="c0">&nbsp;popover in the toolbar.
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c21 c12">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">This is what the &ldquo;Range&rdquo; tab for the X Axis looks like. We&rsquo;re opting for a log scale, which will result in a more linear plot.
+</span></p>
+</td>
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 240.40px; height: 56.50px;">
+
+<a href="images/image04.png" data-lightbox="image-04">
+
+<img alt="" src="images/image04.png" style="width: 240.40px; height: 56.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 158.67px;">
+
+<a href="images/image18.png" data-lightbox="image-18">
+
+<img alt="" src="images/image18.png" style="width: 273.00px; height: 158.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c10 c16">
+
+<span>
+</span></p>
+
+<p class="c10 c16">
+
+<span>
+</span></p>
+
+<p class="c10 c16">
+
+<span>
+</span></p><h2 class="c6"><a name="h.sem5jy4h2d9c"></a>
+
+<span class="c31 c30">Step 3:
+</span>
+
+<span class="c13">&nbsp;Style and annotate!
+</span></h2>
+
+<p class="c10 c16">
+
+<span class="c34 c30 c40">
+</span></p><a href="#" name="3e7e24471ea1b57d02985097962da374d65b15c0"></a><a href="#" name="2"></a>
+<table cellpadding="0" cellspacing="0" class="c23"><tbody>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c0">Your plot should now look something like this. In order to get the graph at the top of the chart, you&rsquo;ll need to style it a little more.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 136.00px;">
+
+<a href="images/image12.png" data-lightbox="image-12">
+
+<img alt="" src="images/image12.png" style="width: 274.00px; height: 136.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">This is what the &ldquo;General&rdquo; and &ldquo;Margins&rdquo; tabs of the 
+</span>
+
+<span class="c7 c11">LAYOUT
+</span>
+
+<span class="c0">&nbsp;popover should look like. We&rsquo;re giving our plot a grey background, and we&rsquo;ve changed some of the font options.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 241.33px;">
+
+<a href="images/image07.png" data-lightbox="image-07">
+
+<img alt="" src="images/image07.png" style="width: 274.00px; height: 241.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 214.67px;">
+
+<a href="images/image00.png" data-lightbox="image-00">
+
+<img alt="" src="images/image00.png" style="width: 274.00px; height: 214.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">This is what the &ldquo;Lines&rdquo; tab of the 
+</span>
+
+<span class="c7 c11">AXES
+</span>
+
+<span class="c0">&nbsp;popover looks like. We&rsquo;ve changed the grey grid to white, and increased the line weight.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.50px; height: 173.89px;">
+
+<a href="images/image17.png" data-lightbox="image-17">
+
+<img alt="" src="images/image17.png" style="width: 274.50px; height: 173.89px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">This is what the 
+</span>
+
+<span class="c7 c11">LEGEND
+</span>
+
+<span class="c0">&nbsp;popover looks like. &nbsp;We&rsquo;ve set its background to grey, too.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 232.00px;">
+
+<a href="images/image09.png" data-lightbox="image-09">
+
+<img alt="" src="images/image09.png" style="width: 274.00px; height: 232.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c3">We&rsquo;ve titled our chart and axes. &nbsp;And we&rsquo;re using markup to link to our source data using the 
+</span>
+
+<span class="c7 c11">NOTES
+</span>
+
+<span class="c7 c14">&nbsp;
+</span>
+
+<span class="c0">popover.
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c21 c12">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">Select the &ldquo;Page&rdquo; option, and hide the arrow. Because our note has nothing to do with specific data points, we&rsquo;re going to nestle it below the x-axis. 
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c0">
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c0">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">Now drag it to the bottom corner of your plot.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9 c16">
+
+<span class="c18">
+</span></p>
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 194.67px;">
+
+<a href="images/image16.png" data-lightbox="image-16">
+
+<img alt="" src="images/image16.png" style="width: 274.00px; height: 194.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 138.00px; height: 112.00px;">
+
+<a href="images/image01.png" data-lightbox="image-01">
+
+<img alt="" src="images/image01.png" style="width: 138.00px; height: 112.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c20">
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c20">
+</span></p>
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c0">Once your note looks like you want it to, use the markdown &lt;a&gt; tag to link to the data source.
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 202.00px; height: 138.00px;">
+
+<a href="images/image14.png" data-lightbox="image-14">
+
+<img alt="" src="images/image14.png" style="width: 202.00px; height: 138.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c9">
+
+<span class="c20">Source: GapMinder via &lt;a href=&quot;https://plot.ly/bchartoff/707&quot;&gt;bchartoff&lt;/a&gt;
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c20">
+</span></p>
+
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">You can download your finished Plotly graph to embed in your Excel workbook. We also recommend including the Plotly link to the graph inside your Excel workbook for easy access to the interactive Plotly version. Get the link to your graph by clicking the blue "Share" button. Download an image of your Plotly graph by clicking
+</span>
+
+<span class="c7 c11">DOWNLOAD
+</span>
+
+<span class="c3">on the toolbar
+</span>
+
+</p>
+</td>
+
+<td class="c2">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 275.00px; height: 190.00px;">
+
+<a href="images/image25.png" data-lightbox="image-25">
+
+<img alt="" src="images/image25.png" style="width: 275.00px; height: 190.00px; margin-left: 0.00px; margin-top: 15.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span>
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 275.00px; height: 80.00px;">
+
+<a href="images/image23.png" data-lightbox="image-23">
+
+<img alt="" src="images/image23.png" style="width: 275.00px; height: 80.00px; margin-left: 0.00px; margin-top: 5.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span>
+
+</p>
+
+<p class="c9 c16">
+
+<span class="c19">
+</span></p>
+</td>
+</tr>
+
+</td>
+</tr>
+<tr class="c25">
+<td class="c5">
+
+<p class="c9">
+
+<span class="c0">Your finished chart should look something like this:
+</span></p>
+</td>
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 165.33px;">
+
+<a href="images/image06.png" data-lightbox="image-06">
+
+<img alt="" src="images/image06.png" style="width: 274.00px; height: 165.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+
+<tr class="c25">
+<td class="c8">
+
+<p class="c9">
+
+<span class="c3">To add the Excel file to your workbook, click where you want to insert the picture inside Excel. On the
+</span>
+
+<span class="c7 c11">INSERT
+</span>
+
+<span class="c3">tab inside Excel, in the
+</span>
+
+<span class="c7 c11">ILLUSTRATIONS
+</span>
+
+<span class="c3">group, click
+</span>
+
+<span class="c7 c11">PICTURE.
+</span>
+
+<span class="c3">Locate the Plotly graph image that you downloaded and then double-click it. Notice that we also copy-pasted the Plotly graph link in a cell for easy access to the interactive Plotly version.
+</span>
+
+</p>
+</td>
+
+<td class="c26">
+
+<p class="c9">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 400.00px; height: 250px;">
+
+<a href="images/image26.png" data-lightbox="image-26">
+
+<img alt="" src="images/image26.png" style="width: 400.00px; height: 250px; margin-left: 0.00px; margin-top: 30.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+</tbody>
+</table>
+
+<p class="c10 c16">
+
+<span class="c12">
+</span></p>
+
+<p class="c10 c16">
+
+<span class="c12">
+</span></p>
+
+<p class="c10 c16 c42">
+
+<span class="c30">
+</span></p>
+
+<p class="c10">
+
+<span class="c31 c30">Questions or Feedback?
+</span></p><a href="#" name="fb9fb93011ad78ca1e36c4c1e56fdf04d009bd67"></a><a href="#" name="3"></a>
+<table cellpadding="0" cellspacing="0" class="c43"><tbody></tbody>
+</table>
+
+<p class="c10 c16">
+
+<span class="c28">
+</span></p><a href="#" name="5e089004eda0ae2bca707683a806569b7b0f18dc"></a><a href="#" name="4"></a>
+<table cellpadding="0" cellspacing="0" class="c23"><tbody>
+<tr class="c25">
+<td class="c39">
+
+<p class="c9">
+
+<span class="c21 c7 c27">About Plotly:
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c21 c7 c27">
+</span></p>
+<ul class="c29 lst-kix_ahdtx5kblk1i-0 start">
+<li class="c9 c33">
+
+<span class="c7">email: 
+</span>
+
+<span class="c22 c11"><a class="c1" href="mailto:feedback@plot.ly">feedback@plot.ly</a>
+</span></li>
+<li class="c9 c33">
+
+<span class="c7">tweet: 
+</span>
+
+<span class="c21 c11 c22">@plotlygraphs
+</span></li>
+</ul>
+
+<p class="c9 c16">
+
+<span class="c21 c22 c14">
+</span></p>
+
+<p class="c9">
+
+<span class="c0">About Chart Tutorials:
+</span></p>
+
+<p class="c9 c16">
+
+<span class="c0">
+</span></p>
+<ul class="c29 lst-kix_hljnb7pn5yly-0 start">
+<li class="c9 c33">
+
+<span class="c7">email: 
+</span>
+
+<span class="c22 c11"><a class="c1" href="mailto:rosie@plot.ly">rosie@plot.ly</a>
+</span></li>
+<li class="c9 c33">
+
+<span class="c22">tweet: 
+</span>
+
+<span class="c22 c11">@rosiecima
+</span></li>
+</ul>
+</td>
+<td class="c41">
+
+<p class="c10 c36">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 186.50px; height: 207.50px;">
+
+<a href="images/image05.png" data-lightbox="image-05">
+
+<img alt="" src="images/image05.png" style="width: 186.50px; height: 207.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c10 c16">
+
+<span class="c28">
+</span></p>
+
+<p class="c38 c16">
+
+<span class="c30">
+</span></p>
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+
+</body>
+</html>
