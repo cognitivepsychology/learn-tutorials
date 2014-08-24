@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import textwrap
 
 # -------------------------------------------------------------------------------
 # 
@@ -9,6 +10,8 @@ import os
 # -------------------------------------------------------------------------------
 
 NAME="make_sitemaps"  # name of this module
+
+tab = "    "  # tab in space
 
 # Shortcut to print status along with the name of the script
 def status(s):
@@ -24,16 +27,16 @@ def get_items(folder,translate_filename_url):
     lmfiles = []
     for tutorial in tutorials:
         locations += ["'/{}/'".format(tutorial)]
-        lmfiles += [("os.path.join("
-            "settings.TOP_DIR,"
-            "'shelly',"
-            "'templates',"
-            "'learn',"
-            "'includes',"
-            "'{folder}',"
-            "'{tutorial}',"
+        lmfiles += [("os.path.join(\n{tab}{tab}{tab}{tab}"
+            "settings.TOP_DIR, "
+            "'shelly',\n{tab}{tab}{tab}{tab}"
+            "'templates', "
+            "'learn', "
+            "'includes',\n{tab}{tab}{tab}{tab}"
+            "'{folder}',\n{tab}{tab}{tab}{tab}"
+            "'{tutorial}',\n{tab}{tab}{tab}{tab}"
             "'body.html')"
-        ).format(folder=folder,tutorial=tutorial)]
+        ).format(folder=folder,tutorial=tutorial,tab=tab)]
     return locations, lmfiles
 
 # Generate sitemaps.py file
@@ -41,25 +44,25 @@ def get_items(folder,translate_filename_url):
 def get_sitemaps_py(locations, lmfiles):
     sitemaps_py = (
         "import os\n\n"
-        "from django.conf import settings\n\n"
+        "from django.conf import settings\n\n\n"
         "def items():\n"
-        "    items = [\n"
-    )
+        "{tab}items = [\n"
+    ).format(tab=tab)
     for location, lmfile in zip(locations,lmfiles):
         sitemaps_py += (
-        "        dict(\n"
-        "            location={location},\n"
-        "            lmfile={lmfile},\n"
-        "            priority=0.5\n"
-        "        )"
-        ).format(location=location,lmfile=lmfile)
+        "{tab}{tab}dict(\n"
+        "{tab}{tab}{tab}location={location},\n"
+        "{tab}{tab}{tab}lmfile={lmfile},\n"
+        "{tab}{tab}{tab}priority=0.5\n"
+        "{tab}{tab})"
+        ).format(location=location,lmfile=lmfile,tab=tab)
         if location != locations[-1]:
             sitemaps_py += ",\n"
     sitemaps_py += (
-        "\n    ]"
-        "\n    return items"
+        "\n{tab}]"
+        "\n{tab}return items"
         "\n"
-    )
+    ).format(tab=tab)
     return sitemaps_py
 
 # Overwrite sitemaps.py

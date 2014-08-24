@@ -10,6 +10,8 @@ import os
 
 NAME="make_urls"  # name of this module
 
+tab = "    "  # tab in space
+
 # Shortcut to print status along with the name of the script
 def status(s):
     S = str(("[{}]".format(NAME), s))
@@ -21,21 +23,24 @@ def status(s):
 def get_urls(translate_filename_url):
     tutorials = translate_filename_url.values()
     urls = []
-    for tutorial in tutorials:  # TODO generalize
-        urls += [r'(?P<excel_tutorial>{})/$'.format(tutorial)]
+    for tutorial in tutorials:  
+        urls += [r'(?P<tutorial>{})/$'.format(tutorial)]
     return urls
 
-# Generate rls.py file
+# Generate urls.py file
 # See streambed/shelly/learn/ for more info
 def get_urls_py(urls):
     urls_py = (
         "from django.conf.urls import patterns, url\n\n"
-        "import learn.views\n\n"
+        "import learn.views\n\n\n"
         "urlpatterns = patterns(\n"
-        "   '',\n"
-    )
-    for url in urls:        # TODO generalize!
-        urls_py += '    url("'+url+'", learn.views.excel_tutorials_template)'
+        "{tab}'',\n"
+    ).format(tab=tab)
+    for url in urls: # TODO generalize views!
+        urls_py += (
+            '{tab}url("'+url+'",\n'
+            '{tab}{tab}learn.views.excel_tutorials_template)'
+        ).format(tab=tab)
         if url != urls[-1]:
             urls_py += ",\n"
     urls_py += "\n)\n"
