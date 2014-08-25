@@ -13,7 +13,9 @@ NAME="translate"  # name of this module
 
 # Shortcut to print status along with the name of the script
 def status(s):
-    S = str(("[{}]".format(NAME), s))
+    if isinstance(s,list) or isinstance(s,tuple):
+        s = ' '.join(s)
+    S = "[{}]".format(NAME) + ' ' + s
     with open('publish.log', 'a') as f:
         f.write(S+"\n")
     return
@@ -71,7 +73,7 @@ def translate_script_src(soup, dir_url, translate_static):
                 status(('src (static) to translate found: ', script['src']))
                 new = get_new(script['src'],translate_static[src_head],dir_url)
                 script['src'] = script['src'].replace(src_head,new)
-                status(('... translated to: ', script['src']))
+                status(('... translated to (but will get stripped): ', script['src']))
                 break
     return soup
 
@@ -98,19 +100,22 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
             continue
         for href_head in translate_static.keys(): # case 1 
             if a['href'].startswith(href_head):
-               status(('href (static) to translate found: ', a['href']))
-               new = get_new(a['href'],translate_static[href_head],dir_url)
-               a['href'] = a['href'].replace(href_head,new)
-               break
-        if a['href'].startswith('https://plot.ly/') :       # case 2
-           status(('href (filename_url) to translate found: ', a['href']))
-           a['href'] = a['href'].replace('https://plot.ly/','/')
-           for href_tail in translate_filename_url.keys():
-               if href_tail in a['href']:
-                   status(('href to translate found: ', a['href']))
-                   a['href'] = a['href'].replace(href_head,translate_static[href_tail])
-                   break
-        status(('... translated to: ', a['href']))
+                status(('href (static) to translate found: ', a['href']))
+                new = get_new(a['href'],translate_static[href_head],dir_url)
+                a['href'] = a['href'].replace(href_head,new)
+                status(('... translated to: ', a['href']))
+                break
+        if a['href'].startswith('https://plot.ly/'): # case 2
+            if a['href'].startswith('https://plot.ly/~'): # but not shareplot!
+                continue
+            status(('href (filename_url) to translate found: ', a['href']))
+            a['href'] = a['href'].replace('https://plot.ly/','/')
+            for href_tail in translate_filename_url.keys():
+                if href_tail in a['href']:
+                    status(('href to translate found: ', a['href']))
+                    a['href'] = a['href'].replace(href_head,translate_static[href_tail])
+                    break
+            status(('... translated to: ', a['href']))
     return soup
 
 # -------------------------------------------------------------------------------

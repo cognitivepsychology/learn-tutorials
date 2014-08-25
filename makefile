@@ -31,9 +31,3 @@ push-to-streambed:
 	@cp -R $(folder)/published/static/images/* $(streambed_path)/shelly/learn/static/learn/images/$(folder)/
 	@cp $(folder)/published/urls.py $(streambed_path)/shelly/learn/urls/$(folder)/urls.py
 	@cp $(folder)/published/sitemaps.py $(streambed_path)/shelly/learn/sitemaps/$(folder)/sitemaps.py
-
-# Clean published folder
-#    $ make clean folder=<name-of-folder>
-clean:
-	@rm -rf $(folder)/published/*
-

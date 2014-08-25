@@ -25,7 +25,9 @@ NAME="publish"  # name of this script
 
 # Shortcut to print status along with the name of the script
 def status(s):
-    S = str(("[{}]".format(NAME), s))
+    if isinstance(s,list) or isinstance(s,tuple):
+        s = ' '.join(s)
+    S = "[{}]".format(NAME) + ' ' + s
     with open('publish.log', 'a') as f:
         f.write(S+"\n")
     return
@@ -47,11 +49,12 @@ def get_args():
     args = sys.argv[1:]
     if not args:
         print (
+            "[{NAME}]\n\n"
             "Usage:\n"
             "python {NAME}.py folder\n"
             "python {NAME}.py path/to/folder\n"
             "python {NAME}.py folder1 folder2 ... folderN\n"
-        )
+        ).format(NAME=NAME)
         stop()
     elif not all(os.path.isdir(arg) for arg in args):
         important('Arguments must be directories')
@@ -161,7 +164,7 @@ def get_soup(path_html):
 
 # Get HTML <body> and <head>
 def get_body_head(soup):
-    status('grabs <body> and <head>')
+    status('Grabs <body> and <head>')
     return soup.body, soup.head
 
 # Get <title> from <head>
@@ -172,19 +175,15 @@ def get_config_title(head, flags):
         title = ""
     elif len(Title)>1:
         flags += ['multiple-titles']
-        title = Title[-1].string
-        status('strip <title> tags from <head>')
-        for _title in Title:
-            _title.extract()
+        title = Title[-1].string.replace("\n",'')
+        status(('With last <title> tag, set meta title to ', title))
     else:
-        title = Title[0].string
-        status('strip <title> tag from <head>')
-        Title[0].extract()
-    title = title.replace("\n",'')
+        title = Title[0].string.replace("\n",'')
+        status(('With <title> tag, set meta title to ', title))
     return title, flags
 
 # Get <meta name="description" > 
-def get_meta_description(head, flags):
+def get_config_meta_description(head, flags):
     Meta = head.findAll('meta')
     Meta_description = [meta for meta in Meta 
                         if (meta.has_attr('name') and 
@@ -194,19 +193,19 @@ def get_meta_description(head, flags):
         meta_description = ""
     elif len(Meta_description)>1:
         flags += ['multiple-meta_descriptions']
-        meta_description = Meta_description[-1]['content']
-        status('strip <meta name="description"> tags from <head>')
-        for _meta_description in Meta_description:
-            _meta_description.extract()
+        meta_description = Meta_description[-1]['content'].replace("\n",'')
+        status(('With last <meta name="description"> tag,'
+                'set meta description to ', meta_description)
+        )
     else:
-        meta_description = Meta_description[0]['content']
-        status('strip <meta name="description"> tag from <head>')
-        Meta_description[0].extract()
-    meta_description = meta_description.replace("\n",'')
+        meta_description = Meta_description[0]['content'].replace("\n",'')
+        status(('With <meta name="description"> tag,'
+                'set meta description to ', meta_description)
+        )
     return meta_description, flags
 
 # Get tutorial name (for breadcrumb) 
-def get_tutorial_name(head, flags):  #TODO generalize!
+def get_config_tutorial_name(head, flags):  #TODO generalize!
     tutorial_name = ''               
     flags += ['no-tutorial_name']
     return tutorial_name, flags
@@ -215,22 +214,22 @@ def get_tutorial_name(head, flags):  #TODO generalize!
 def get_config(head, path_html, tree):
     flags = []
     title, flags = get_config_title(head, flags)
-    meta_description, flags = get_meta_description(head, flags)
-    tutorial_name, flags  = get_tutorial_name(head, flags)
+    meta_description, flags = get_config_meta_description(head, flags)
+    tutorial_name, flags  = get_config_tutorial_name(head, flags)
     config = dict(
         tutorial_name=tutorial_name,
         tags=dict(title=title, meta_description=meta_description)
     )
     try:
-        flags = []
         path_config = os.path.join(tree,'config.json')
         with open(path_config) as f:
             config_old = json.load(f)
         if config_old != config:
             config = config_old
             status((
-                "Not overwriting\n`{}`,\nas modifications were found"
+                "Not overwriting `{}`, as modifications were found"
             ).format(path_config))
+        flags = []
         if not config['tags']['title']: flags += ['no-title'] 
         if not config['tags']['meta_description']: flags += ['no-meta_description'] 
         if not config['tutorial_name']: flags += ['no-tutorial_name'] 
@@ -239,22 +238,22 @@ def get_config(head, path_html, tree):
     for flag in flags:
         if flag=='no-title': 
             important((
-                "There is no <title> in `{}`.\n"
+                "There is no <title>\nin `{}`.\n"
                 "Please fill in\n`{}/config.json`"
                 ).format(path_html,tree))
         elif flag=='multiple-title':
             important((
-                "There is more than one <title> in `{}`.\n"
+                "There is more than one <title>\nin `{}`.\n"
                 "Picking the last one for\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='no-meta_description':
             important((
-                "There is more than one <meta name='description'> in `{}`.\n"
+                "There is more than one <meta name='description'> in\n`{}`.\n"
                 "Please fill in\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='multiple-meta_descriptions':
             important((
-                "There is more than one <meta name='description'> in {}.\n"
+                "There is more than one <meta name='description'> in\n`{}`.\n"
                 "Picking the last one for\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='no-tutorial_name':
@@ -263,7 +262,7 @@ def get_config(head, path_html, tree):
             ).format(tree))
     return config
 
-# Strip all attributes, jquery script and <body></body> from body
+# Strip all attributes, <script></script> and <body></body> from body
 def strip_body(body):
     for tag in body():
         for attribute in ["class", "id", "name", "style"]:
@@ -299,17 +298,17 @@ def strip_body(body):
 def make_tree(tree_segments):
     tree = os.path.join(*tree_segments)
     if not os.path.exists(tree):
-        status(("[{}]".format(NAME), '... making', tree))
+        status(('Making', tree))
         os.makedirs(tree)
     else:
-        status(("[{}]".format(NAME), '...', tree, 'already exists OK'))
+        status(('Tree', tree, 'already exists OK'))
     return tree
 
 # Overwrite tree leaf
 def overwrite_leaves(tree, leaves):
     for leaf in leaves:
         path_leaf = os.path.join(tree, leaf[1])
-        status(('... writing in', path_leaf))
+        status(('Writing in', path_leaf))
         with open(path_leaf, 'wb') as f:
             if leaf[1].endswith('.json'):
                 json.dump(leaf[0], f, indent=4)
@@ -320,6 +319,7 @@ def overwrite_leaves(tree, leaves):
 
 # Copy leaves to tree
 def copy_leaves(tree, paths_leaf):
+    status(('Copying leaves to', tree))
     for path_leaf in paths_leaf:
         shutil.copy(path_leaf, tree)
     return
@@ -355,14 +355,16 @@ def main():
             # Get published tree for this html file
             tree_includes = make_tree([folder,'published','includes',dir_url])
             
-            # Get soup and translate its 'href' and 'src' 
+            # Get soup and split <body> and <head>
             soup = get_soup(path_html)
-            soup, paths_image = translate.translate(soup,path_html,dir_url,
+            body, head = get_body_head(soup) 
+
+            # Translate 'href' and 'src' in body 
+            body, paths_image = translate.translate(body,path_html,dir_url,
                                                     translate_static,
                                                     translate_filename_url)
 
-            # Split <body> and <head>, get config info
-            body, head = get_body_head(soup) 
+            # Get config info from head
             config = get_config(head, path_html, tree_includes)
 
             # Strip <body> tags and all class attributes
@@ -375,6 +377,8 @@ def main():
             # (2) Copy images in the appropriate published/ subdirectories
             tree_images = make_tree([folder,'published','static','images',dir_url])
             copy_leaves(tree_images,paths_image)
+
+            status('---- done with `{}`\n'.format(dir_url))
 
         # (3) Make folder-wide urls and sitemaps files
         make_urls.make_urls(folder,translate_filename_url)
