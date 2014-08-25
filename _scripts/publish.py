@@ -132,14 +132,12 @@ def check_published_subdirectories(folder, translate_filename_url):
     dirs_url = translate_filename_url.values()
     if subdirectories_includes != subdirectories_images:
         important((
-            "Directories `{}/published/includes/`\n"
-            "and `{}/published/images/`\n"
+            "Directories `{folder}/published/includes/`\n"
+            "and `{folder}/published/images/`\n"
             "do not have to same subdirectories.\n"
             "Please investigate."
-        ).format(folder))
-    elif not len(subdirectories_includes):
-        pass
-    elif set(subdirectories_includes) != set(dirs_url):
+        ).format(folder=folder))
+    elif len(subdirectories_includes) > len(dirs_url): 
         diff = list(set(subdirectories_includes) - set(dirs_url))
         to_be = 'is' if len(diff)==1 else 'are'
         important((
@@ -149,6 +147,8 @@ def check_published_subdirectories(folder, translate_filename_url):
             "{to_be} not listed in `{folder}/translate_filename_url.json`.\n"
             "Please investigate."
             ).format(diff='\n'.join(diff),folder=folder,to_be=to_be))
+    elif not len(subdirectories_includes) <= len(dirs_url):
+        pass
     return
 
 # -------------------------------------------------------------------------------
@@ -231,35 +231,35 @@ def get_config(head, path_html, tree):
             status((
                 "Not overwriting\n`{}`,\nas modifications were found"
             ).format(path_config))
-        if not config['tags']['title']: flag += ['no-title'] 
-        if not config['tags']['meta_description']: flag += ['no-meta_description'] 
-        if not config['tutorial_name']: flag += ['no-tutorial_name'] 
+        if not config['tags']['title']: flags += ['no-title'] 
+        if not config['tags']['meta_description']: flags += ['no-meta_description'] 
+        if not config['tutorial_name']: flags += ['no-tutorial_name'] 
     except:
         pass
     for flag in flags:
         if flag=='no-title': 
             important((
-                "There is no <title> in {}.\n"
-                "Please fill in `{}`/config.json"
+                "There is no <title> in `{}`.\n"
+                "Please fill in\n`{}/config.json`"
                 ).format(path_html,tree))
         elif flag=='multiple-title':
             important((
-                "There is more than one <title> in {}.\n"
-                "Picking the last one for `{}`/config.json"
+                "There is more than one <title> in `{}`.\n"
+                "Picking the last one for\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='no-meta_description':
             important((
                 "There is more than one <meta name='description'> in `{}`.\n"
-                "Please fill in `{}`/config.json"
+                "Please fill in\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='multiple-meta_descriptions':
             important((
                 "There is more than one <meta name='description'> in {}.\n"
-                "Picking the last one for `{}`/config.json"
+                "Picking the last one for\n`{}/config.json`"
             ).format(path_html,tree))
         elif flag=='no-tutorial_name':
             important((
-                "Please fill 'tutorial_name' in `{}`/config.json"
+                "Please fill 'tutorial_name' in\n`{}/config.json`"
             ).format(tree))
     return config
 
@@ -272,21 +272,21 @@ def strip_body(body):
     for script in Script:
         script.extract()
 
-    # only for excel_tutorials/
-    try:
-        iframe = body.findAll('iframe')[0]
-        iframe_str = str(iframe)
-        iframe_soup = BeautifulSoup(iframe_str)
-        wrapper = iframe_soup.new_tag("div", **{'class':'text--center'})
-        iframe_soup.body.wrap(wrapper)
-        iframe_new = iframe_soup.encode('utf8')
-        iframe_new = iframe_new.replace('<html>','').replace('</html>','')
-        iframe_new = iframe_new.replace('<body>','').replace('</body>','')
-        _body = body.encode('utf8')
-        _body = _body.replace(iframe_str,iframe_new)
-        body = BeautifulSoup(_body).body
-    except:
-        pass
+#    # only for excel_tutorials/ (not needed anymore)
+#    try:
+#        iframe = body.findAll('iframe')[0]
+#        iframe_str = str(iframe)
+#        iframe_soup = BeautifulSoup(iframe_str)
+#        wrapper = iframe_soup.new_tag("div", **{'class':'text--center'})
+#        iframe_soup.body.wrap(wrapper)
+#        iframe_new = iframe_soup.encode('utf8')
+#        iframe_new = iframe_new.replace('<html>','').replace('</html>','')
+#        iframe_new = iframe_new.replace('<body>','').replace('</body>','')
+#        _body = body.encode('utf8')
+#        _body = _body.replace(iframe_str,iframe_new)
+#        body = BeautifulSoup(_body).body
+#    except:
+#        pass
 
     body = body.prettify().encode('utf8')
     body = body.replace('<body>','')
