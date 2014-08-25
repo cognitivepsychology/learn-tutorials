@@ -1,3 +1,5 @@
+# --- learn_tutorial/ makefile ---
+
 # Set (relative or absolute) path to streambed
 streambed_path="../streambed"
 
@@ -15,6 +17,11 @@ publish:
 show-config:
 	@more $(folder)/published/includes/*/config.json | cat | less
 
+# Show log file
+# 	$ make show-log
+show-log:
+	@more publish.log | cat | less
+
 # Push change to streambed
 #    $ make push-to-streambed folder=<name-of-folder>
 push-to-streambed:
@@ -29,3 +36,4 @@ push-to-streambed:
 #    $ make clean folder=<name-of-folder>
 clean:
 	@rm -rf $(folder)/published/*
+

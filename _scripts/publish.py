@@ -30,11 +30,12 @@ def status(s):
         f.write(S+"\n")
     return
 
-# Print error to screen
+# Print important message to screen
 def important(s):
-    print "[{NAME}] ** IMPORTANT!\n\n{s}\n**".format(NAME=NAME,s=s)
+    print "[{NAME}] ** IMPORTANT!\n\n{s}\n**\n".format(NAME=NAME,s=s)
     return
 
+# Stop execution
 def stop():
     important("Stopping execution here!")
     sys.exit(0)
@@ -58,12 +59,14 @@ def get_args():
     else:
         return args
 
+# -------------------------------------------------------------------------------
+
 # Get list of HTML files in folder
 def get_paths_html(folder):
     paths_html = []
     folder_raw = os.path.join(folder,'raw')
     if not os.path.isdir(folder_raw):
-        important('Folder must contain a raw/ subfolder')
+        important('Folder `{}` must contain a `raw/` subfolder'.format(folder))
         stop()
     for path_folder, subfolders, files in os.walk(folder_raw):
         for f in files:
@@ -71,23 +74,50 @@ def get_paths_html(folder):
                 path_html = os.path.join(path_folder,f)
                 paths_html.append(path_html)
     if not paths_html:
-        important('No .html files located inside {}'.format(folder))
+        important('No .html files located inside `{}`'.format(folder))
         stop()
     return paths_html
 
+# Check if paths are in translate_filename_url (update if necessary)
 def check_translate(folder, paths_html, translate_filename_url):
     files_html_translate = translate_filename_url.keys()
     files_html = [os.path.split(path_html)[1] for path_html in paths_html]
-    if set(files_html_translate) != set(files_html):
-        important((
-            '{folder}/translate_filename_url.json is not filled in correctly\n'
-            'The html files in {folder}/raw/ are:\n{raw}\n\n'
-            'While {folder}/translate_filename_url.json points to:\n{translate}'
-        ).format(folder=folder,raw='\n'.join(files_html),
-                 translate='\n'.join(files_html_translate)))
-        stop()
-    return
+    if set(files_html_translate) == set(files_html):
+        return paths_html
+    else:
+        if len(files_html_translate) < len(files_html):
+            diff = list(set(files_html) - set(files_html_translate))
+            to_be = 'was' if len(diff)==1 else 'were'
+            to_have = 'has' if len(diff)==1 else 'have'
+            important((
+                "File(s): \n\n {diff}\n\n"
+                "{to_be} found from `{folder}/raw/` but {to_have} "
+                "no correspondence\n"
+                "in `{folder}/translate_filename_url.json`.\n\n"
+                "Note that files not listed in "
+                "`{folder}/translate_filename_url.json`\n"
+                "will NOT be published"
+            ).format(diff='\n'.join(diff),folder=folder,
+                     to_be=to_be,to_have=to_have))
+        else:
+            diff = list(set(files_html_translate) - set(files_html))
+            to_be = 'is' if len(diff)==1 else 'are'
+            to_have = 'has' if len(diff)==1 else 'have'
+            important((
+                "File(s): \n\n {diff}\n\n"
+                "{to_be} listed in "
+                "`{folder}/translate_filename_url.json` but {to_have} "
+                "no correspondence\n"
+                "in `{folder}/raw/`.\n\n"
+                "Note that files not found in "
+                "`{folder}/raw` CANNOT be published"
+            ).format(diff='\n'.join(diff),folder=folder,
+                     to_be=to_be,to_have=to_have))
+        return [path_html 
+                for i,path_html in enumerate(paths_html) 
+                if files_html[i] in files_html_translate]
 
+# Check if {folder}/published/ subdirectories corresp. to translate_filename_url
 def check_published_subdirectories(folder, translate_filename_url):
     path_includes = os.path.join(folder,'published','includes')
     path_images = os.path.join(folder,'published','static','images')
@@ -102,22 +132,23 @@ def check_published_subdirectories(folder, translate_filename_url):
     dirs_url = translate_filename_url.values()
     if subdirectories_includes != subdirectories_images:
         important((
-            "{}/published/includes/ and\n{}/published/images"
+            "Directories `{}/published/includes/`\n"
+            "and `{}/published/images/`\n"
             "do not have to same subdirectories.\n"
-            "Please investigate." 
+            "Please investigate."
         ).format(folder))
     elif not len(subdirectories_includes):
         pass
     elif set(subdirectories_includes) != set(dirs_url):
+        diff = list(set(subdirectories_includes) - set(dirs_url))
+        to_be = 'is' if len(diff)==1 else 'are'
         important((
-            "{folder}translate_filename_url.json is inconsistent with\n"
-            "the subdirectories in {folder}/published/includes/\n"
-            "and in {folder}/published/images.\n\n"
-            "The includes/ and images/ subdirectories are:\n{sub}\n\n"
-            "While {folder}/translate_filename_url.json points to:\n{translate}\n\n"
+            "Subdirectory(ies):\n\n {diff}\n\n"
+            "from `{folder}/published/includes/`\n"
+            "and `{folder}/published/images/`\n"
+            "{to_be} not listed in `{folder}/translate_filename_url.json`.\n"
             "Please investigate."
-        ).format(folder=folder,sub='\n'.join(subdirectories_includes),
-                 translate='\n'.join(dirs_url)))
+            ).format(diff='\n'.join(diff),folder=folder,to_be=to_be))
     return
 
 # -------------------------------------------------------------------------------
@@ -176,7 +207,7 @@ def get_meta_description(head, flags):
 
 # Get tutorial name (for breadcrumb) 
 def get_tutorial_name(head, flags):  #TODO generalize!
-    tutorial_name = ''
+    tutorial_name = ''               
     flags += ['no-tutorial_name']
     return tutorial_name, flags
 
@@ -197,36 +228,38 @@ def get_config(head, path_html, tree):
             config_old = json.load(f)
         if config_old != config:
             config = config_old
-            important((
-                "Not overwriting {}, as modifications were found"
+            status((
+                "Not overwriting\n`{}`,\nas modifications were found"
             ).format(path_config))
-        # TODO! If key in config_old is empty add flag!
+        if not config['tags']['title']: flag += ['no-title'] 
+        if not config['tags']['meta_description']: flag += ['no-meta_description'] 
+        if not config['tutorial_name']: flag += ['no-tutorial_name'] 
     except:
         pass
     for flag in flags:
         if flag=='no-title': 
             important((
                 "There is no <title> in {}.\n"
-                "Please fill in {}/config.json"
+                "Please fill in `{}`/config.json"
                 ).format(path_html,tree))
         elif flag=='multiple-title':
             important((
                 "There is more than one <title> in {}.\n"
-                "Picking the last one for {}/config.json"
+                "Picking the last one for `{}`/config.json"
             ).format(path_html,tree))
         elif flag=='no-meta_description':
             important((
-                "There is more than one <meta name='description'> in {}.\n"
-                "Please fill in {}/config.json"
+                "There is more than one <meta name='description'> in `{}`.\n"
+                "Please fill in `{}`/config.json"
             ).format(path_html,tree))
         elif flag=='multiple-meta_descriptions':
             important((
                 "There is more than one <meta name='description'> in {}.\n"
-                "Picking the last one for {}/config.json"
+                "Picking the last one for `{}`/config.json"
             ).format(path_html,tree))
         elif flag=='no-tutorial_name':
             important((
-                "Please fill 'tutorial_name' in {}/config.json"
+                "Please fill 'tutorial_name' in `{}`/config.json"
             ).format(tree))
     return config
 
@@ -238,6 +271,23 @@ def strip_body(body):
     Script = body.findAll('script')
     for script in Script:
         script.extract()
+
+    # only for excel_tutorials/
+    try:
+        iframe = body.findAll('iframe')[0]
+        iframe_str = str(iframe)
+        iframe_soup = BeautifulSoup(iframe_str)
+        wrapper = iframe_soup.new_tag("div", **{'class':'text--center'})
+        iframe_soup.body.wrap(wrapper)
+        iframe_new = iframe_soup.encode('utf8')
+        iframe_new = iframe_new.replace('<html>','').replace('</html>','')
+        iframe_new = iframe_new.replace('<body>','').replace('</body>','')
+        _body = body.encode('utf8')
+        _body = _body.replace(iframe_str,iframe_new)
+        body = BeautifulSoup(_body).body
+    except:
+        pass
+
     body = body.prettify().encode('utf8')
     body = body.replace('<body>','')
     body = body.replace('</body>','')
@@ -282,12 +332,17 @@ def main():
 
     for folder in folders:
 
-        paths_html = get_paths_html(folder)
-
+        # Get translate info for folder-specific files
         translate_static = translate.get_translate_static(folder)
         translate_filename_url = translate.get_translate_filename_url(folder)
 
-        check_translate(folder, paths_html, translate_filename_url)
+        # Get paths of all html files in {folder}/raw/
+        paths_html = get_paths_html(folder)
+
+        # Check if paths are in translate_filename_url (update if necessary)
+        paths_html = check_translate(folder, paths_html, translate_filename_url)
+
+        # Check if {folder}/published/* corresp. to translate_filename_url
         check_published_subdirectories(folder, translate_filename_url)
 
         # (1) Make body.html and config.json for each html file 

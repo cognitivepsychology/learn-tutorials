@@ -11,8 +11,6 @@ urlpatterns = patterns(
         learn.views.excel_tutorials_template),
     url("(?P<tutorial>how-to-make-a-graph-with-error-bars-with-excel)/$",
         learn.views.excel_tutorials_template),
-    url("(?P<tutorial>how-to-make-a-graph-with-multiple-axes-with-excel)/$",
-        learn.views.excel_tutorials_template),
     url("(?P<tutorial>how-to-make-a-line-graph-and-scatter-plot-with-excel)/$",
         learn.views.excel_tutorials_template),
     url("(?P<tutorial>how-to-make-a-heatmap-with-excel)/$",
