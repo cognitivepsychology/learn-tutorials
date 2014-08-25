@@ -1,5 +1,12 @@
 {
-    "" : "",
-    "" : "",
-    ""
+    "GridTutorialTemplateRevTwo.html" : "add-data-to-the-plotly-grid",
+    "LineandScatterTutorialTemplateRevTwo.html" : "how-to-make-a-line-graph-and-scatter-plot",
+    "BarChartTutorial.html" : "how-to-make-a-bar-chart-online",
+    "AreaChartTutorialTemplateRevTwo.html" : "area-chart-tutorial",
+    "HistogramTutorialTemplateRevTwo.html" : "how-to-make-a-histogram-online",
+    "BoxPlotTutorialTemplateRevTwo.html" : "how-to-make-a-box-plot-online",
+    "BubbleChartTutorialTemplateRevTwo.html" : "how-to-make-a-bubble-chart-online",
+    "HeatTutorialTemplateRevTwo.html" : "how-to-make-a-heatmap-online",
+    "ErrorBarsTutorialTemplateRevTwo.html" : "how-to-make-a-graph-with-error-bars",
+    "MultipleAxesTemplateRevTwo.html" : "multiple-axes-tutorial"
 }

@@ -1,0 +1,12 @@
+/* <link rel="stylesheet" type="text/css" href="css_override.css"> */
+
+body{
+  margin: 0 auto !important;
+  padding-top: 0px !important;
+}
+h1{
+  margin-top: 0px !important;
+}
+*{
+  font-weight: 100 !important;
+}

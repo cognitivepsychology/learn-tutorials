@@ -1,0 +1,678 @@
+
+<html>
+
+<head>
+<title>How to make a heat map online
+</title>
+
+<link rel="shortcut icon" href="/static/img/ploticons/16px_444444_PNG/plot.png">
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?kit=chteh0fSOiSrmusp8u43YAdDjahd2IAEL5IFmyNQJ7o');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c8{border-bottom-width:0pt;border-top-style:solid;width:215.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c3{border-bottom-width:0pt;border-top-style:solid;width:243.8pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c17{border-bottom-width:0pt;border-top-style:solid;width:216pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c27{border-bottom-width:0pt;border-top-style:solid;width:188.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c32{border-bottom-width:0pt;border-top-style:solid;width:216pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c23{border-bottom-width:0pt;border-top-style:solid;width:216.8pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c10{vertical-align:baseline;color:#434343;font-size:12pt;font-style:normal;font-family:"Open Sans";text-decoration:none;font-weight:normal}.c28{vertical-align:baseline;color:#1155cc;font-size:12pt;font-style:normal;font-family:"Consolas";text-decoration:none;font-weight:normal}.c7{line-height:1.5;padding-top:0pt;widows:2;orphans:2;text-align:left;direction:ltr;padding-bottom:0pt}.c34{line-height:1.5;padding-top:0pt;widows:2;orphans:2;text-align:center;direction:ltr;padding-bottom:0pt}.c6{vertical-align:baseline;color:#447adb;font-size:12pt;font-style:normal;font-family:"Consolas";text-decoration:none;font-weight:normal}.c13{line-height:1.5;widows:2;orphans:2;direction:ltr;page-break-after:avoid}.c1{line-height:1.5;widows:2;orphans:2;height:11pt;direction:ltr}.c14{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:normal}.c0{color:#1d3b84;font-size:18pt;font-family:"Open Sans";font-weight:normal}.c29{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c43{line-height:1.5;widows:2;orphans:2;direction:ltr}.c48{widows:2;orphans:2;direction:ltr}.c36{margin-right:auto;border-collapse:collapse;margin-left:auto}.c20{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c16{font-size:48pt;font-family:"Open Sans";font-weight:bold}.c9{color:#447adb;font-size:12pt;font-family:"Open Sans"}.c45{vertical-align:baseline;color:#000000;text-decoration:none}.c2{margin-right:auto;border-collapse:collapse}.c44{font-size:12pt;font-family:"Consolas"}.c5{color:inherit;text-decoration:inherit}.c19{color:#434343;font-style:italic}.c15{margin:0;padding:0}.c22{color:#434343;font-size:14pt}.c42{padding-left:0pt;margin-left:36pt}.c30{font-size:12pt;font-family:"Arial"}.c11{font-size:12pt;font-family:"Open Sans"}.c18{font-family:"Open Sans"}.c4{height:0pt}.c26{height:11pt}.c49{font-size:48pt}.c38{color:#447adb}.c37{font-weight:bold}.c35{font-weight:normal}.c47{height:168pt}.c21{font-size:11pt}.c40{padding-top:10pt}.c46{text-decoration:underline}.c41{text-align:center}.c50{height:48pt}.c24{color:#434343}.c33{font-size:18pt}.c25{font-size:14pt}.c31{font-style:italic}.c12{color:#1d3b84}.c39{color:#1155cc}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+</style>
+
+<link rel="stylesheet" type="text/css" href="css/css_override.css">
+<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+
+<meta name= "description" content="A tutorial on how to make heat maps online and for free with Plotly">
+
+</head>
+
+<body class="c20">
+
+<div>
+
+<p class="c26 c48">
+
+<span>
+</span></p>
+</div><h1 class="c13"><a name="h.x6kp9fud1zuf"></a>
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 76.00px;">
+
+<a href="images/image18.png" data-lightbox="image-18">
+
+<img alt="" src="images/image18.png" style="width: 624.00px; height: 76.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></h1><h1 class="c13"><a name="h.40yjqrtgo9ck"></a>
+
+<span class="c9"><a class="c5" href="/learn">< Back to all chart tutorials</a>
+</span></h1><h1 class="c13"><a name="h.t62y66ciwnw"></a>
+
+<span class="c18 c12 c49">How to make a
+</span>
+
+<span class="c12 c16">&nbsp;Heat Map
+</span></h1>
+
+<p class="c43">
+
+<iframe src="https://plot.ly/~cimar/200//576/301" width="576.00" height="444" frameborder="0" scrolling="no"></iframe>
+
+</span></p>
+
+<p class="c1">
+
+<span class="c18">
+</span></p>
+
+<p class="c43">
+
+<span class="c11 c24">Follow along below to make a heatmap in Plotly.
+</span></p><h2 class="c13"><a name="h.gbznpiihyim3"></a>
+
+<span class="c18 c33 c12">Step 1:
+</span>
+
+<span class="c0">&nbsp;Set up the grid
+</span></h2><a href="#" name="f428fd69579b0e0400f238c80ff37bb80d4a2598"></a><a href="#" name="0"></a>
+<table cellpadding="0" cellspacing="0" class="c2"><tbody>
+<tr class="c4">
+<td class="c17">
+
+<p class="c7">
+
+<span class="c11 c24">This is one way you could set up Plotly&rsquo;s grid to make the graph above. &nbsp;
+</span>
+
+<span class="c11 c24 c37">The rows and columns of the grid will correspond to the rows and columns of the heat map
+</span>
+
+<span class="c11 c24">, the column names will name the column (data here:
+</span>
+
+<span class="c44 c38 c46"><a class="c5" href="hhttps://plot.ly/~cimar/191">https://plot.ly/~cimar/191</a>
+</span>
+
+<span class="c10">).
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 80.00px;">
+
+<a href="images/image05.png" data-lightbox="image-05">
+
+<img alt="" src="images/image05.png" style="width: 274.00px; height: 80.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 272.50px; height: 128.41px;">
+
+<a href="images/image05.png" data-lightbox="image-05">
+
+<img alt="" src="images/image05.png" style="width: 619.03px; height: 180.99px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c17">
+
+<p class="c7">
+
+<span class="c11 c24">Select &ldquo;Heat map&rdquo; from the 
+</span>
+
+<span class="c9">MAKE A PLOT
+</span>
+
+<span class="c11 c39">&nbsp;
+</span>
+
+<span class="c10">menu.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 233.00px; height: 204.00px;">
+
+<a href="images/image06.png" data-lightbox="image-06">
+
+<img alt="" src="images/image06.png" style="width: 233.00px; height: 209.00px; margin-left: 0.00px; margin-top: -5.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c17">
+
+<p class="c7">
+
+<span class="c11 c24">Select the &ldquo;Column names&rdquo; button from the 
+</span>
+
+<span class="c9">X-AXIS
+</span>
+
+<span class="c11 c39">&nbsp;
+</span>
+
+<span class="c10">options in the sidebar and click &ldquo;Select all columns&rdquo; button.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 131.00px; height: 136.00px;">
+
+<a href="images/image10.png" data-lightbox="image-10">
+
+<img alt="" src="images/image10.png" style="width: 131.00px; height: 136.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c17">
+
+<p class="c7">
+
+<span class="c10">Deselect any columns you don&rsquo;t want to plot, and your row names column if you have one. This will be your &ldquo;y&rdquo; value.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 134.67px;">
+
+<a href="images/image02.png" data-lightbox="image-02">
+
+<img alt="" src="images/image02.png" style="width: 273.00px; height: 134.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c17">
+
+<p class="c7">
+
+<span class="c11 c24">Click the blue plot button in the sidebar to create the chart. &nbsp;(For more help with the grid see: 
+</span>
+
+<span class="c44 c38 c46"><a class="c5" href="https://plot.ly/add-data-to-the-plotly-grid/">https://plot.ly/add-data-to-the-plotly-grid/</a>
+</span>
+
+<span class="c10">)
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 230.00px; height: 125.00px;">
+
+<a href="images/image07.png" data-lightbox="image-07">
+
+<img alt="" src="images/image07.png" style="width: 230.00px; height: 125.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c1">
+
+<span>
+</span></p><h2 class="c13 c40"><a name="h.pjmuxph8y5qc"></a>
+
+<span class="c18 c33 c12">Step 2: 
+</span>
+
+<span class="c0">Traces
+</span></h2>
+
+<p class="c1">
+
+<span>
+</span></p><a href="#" name="5342df3e94ad889e2b3cd31fa6a93591a3341a86"></a><a href="#" name="1"></a>
+<table cellpadding="0" cellspacing="0" class="c2"><tbody>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c11 c24">Your plot should look something like this. &nbsp;The first step to styling it into the heatmap above is to open the 
+</span>
+
+<span class="c9">TRACES
+</span>
+
+<span class="c11 c39">&nbsp;
+</span>
+
+<span class="c10">popover in the toolbar.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 149.33px;">
+
+<a href="images/image00.png" data-lightbox="image-00">
+
+<img alt="" src="images/image00.png" style="width: 274.00px; height: 149.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 270.00px; height: 40.00px;">
+
+<a href="images/image12.png" data-lightbox="image-12">
+
+<img alt="" src="images/image12.png" style="width: 501.16px; height: 520.37px; margin-left: 9.25px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c47">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c11 c24">This is what the &ldquo;Style&rdquo; tab of the 
+</span>
+
+<span class="c9">TRACES
+</span>
+
+<span class="c11 c24">&nbsp;popover should look like. We&rsquo;ve selected one of the default gradients, 
+</span>
+
+<span class="c11 c19">red-yellow-blue
+</span>
+
+<span class="c10">.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 250.00px; height: 205.33px;">
+
+<a href="images/image14.png" data-lightbox="image-14">
+
+<img alt="" src="images/image14.png" style="width: 250.00px; height: 205.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c50">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c10">For this particular data, we also want to center our gradient so that yellow correlates to a value of 60.2, and everything above or below is a little red or green. The easiest way to do this is by nudging the &ldquo;Z range&rdquo; values in the &ldquo;Range/bins&rdquo; tab to converge on our desired midpoint &nbsp;-- we compressed our range, but you can also stretch it if you prefer the effect.
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 144.00px;">
+
+<a href="images/image03.png" data-lightbox="image-03">
+
+<img alt="" src="images/image03.png" style="width: 273.00px; height: 144.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c11 c24">(Alternative: if you want to make a 
+</span>
+
+<span class="c19 c11">contour plot
+</span>
+
+<span class="c10">, just change the &ldquo;Type&rdquo; setting in the &ldquo;Mode&rdquo; tab.)
+</span></p>
+</td>
+<td class="c8">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 168.00px;">
+
+<a href="images/image13.png" data-lightbox="image-13">
+
+<img alt="" src="images/image13.png" style="width: 273.00px; height: 168.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 142.67px;">
+
+<a href="images/image01.png" data-lightbox="image-01">
+
+<img alt="" src="images/image01.png" style="width: 273.00px; height: 142.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c1">
+
+<span>
+</span></p>
+
+<p class="c1">
+
+<span>
+</span></p>
+
+<p class="c1">
+
+<span>
+</span></p><h2 class="c13"><a name="h.sem5jy4h2d9c"></a>
+
+<span class="c18 c12 c33">Step 3:
+</span>
+
+<span class="c0">&nbsp;Style and annotate!
+</span></h2>
+
+<p class="c1">
+
+<span class="c18 c37 c33">
+</span></p><a href="#" name="2a54382b00d78cd883dee1795e56a39184afa2e5"></a><a href="#" name="2"></a>
+<table cellpadding="0" cellspacing="0" class="c2"><tbody>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c10">Your plot should look something like this. &nbsp;There&rsquo;s a little more styling you need to do to get the graph at the top of the chart.
+</span></p>
+</td>
+<td class="c32">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 273.00px; height: 152.00px;">
+
+<a href="images/image16.png" data-lightbox="image-16">
+
+<img alt="" src="images/image16.png" style="width: 273.00px; height: 152.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span>
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 270.00px; height: 40.00px;">
+
+<a href="images/image12.png" data-lightbox="image-12">
+
+<img alt="" src="images/image12.png" style="width: 501.16px; height: 520.37px; margin-left: 9.25px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c11 c24">Here&rsquo;s how the 
+</span>
+
+<span class="c9">LAYOUT
+</span>
+
+<span class="c10">&nbsp;popover should look. We&rsquo;ve nudged the margins to accommodate the y-axis labels, and we&rsquo;re giving our chart a grey background.
+</span></p>
+</td>
+<td class="c32">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 254.67px;">
+
+<a href="images/image11.png" data-lightbox="image-11">
+
+<img alt="" src="images/image11.png" style="width: 274.00px; height: 254.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 233.33px;">
+
+<a href="images/image04.png" data-lightbox="image-04">
+
+<img alt="" src="images/image04.png" style="width: 274.00px; height: 233.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c10">We&rsquo;ve titled our chart, and used markup to format our text and source our data.
+</span></p>
+</td>
+<td class="c32">
+
+<p class="c7 c26">
+
+<span class="c14 c18 c21">
+</span></p>
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 125.33px;">
+
+<a href="images/image09.png" data-lightbox="image-09">
+
+<img alt="" src="images/image09.png" style="width: 274.00px; height: 125.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span>
+
+<span class="c18 c31">OKCupid Compatibility by Religion&lt;br&gt;Source: &lt;a href=&rdquo;
+</span>
+
+<span class="c18 c46 c31 c39"><a class="c5" href="http://blog.okcupid.com/index.php/how-races-and-religions-match-in-online-dating">http://blog.okcupid.com/index.php/how-races-and-religions-match-in-online-dating</a>
+</span>
+
+<span class="c18 c35 c21 c31 c45">&rdquo;&gt;OKTrends, 2009&lt;/a&gt;
+</span></p>
+</td>
+</tr>
+<tr class="c4">
+<td class="c23">
+
+<p class="c7">
+
+<span class="c10">Your finished chart should look something like this:
+</span></p>
+</td>
+<td class="c32">
+
+<p class="c7">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 274.00px; height: 132.00px;">
+
+<a href="images/image15.png" data-lightbox="image-15">
+
+<img alt="" src="images/image15.png" style="width: 274.00px; height: 132.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c1">
+
+<span class="c22 c18">
+</span></p>
+
+<p class="c1">
+
+<span class="c18 c22">
+</span></p>
+
+<p class="c1 c41">
+
+<span class="c18">
+</span></p>
+
+<p class="c43">
+
+<span class="c18 c38 c33">Questions or Feedback?
+</span></p><a href="#" name="fb9fb93011ad78ca1e36c4c1e56fdf04d009bd67"></a><a href="#" name="3"></a>
+<table cellpadding="0" cellspacing="0" class="c36"><tbody></tbody>
+</table>
+
+<p class="c1">
+
+<span class="c18 c25">
+</span></p><a href="#" name="5e089004eda0ae2bca707683a806569b7b0f18dc"></a><a href="#" name="4"></a>
+<table cellpadding="0" cellspacing="0" class="c2"><tbody>
+<tr class="c4">
+<td class="c3">
+
+<p class="c7">
+
+<span class="c14 c11">About Plotly:
+</span></p>
+
+<p class="c7 c26">
+
+<span class="c11 c14">
+</span></p>
+<ul class="c15 lst-kix_ahdtx5kblk1i-0 start">
+<li class="c7 c42">
+
+<span class="c11">email: 
+</span>
+
+<span class="c44 c38"><a class="c5" href="mailto:feedback@plot.ly">feedback@plot.ly</a>
+</span></li>
+<li class="c7 c42">
+
+<span class="c11">tweet: 
+</span>
+
+<span class="c6">@plotlygraphs
+</span></li>
+</ul>
+
+<p class="c7 c26">
+
+<span class="c28">
+</span></p>
+
+<p class="c7">
+
+<span class="c10">About Chart Tutorials:
+</span></p>
+
+<p class="c7 c26">
+
+<span class="c10">
+</span></p>
+<ul class="c15 lst-kix_hljnb7pn5yly-0 start">
+<li class="c7 c42">
+
+<span class="c11">email: 
+</span>
+
+<span class="c38 c44"><a class="c5" href="mailto:rosie@plot.ly">rosie@plot.ly</a>
+</span></li>
+<li class="c7 c42">
+
+<span class="c44">tweet: 
+</span>
+
+<span class="c44 c38">@rosiecima
+</span></li>
+</ul>
+</td>
+<td class="c27">
+
+<p class="c34">
+
+<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 186.50px; height: 207.50px;">
+
+<a href="images/image08.png" data-lightbox="image-08">
+
+<img alt="" src="images/image08.png" style="width: 186.50px; height: 207.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
+
+</a>
+
+</span></p>
+</td>
+</tr></tbody>
+</table>
+
+<p class="c1">
+
+<span class="c18 c25">
+</span></p>
+
+<p class="c48 c26">
+
+<span class="c18">
+</span></p>
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+
+</body>
+</html>
