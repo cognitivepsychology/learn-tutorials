@@ -22,7 +22,7 @@ def get_urls(translate_filename_url):
 
 # Generate urls.py file
 # See streambed/shelly/learn/ for more info
-def get_urls_py(urls):
+def get_urls_py(folder, urls):
     urls_py = (
         "from django.conf.urls import patterns, url\n\n"
         "import learn.views\n\n\n"
@@ -32,8 +32,8 @@ def get_urls_py(urls):
     for url in urls: # TODO generalize views!
         urls_py += (
             '{tab}url("'+url+'",\n'
-            '{tab}{tab}learn.views.excel_tutorials_template)'
-        ).format(tab=tab)
+            '{tab}{tab}learn.views.{folder}_template)'
+        ).format(tab=tab,folder=folder)
         if url != urls[-1]:
             urls_py += ",\n"
     urls_py += "\n)\n"
@@ -52,5 +52,5 @@ def overwrite_urls(folder,urls_py):
 # Make and overwrite urls.py file
 def make_urls(folder, translate_filename_url):
     urls = get_urls(translate_filename_url)
-    urls_py = get_urls_py(urls)
-    overwrite_urls(folder,urls_py)
+    urls_py = get_urls_py(folder, urls)
+    overwrite_urls(folder, urls_py)
