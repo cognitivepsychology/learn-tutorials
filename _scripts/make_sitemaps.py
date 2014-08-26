@@ -1,7 +1,7 @@
 import json
-import sys
 import os
-import textwrap
+
+import status
 
 # -------------------------------------------------------------------------------
 # 
@@ -9,16 +9,8 @@ import textwrap
 #
 # -------------------------------------------------------------------------------
 
-NAME="make_sitemaps"  # name of this module
-
-tab = "    "  # tab in space
-
-# Shortcut to print status along with the name of the script
-def status(s):
-    S = str(("[{}]".format(NAME), s))
-    with open('publish.log', 'a') as f:
-        f.write(S+"\n")
-    return
+NAME="make_sitemaps" # name of this module
+tab = "    "         # tab in space
 
 # Get sitemaps items
 def get_items(folder,translate_filename_url):
@@ -70,7 +62,7 @@ def overwrite_sitemaps(folder,sitemaps_py):
     f_urls = "{}/published/sitemaps.py".format(folder)
     with open(f_urls, "w") as f:
         f.write(sitemaps_py)
-        status(('... writes in', f_urls))
+        status.log(NAME,('Writes in', f_urls))
     return
 
 # -------------------------------------------------------------------------------

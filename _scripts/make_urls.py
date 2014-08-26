@@ -1,6 +1,7 @@
 import json
-import sys
 import os
+
+import status
 
 # -------------------------------------------------------------------------------
 # 
@@ -9,15 +10,7 @@ import os
 # -------------------------------------------------------------------------------
 
 NAME="make_urls"  # name of this module
-
-tab = "    "  # tab in space
-
-# Shortcut to print status along with the name of the script
-def status(s):
-    S = str(("[{}]".format(NAME), s))
-    with open('publish.log', 'a') as f:
-        f.write(S+"\n")
-    return
+tab = "    "      # tab in space
 
 # Get urls patterns
 def get_urls(translate_filename_url):
@@ -50,12 +43,13 @@ def get_urls_py(urls):
 def overwrite_urls(folder,urls_py):
     f_urls = "{}/published/urls.py".format(folder)
     with open(f_urls, "w") as f:
-        status(('... writes in', f_urls))
+        status.log(NAME,('Writes in', f_urls))
         f.write(urls_py)
     return
 
 # -------------------------------------------------------------------------------
 
+# Make and overwrite urls.py file
 def make_urls(folder, translate_filename_url):
     urls = get_urls(translate_filename_url)
     urls_py = get_urls_py(urls)
