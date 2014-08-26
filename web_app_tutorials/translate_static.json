@@ -1,6 +1,6 @@
 {
     "images/" : "/static/learn/images/web_app_tutorials",
     "img/" : "/static/learn/images/web_app_tutorials/",
-    "css/" : "/static/learn/css/web_app_tutorials/",
-    "js/" :  "/static/learn/js/web_app_tutorials/"
+    "css/" : "/static/learn/css/",
+    "js/" :  "/static/learn/js/"
 }

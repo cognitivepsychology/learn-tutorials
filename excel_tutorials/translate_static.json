@@ -1,6 +1,6 @@
 {
     "images/" : "/static/learn/images/excel_tutorials/",
     "img/" : "/static/learn/images/excel_tutorials/",
-    "css/" : "/static/learn/css/excel_tutorials/",
-    "js/" :  "/static/learn/js/excel_tutorials/"
+    "css/" : "/static/learn/css/",
+    "js/" :  "/static/learn/js/"
 }
