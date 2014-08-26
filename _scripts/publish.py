@@ -29,7 +29,8 @@ NAME="publish"  # name of this script
 
 # Get input arguments 
 def get_args():
-    args = sys.argv[1:]
+    _args = sys.argv[1:]
+    args = [os.path.dirname(_arg) for _arg in _args]
     if not args:
         print (
             "[{NAME}]\n\n"
@@ -40,7 +41,9 @@ def get_args():
         ).format(NAME=NAME)
         status.stop(NAME)
     elif not all(os.path.isdir(arg) for arg in args):
-        status.important(NAME,'Arguments must be directories')
+        status.important(NAME,(
+            'Arguments must be directories from the repo root.'
+        ))
         status.stop(NAME)
     else:
         return args

@@ -110,6 +110,16 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
             status.log(NAME,('... translated to: ', a['href']))
     return soup
 
+# Add target blank attributes to link out of plotly pages
+def add_target_blank(soup):
+    A = soup.findAll('a')
+    for a in A:
+        if not a.has_attr('href'):
+            continue
+        if a['href'].startswith('http://') or a['href'].startswith('https://'):
+            a['target'] = '_blank'
+    return soup
+
 # -------------------------------------------------------------------------------
 
 def translate(soup, path_html, dir_url, translate_static, translate_filename_url):
@@ -117,4 +127,5 @@ def translate(soup, path_html, dir_url, translate_static, translate_filename_url
     soup = translate_script_src(soup, dir_url, translate_static)
     soup = translate_link_href(soup, dir_url, translate_static)
     soup = translate_a_href(soup, dir_url, translate_static, translate_filename_url)
+    soup = add_target_blank(soup)
     return soup, paths_image
