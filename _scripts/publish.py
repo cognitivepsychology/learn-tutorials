@@ -30,8 +30,7 @@ NAME="publish"  # name of this script
 # Get input arguments 
 def get_args():
     _args = sys.argv[1:]
-    args = [os.path.dirname(_arg) for _arg in _args]
-    if not args:
+    if not _args:
         print (
             "[{NAME}]\n\n"
             "Usage:\n"
@@ -40,12 +39,19 @@ def get_args():
             "python {NAME}.py folder1 folder2 ... folderN\n"
         ).format(NAME=NAME)
         status.stop(NAME)
-    elif not all(os.path.isdir(arg) for arg in args):
+    elif not all(os.path.isdir(_arg) for _arg in _args):
+        dirs_available = [i for i in os.listdir(os.getcwd()) 
+                          if (os.path.isdir(i) and 
+                              not i.startswith('.') and 
+                              not i.startswith('_'))]
         status.important(NAME,(
-            'Arguments must be directories from the repo root.'
+            'Arguments must be directories from the repo root.\n\n'
+            'The available directories are:\n'
+            '  {}'.format('\n  '.join(dirs_available))
         ))
         status.stop(NAME)
     else:
+        args = [os.path.dirname(_arg+'/') for _arg in _args]
         return args
 
 # -------------------------------------------------------------------------------

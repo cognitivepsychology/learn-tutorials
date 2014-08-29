@@ -24,5 +24,7 @@ urlpatterns = patterns(
     url("(?P<tutorial>how-to-make-a-box-plot-online)/$",
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-heatmap-online)/$",
+        learn.views.web_app_tutorials_template),
+    url("(?P<tutorial>how-to-sign-up-to-plotly)/$",
         learn.views.web_app_tutorials_template)
 )

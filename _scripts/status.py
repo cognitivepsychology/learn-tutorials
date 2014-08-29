@@ -22,5 +22,5 @@ def important(NAME, s):
 
 # Stop execution
 def stop(NAME):
-    important("Stopping execution here!")
+    important(NAME, "Stopping execution here!")
     sys.exit(0)

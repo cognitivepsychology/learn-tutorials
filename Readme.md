@@ -17,8 +17,9 @@ one command away from being *plot.ly-ready*.
 Scripts and commands:
 
 - `_scripts/` : scripts handling the conversion to *plot.ly-ready* process
-- `makefile/` : shortcut commands to run the scripts and push the published
-  content to the `streambed/` repository (more in [`Contributing.md`](./Contributing.md))
+- `makefile/` : shortcut commands to run the scripts, show conversion log and
+  push the published content to the `streambed/` repository (more in
+  [`Contributing.md`](./Contributing.md))
 
 Content directory:
 

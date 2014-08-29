@@ -104,6 +104,16 @@ def items():
                 'how-to-make-a-heatmap-online',
                 'body.html'),
             priority=0.5
+        ),
+        dict(
+            location='/how-to-sign-up-to-plotly/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'how-to-sign-up-to-plotly',
+                'body.html'),
+            priority=0.5
         )
     ]
     return items

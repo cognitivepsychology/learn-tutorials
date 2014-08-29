@@ -23,14 +23,18 @@ $ git pull origin master
 Run
 
 ```
-$ git branch <name-of-your-branch>
+$ git branch <your-branch>
 ```
 
 and then checkout to your new branch
 
 ```
-$ git checkout <name-of-your-branch>
+$ git checkout <your-branch>
 ```
+
+#### 3. Go to
+- [dsadsa]()
+- [sda]()
 
 
 ### Case A: Fix typo or update on existing page
@@ -40,7 +44,7 @@ $ git checkout <name-of-your-branch>
 - fix the typo in the up-to-date google document, convert to HTML and overwrite
 
 ```
-learn_tutorials/<name-of-content-dir>/raw/<name-of-tutorial>/
+learn_tutorials/<content-dir>/raw/<some-dir>/
 ```  
 
 - or fix the typo directly in the HTML file in question
@@ -50,7 +54,7 @@ learn_tutorials/<name-of-content-dir>/raw/<name-of-tutorial>/
 From the `learn_tutorials/`, run
 
 ```
-$ make publish folder=<name-of-content-dir>
+$ make publish folder=<content-dir>
 ```
 
 ### Case B: Fix typo or update meta a page's information
@@ -58,7 +62,7 @@ $ make publish folder=<name-of-content-dir>
 All the meta information is in JSON file located
 
 ```
-learn_tutorials/<name-of-content-dir>/published/includes/<tutorial-url>/config.json
+learn_tutorials/<content-dir>/published/includes/<tutorial-url>/config.json
 ```
 
 #### 1. Open the `config.json` in question

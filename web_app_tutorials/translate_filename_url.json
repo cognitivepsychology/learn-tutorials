@@ -8,5 +8,6 @@
     "BubbleChartTutorialTemplateRevTwo.html" : "how-to-make-a-bubble-chart-online",
     "HeatTutorialTemplateRevTwo.html" : "how-to-make-a-heatmap-online",
     "ErrorBarsTutorialTemplateRevTwo.html" : "how-to-make-a-graph-with-error-bars",
-    "MultipleAxesTemplateRevTwo.html" : "multiple-axes-tutorial"
+    "MultipleAxesTemplateRevTwo.html" : "multiple-axes-tutorial",
+    "SignUp.html" : "how-to-sign-up-to-plotly"
 }

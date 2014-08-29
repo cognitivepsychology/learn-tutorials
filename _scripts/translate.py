@@ -16,15 +16,18 @@ NAME="translate"  # name of this module
 def get_translate_static(folder):
     file_path = os.path.join(folder,'translate_static.json')
     with open(file_path) as f:
-        translate = json.load(f)
-    return translate
+        translate_static = json.load(f)
+    return translate_static
 
 # Get dictionary in translate_filename_url.json
 def get_translate_filename_url(folder):
     file_path = os.path.join(folder,'translate_filename_url.json')
     with open(file_path) as f:
         translate = json.load(f)
+    translate
     return translate
+
+# -------------------------------------------------------------------------------
 
 # Get the 'new' replacing string 
 def get_new(old,s,dir_url):
@@ -35,6 +38,8 @@ def get_new(old,s,dir_url):
     else:
         new = s
     return new
+
+# -------------------------------------------------------------------------------
 
 # Translate image source and make list of image paths
 def translate_img_src(soup, path_html, dir_url, translate_static):
@@ -86,6 +91,7 @@ def translate_link_href(soup, dir_url, translate_static):
 
 # Translate anchor hyperref
 def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
+    href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/']
     A = soup.findAll('a')
     for a in A:
         if not a.has_attr('href'):
@@ -97,17 +103,18 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
                 a['href'] = a['href'].replace(href_head,new)
                 status.log(NAME,('... translated to: ', a['href']))
                 break
-        if a['href'].startswith('https://plot.ly/'): # case 2
-            if a['href'].startswith('https://plot.ly/~'): # but not shareplot!
-                continue
-            status.log(NAME,('href (filename_url) to translate found: ', a['href']))
-            a['href'] = a['href'].replace('https://plot.ly/','/')
-            for href_tail in translate_filename_url.keys():
-                if href_tail in a['href']:
-                    status.log(NAME,('href to translate found: ', a['href']))
-                    a['href'] = a['href'].replace(href_head,translate_static[href_tail])
-                    break
-            status.log(NAME,('... translated to: ', a['href']))
+        for href_start in href_starts:
+            if a['href'].startswith(href_start): # case 2
+                if a['href'].startswith('https://plot.ly/~'): # but not shareplot!
+                    continue
+                status.log(NAME,('href (filename_url) to translate found: ', a['href']))
+                a['href'] = a['href'].replace(href_start, '/')
+                for href_tail in translate_filename_url.keys():
+                    if href_tail in a['href']:
+                        status.log(NAME,('href to translate found: ', a['href']))
+                        a['href'] = a['href'].replace(href_head,translate_static[href_tail])
+                        break
+                status.log(NAME,('... translated to: ', a['href']))
     return soup
 
 # Add target blank attributes to link out of plotly pages
