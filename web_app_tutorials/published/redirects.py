@@ -6,6 +6,10 @@ import learn.views
 
 urlpatterns = patterns(
     '',
+    url(r'^errorbars/$',
+        RedirectView.as_view(
+            url='/how-to-make-a-graph-with-error-bars-online/',
+            permanent=True)),
     url(r'^how-to-make-a-graph-with-error-bars/$',
         RedirectView.as_view(
             url='/how-to-make-a-graph-with-error-bars-online/',

@@ -193,6 +193,8 @@ def get_body_head(soup):
 
 # Strip all attributes, <script></script> and <body></body> from body
 def strip_body(body):
+    for attribute in ["class", "id", "name", "style"]:
+        del body[attribute]
     for tag in body():
         for attribute in ["class", "id", "name", "style"]:
             del tag[attribute]

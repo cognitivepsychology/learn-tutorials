@@ -7,7 +7,7 @@
     "BoxPlotTutorialTemplateRevTwo.html" : "how-to-make-a-box-plot-online",
     "BubbleChartTutorialTemplateRevTwo.html" : "how-to-make-a-bubble-chart-online",
     "HeatTutorialTemplateRevTwo.html" : "how-to-make-a-heatmap-online",
-    "ErrorBarsTutorialTemplateRevTwo.html" : ["how-to-make-a-graph-with-error-bars", "how-to-make-a-graph-with-error-bars-online"],
+    "ErrorBarsTutorialTemplateRevTwo.html" : ["errorbars", "how-to-make-a-graph-with-error-bars", "how-to-make-a-graph-with-error-bars-online"],
     "MultipleAxesTemplateRevTwo.html" : ["multiple-axes-tutorial", "how-to-make-a-graph-with-multiple-axes-online"],
     "SignUp.html" : "how-to-sign-up-to-plotly"
 }

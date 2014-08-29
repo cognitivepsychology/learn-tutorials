@@ -30,4 +30,5 @@ push-to-streambed:
 	@rm -rf $(streambed_path)/shelly/learn/static/learn/images/$(folder)/*
 	@cp -R $(folder)/published/static/images/* $(streambed_path)/shelly/learn/static/learn/images/$(folder)/
 	@cp $(folder)/published/urls.py $(streambed_path)/shelly/learn/urls/$(folder)/urls.py
+	@cp $(folder)/published/redirects.py $(streambed_path)/shelly/learn/urls/$(folder)/redirects.py
 	@cp $(folder)/published/sitemaps.py $(streambed_path)/shelly/learn/sitemaps/$(folder)/sitemaps.py
