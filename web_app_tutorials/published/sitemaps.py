@@ -16,32 +16,32 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/area-chart-tutorial/',
+            location='/how-to-make-an-area-chart-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'area-chart-tutorial',
+                'how-to-make-an-area-chart-online',
                 'body.html'),
             priority=0.5
         ),
         dict(
-            location='/multiple-axes-tutorial/',
+            location='/how-to-make-a-box-plot-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'multiple-axes-tutorial',
+                'how-to-make-a-box-plot-online',
                 'body.html'),
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-line-graph-and-scatter-plot/',
+            location='/how-to-make-a-line-graph-and-scatter-plot-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-line-graph-and-scatter-plot',
+                'how-to-make-a-line-graph-and-scatter-plot-online',
                 'body.html'),
             priority=0.5
         ),
@@ -56,12 +56,12 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-graph-with-error-bars/',
+            location='/how-to-make-a-graph-with-error-bars-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-graph-with-error-bars',
+                'how-to-make-a-graph-with-error-bars-online',
                 'body.html'),
             priority=0.5
         ),
@@ -86,12 +86,12 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-box-plot-online/',
+            location='/how-to-make-a-graph-with-multiple-axes-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-box-plot-online',
+                'how-to-make-a-graph-with-multiple-axes-online',
                 'body.html'),
             priority=0.5
         ),

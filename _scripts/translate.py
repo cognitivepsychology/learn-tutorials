@@ -24,8 +24,22 @@ def get_translate_filename_url(folder):
     file_path = os.path.join(folder,'translate_filename_url.json')
     with open(file_path) as f:
         translate = json.load(f)
-    translate
-    return translate
+    translate_filename_url = dict()
+    translate_redirects = dict()
+    for k,v in translate.items():
+        if isinstance(v, list) and isinstance(v[-1], (str, unicode)):
+            translate_filename_url[k] = v[-1]
+            translate_redirects[v[-1]] = v[0:-1]
+        elif isinstance(v, (str, unicode)):
+            translate_filename_url[k] = v
+        else:
+            status.important(NAME, (
+                "object values in {}/translate_filename_url.json\n"
+                "must be either a string (the urls)\n"
+                "or a list of strings (to handle redirects)"
+            ).format(folder))
+            status.stop(NAME)
+    return translate_filename_url, translate_redirects
 
 # -------------------------------------------------------------------------------
 

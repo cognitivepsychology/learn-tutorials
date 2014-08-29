@@ -8,6 +8,7 @@ import status
 import translate 
 import make_config
 import make_urls
+import make_redirects
 import make_sitemaps
 
 # -------------------------------------------------------------------------------
@@ -116,6 +117,32 @@ def check_translate(folder, paths_html, translate_filename_url):
                 for i,path_html in enumerate(paths_html) 
                 if files_html[i] in files_html_translate]
 
+# Check if there are directories to redirect, copy them over if so.
+def check_redirects(folder, translate_redirects):
+    paths_subdirs = [
+        os.path.join(folder,'published','includes'),
+        os.path.join(folder,'published','static','images')
+    ]
+    for path_subdirs in paths_subdirs:
+        for new, olds in translate_redirects.items():
+            path_subdir_new = os.path.join(path_subdirs, new) + '/'
+            path_subdir_old = os.path.join(path_subdirs, olds[-1]) + '/'
+            if (os.path.isdir(path_subdir_old) and 
+                not os.path.isdir(path_subdir_new)):
+                status.log(NAME,('Making', path_subdir_new))
+                os.makedirs(path_subdir_new)
+                for item in os.listdir(path_subdir_old):
+                    path_item = os.path.join(path_subdir_old, item)
+                    shutil.copy(path_item, path_subdir_new)
+                    status.log(NAME,(
+                        'Copying {} to {}'
+                    ).format(path_item, path_subdir_new))
+                shutil.rmtree(path_subdir_old)
+                status.log(NAME,(
+                    'Removing directory {}'
+                ).format(path_subdir_old))
+    return
+
 # Check if {folder}/published/ subdirectories corresp. to translate_filename_url
 def check_published_subdirectories(folder, translate_filename_url):
     path_includes = os.path.join(folder,'published','includes')
@@ -129,7 +156,7 @@ def check_published_subdirectories(folder, translate_filename_url):
     except:
         subdirectories_images = []
     dirs_url = translate_filename_url.values()
-    if subdirectories_includes != subdirectories_images:
+    if set(subdirectories_includes) != set(subdirectories_images):
         status.important(NAME,(
             "Directories `{folder}/published/includes/`\n"
             "and `{folder}/published/images/`\n"
@@ -172,23 +199,6 @@ def strip_body(body):
     Script = body.findAll('script')
     for script in Script:
         script.extract()
-
-#    # only for excel_tutorials/ (not needed anymore)
-#    try:
-#        iframe = body.findAll('iframe')[0]
-#        iframe_str = str(iframe)
-#        iframe_soup = BeautifulSoup(iframe_str)
-#        wrapper = iframe_soup.new_tag("div", **{'class':'text--center'})
-#        iframe_soup.body.wrap(wrapper)
-#        iframe_new = iframe_soup.encode('utf8')
-#        iframe_new = iframe_new.replace('<html>','').replace('</html>','')
-#        iframe_new = iframe_new.replace('<body>','').replace('</body>','')
-#        _body = body.encode('utf8')
-#        _body = _body.replace(iframe_str,iframe_new)
-#        body = BeautifulSoup(_body).body
-#    except:
-#        pass
-
     body = body.prettify().encode('utf8')
     body = body.replace('<body>','')
     body = body.replace('</body>','')
@@ -236,13 +246,17 @@ def main():
 
         # Get translate info for folder-specific files
         translate_static = translate.get_translate_static(folder)
-        translate_filename_url = translate.get_translate_filename_url(folder)
+        translate_filename_url, translate_redirects = (
+            translate.get_translate_filename_url(folder))
 
         # Get paths of all html files in {folder}/raw/
         paths_html = get_paths_html(folder)
 
         # Check if paths are in translate_filename_url (update if necessary)
         paths_html = check_translate(folder, paths_html, translate_filename_url)
+
+        # Check if there are directories to redirect
+        check_redirects(folder, translate_redirects)
 
         # Check if {folder}/published/* corresp. to translate_filename_url
         check_published_subdirectories(folder, translate_filename_url)
@@ -280,11 +294,14 @@ def main():
             tree_images = make_tree([folder,'published','static','images',dir_url])
             copy_leaves(tree_images,paths_image)
 
+
+
             status.log(NAME,'---- done with `{}`\n'.format(dir_url))
 
-        # (3) Make folder-wide urls and sitemaps files
-        make_urls.make_urls(folder,translate_filename_url)
-        make_sitemaps.make_sitemaps(folder,translate_filename_url)
+        # (3) Make folder-wide urls, redirects and sitemaps files
+        make_urls.make_urls(folder, translate_filename_url)
+        make_redirects.make_redirects(folder, translate_redirects)
+        make_sitemaps.make_sitemaps(folder, translate_filename_url)
 
 if __name__ == "__main__":
     main()

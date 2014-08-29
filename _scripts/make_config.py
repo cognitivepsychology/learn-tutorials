@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 
 import status
 
@@ -14,6 +15,7 @@ import status
 # -------------------------------------------------------------------------------
 
 NAME="make_config"  # name of this script
+
 
 # Get <title> from <head>
 def get_config_title(head, flags):
