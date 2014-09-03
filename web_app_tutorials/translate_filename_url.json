@@ -9,5 +9,7 @@
     "HeatTutorialTemplateRevTwo.html" : "how-to-make-a-heatmap-online",
     "ErrorBarsTutorialTemplateRevTwo.html" : ["errorbars", "how-to-make-a-graph-with-error-bars", "how-to-make-a-graph-with-error-bars-online"],
     "MultipleAxesTemplateRevTwo.html" : ["multiple-axes-tutorial", "how-to-make-a-graph-with-multiple-axes-online"],
-    "SignUp.html" : "how-to-sign-up-to-plotly"
+    "SignUp.html" : "how-to-sign-up-to-plotly",
+    "embedinteractiveplotlygraphsinwebsitesblogsif.html" : ["embed", "how-to-embed-plotly-graphs-in-websites"],
+    "HowtoshareandprintgraphsonPlotly.html" : ["share-print", "how-to-share-and-print-plotly-graphs"]
 }

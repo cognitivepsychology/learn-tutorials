@@ -71,7 +71,7 @@ def get_paths_html(folder):
             if subfolder == '__MACOSX':
                 path_MACOSX = os.path.join(path_folder, subfolder)
                 status.important(NAME,(
-                    "Removing `{}` - not needed (this is no big deal)"
+                    "Removing `{}`\n - Not needed (this is no big deal)"
                 ).format(path_MACOSX))
                 shutil.rmtree(path_MACOSX)
     for path_folder, subfolders, files in os.walk(folder_raw):

@@ -1,5 +1,6 @@
 {
-    "images/" : "/static/",
-    "css/" : "new"
-    "js/"
+    "images/" : "/static/learn/images/data_literacy",
+    "img/" : "/static/learn/images/data_literacy/",
+    "css/" : "/static/learn/css/",
+    "js/" :  "/static/learn/js/"
 }

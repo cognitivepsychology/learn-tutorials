@@ -18,12 +18,20 @@ urlpatterns = patterns(
         RedirectView.as_view(
             url='/how-to-make-an-area-chart-online/',
             permanent=True)),
-    url(r'^how-to-make-a-line-graph-and-scatter-plot/$',
+    url(r'^embed/$',
         RedirectView.as_view(
-            url='/how-to-make-a-line-graph-and-scatter-plot-online/',
+            url='/how-to-embed-plotly-graphs-in-websites/',
             permanent=True)),
     url(r'^multiple-axes-tutorial/$',
         RedirectView.as_view(
             url='/how-to-make-a-graph-with-multiple-axes-online/',
+            permanent=True)),
+    url(r'^how-to-make-a-line-graph-and-scatter-plot/$',
+        RedirectView.as_view(
+            url='/how-to-make-a-line-graph-and-scatter-plot-online/',
+            permanent=True)),
+    url(r'^share-print/$',
+        RedirectView.as_view(
+            url='/how-to-share-and-print-plotly-graphs/',
             permanent=True))
 )

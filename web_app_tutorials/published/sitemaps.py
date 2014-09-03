@@ -16,6 +16,16 @@ def items():
             priority=0.5
         ),
         dict(
+            location='/how-to-make-a-histogram-online/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'how-to-make-a-histogram-online',
+                'body.html'),
+            priority=0.5
+        ),
+        dict(
             location='/how-to-make-an-area-chart-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
@@ -26,12 +36,12 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-box-plot-online/',
+            location='/how-to-embed-plotly-graphs-in-websites/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-box-plot-online',
+                'how-to-embed-plotly-graphs-in-websites',
                 'body.html'),
             priority=0.5
         ),
@@ -76,12 +86,22 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-histogram-online/',
+            location='/how-to-share-and-print-plotly-graphs/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-histogram-online',
+                'how-to-share-and-print-plotly-graphs',
+                'body.html'),
+            priority=0.5
+        ),
+        dict(
+            location='/how-to-make-a-box-plot-online/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'how-to-make-a-box-plot-online',
                 'body.html'),
             priority=0.5
         ),
