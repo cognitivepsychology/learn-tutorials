@@ -17,7 +17,10 @@ def log(NAME, s):
 
 # Print important message to screen
 def important(NAME, s):
-    print "[{NAME}] ** IMPORTANT!\n\n{s}\n**\n".format(NAME=NAME,s=s)
+    S = "[{NAME}] ** IMPORTANT!\n\n{s}\n**\n".format(NAME=NAME,s=s)
+    print S
+    with open('publish.log', 'a') as f:
+        f.write(S+"\n")
     return
 
 # Stop execution
