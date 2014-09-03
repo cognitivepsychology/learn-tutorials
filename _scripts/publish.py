@@ -71,7 +71,7 @@ def get_paths_html(folder):
             if subfolder == '__MACOSX':
                 path_MACOSX = os.path.join(path_folder, subfolder)
                 status.important(NAME,(
-                    'Removing `{}` - not needed!'
+                    "Removing `{}` - not needed (this is no big deal)"
                 ).format(path_MACOSX))
                 shutil.rmtree(path_MACOSX)
     for path_folder, subfolders, files in os.walk(folder_raw):
@@ -165,7 +165,7 @@ def check_published_subdirectories(folder, translate_filename_url):
     if set(subdirectories_includes) != set(subdirectories_images):
         status.important(NAME,(
             "Directories `{folder}/published/includes/`\n"
-            "and `{folder}/published/images/`\n"
+            "and `{folder}/published/static/images/`\n"
             "do not have to same subdirectories.\n\n"
             "Please investigate (that's a weird one)."
         ).format(folder=folder))
@@ -175,7 +175,7 @@ def check_published_subdirectories(folder, translate_filename_url):
         status.important(NAME,(
             "Subdirectory(ies):\n\n {diff}\n\n"
             "from `{folder}/published/includes/`\n"
-            "and `{folder}/published/images/`\n"
+            "and `{folder}/published/static/images/`\n"
             "{to_be} not listed in `{folder}/translate_filename_url.json`.\n\n"
             "Please investigate:\n"
             "  - Did you change a url in {folder}/translate_filename_url.json\n"

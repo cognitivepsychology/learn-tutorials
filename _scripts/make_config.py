@@ -97,7 +97,7 @@ def print_flags(flags, config, path_html, tree):
             status.log(NAME,(
                 'With last <title> tag, set meta'
                 'title to "{}"'
-           ).format(title))
+           ).format(config['tags']['title']))
         elif flag=='no-meta_description':
             status.important(NAME,(
                 "There is more than one <meta name='description'> in\n`{}`.\n"
@@ -111,7 +111,7 @@ def print_flags(flags, config, path_html, tree):
             status.log(NAME,(
                 'With last <meta name="description"> tag, '
                 'set meta description to "{}"'
-            ).format(meta_description))
+            ).format(config['tags']['meta_description']))
         elif flag=='no-tutorial_name':
             status.important(NAME,(
                 "Please fill 'tutorial_name' in\n`{}/config.json`"
@@ -119,10 +119,10 @@ def print_flags(flags, config, path_html, tree):
         else:
             status.log(NAME,(
                 'With <title> tag, set meta title to:\n\t"{}"'
-            ).format(title))
+            ).format(config['tags']['title']))
             status.log(NAME,(
                 'With <meta name="description"> tag, set meta description to:\n\t"{}"'
-           ).format(meta_description))
+           ).format(config['tags']['meta_description']))
     return
 
 # -------------------------------------------------------------------------------
