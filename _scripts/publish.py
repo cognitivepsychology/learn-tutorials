@@ -113,9 +113,7 @@ def check_translate(folder, paths_html, translate_filename_url):
                 "`{folder}/raw` CANNOT be published"
             ).format(diff='\n'.join(diff),folder=folder,
                      to_be=to_be,to_have=to_have))
-        return [path_html 
-                for i,path_html in enumerate(paths_html) 
-                if files_html[i] in files_html_translate]
+        status.stop(NAME)
 
 # Check if there are directories to redirect, copy them over if so.
 def check_redirects(folder, translate_redirects):
@@ -160,8 +158,8 @@ def check_published_subdirectories(folder, translate_filename_url):
         status.important(NAME,(
             "Directories `{folder}/published/includes/`\n"
             "and `{folder}/published/images/`\n"
-            "do not have to same subdirectories.\n"
-            "Please investigate."
+            "do not have to same subdirectories.\n\n"
+            "Please investigate (that's a weird one)."
         ).format(folder=folder))
     elif len(subdirectories_includes) > len(dirs_url): 
         diff = list(set(subdirectories_includes) - set(dirs_url))
@@ -170,8 +168,13 @@ def check_published_subdirectories(folder, translate_filename_url):
             "Subdirectory(ies):\n\n {diff}\n\n"
             "from `{folder}/published/includes/`\n"
             "and `{folder}/published/images/`\n"
-            "{to_be} not listed in `{folder}/translate_filename_url.json`.\n"
-            "Please investigate."
+            "{to_be} not listed in `{folder}/translate_filename_url.json`.\n\n"
+            "Please investigate:\n"
+            "  - Did you change a url in {folder}/translate_filename_url.json\n"
+            "    not meant to be redirected (e.g. you fixed a typo)?\n"
+            "    Then, please remove\n"
+            "    {folder}/published/includes/{diff}/ and\n"
+            "    {folder}/published/static/images/{diff}/"
             ).format(diff='\n'.join(diff),folder=folder,to_be=to_be))
     elif not len(subdirectories_includes) <= len(dirs_url):
         pass
@@ -295,8 +298,6 @@ def main():
             # (2) Copy images in the appropriate published/ subdirectories
             tree_images = make_tree([folder,'published','static','images',dir_url])
             copy_leaves(tree_images,paths_image)
-
-
 
             status.log(NAME,'---- done with `{}`\n'.format(dir_url))
 
