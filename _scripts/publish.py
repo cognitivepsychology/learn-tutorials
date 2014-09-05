@@ -203,18 +203,11 @@ def get_body_head(soup):
 
 # Strip all attributes, <script></script> and <body></body> from body
 def strip_body(body):
-    plotly_classes = [  # TODO generalize!
-        ['heading'], ["section__inner"], ['link--bold', 'link--impt'], 
-        ['beta', 'push--ends'],  
-        ['media', 'push--bottom'], ['media__body'], ["media__img--rev"],
-        ['img-with-caption'], ['img-caption'], ['img--border push--bottom']
-    ]
+    for attribute in ["class", "id", "name", "style"]:
+        del body[attribute]
     for tag in body():
-        try:
-            (tag['class'] in plotly_classes)
-        except:
-            for attribute in ["class", "id", "name", "style"]:
-                del tag[attribute]
+        for attribute in ["class", "id", "name", "style"]:
+            del tag[attribute]
     Script = body.findAll('script')
     for script in Script:
         script.extract()
@@ -223,6 +216,12 @@ def strip_body(body):
     body = body.replace('</body>','')
     return body
 
+#    plotly_classes = [  # TODO generalize!
+#        ['heading'], ["section__inner"], ['link--bold', 'link--impt'], 
+#        ['beta', 'push--ends'],  
+#        ['media', 'push--bottom'], ['media__body'], ["media__img--rev"],
+#        ['img-with-caption'], ['img-caption'], ['img--border push--bottom']
+#    ]
 # -------------------------------------------------------------------------------
 
 # Make directory tree
