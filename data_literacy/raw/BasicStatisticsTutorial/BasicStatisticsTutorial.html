@@ -1,473 +1,332 @@
-
+<!DOCTYPE html>
 <html>
-
 <head>
-<title>Basic Statistics Tutorial
-</title>
-<link rel="shortcut icon" href="{{ PLOTLY_FAVICON_URL }}">
-<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?kit=chteh0fSOiSrmusp8u43YAdDjahd2IAEL5IFmyNQJ7o');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c7{border-bottom-width:0pt;border-top-style:solid;width:188.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c28{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c1{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c27{border-bottom-width:0pt;border-top-style:solid;width:243.8pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c0{line-height:1.15;padding-top:0pt;widows:2;orphans:2;height:11pt;text-align:left;direction:ltr;padding-bottom:0pt}.c2{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:right;direction:ltr;padding-bottom:0pt}.c18{line-height:1.0;padding-top:0pt;text-align:left;padding-bottom:0pt}.c10{line-height:1.15;padding-top:0pt;text-align:left;padding-bottom:0pt}.c11{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c24{color:#1155cc;font-size:12pt;text-decoration:underline}.c3{color:#434343;font-size:12pt;font-family:"Open Sans"}.c17{margin-right:auto;border-collapse:collapse;margin-left:auto}.c15{color:#447adb;font-size:12pt;font-family:"Consolas"}.c5{widows:2;orphans:2;direction:ltr}.c12{color:#000000;font-size:12pt;font-family:"Open Sans"}.c20{color:#000000;font-size:10pt;font-family:"Arial"}.c8{color:#1d3b84;font-size:18pt;font-family:"Open Sans"}.c47{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c9{margin-right:auto;border-collapse:collapse}.c13{color:#447adb;font-size:12pt;font-family:"Open Sans"}.c29{padding-left:0pt;margin-left:36pt}.c16{color:inherit;text-decoration:inherit}.c35{font-size:12pt;font-family:"Consolas"}.c19{color:#000000;font-size:14pt}.c30{color:#1d3b84;font-size:48pt}.c31{margin:0;padding:0}.c26{margin-right:270pt;margin-left:13.5pt}.c4{color:#999999;font-size:10pt}.c34{color:#1155cc;font-size:12pt}.c21{color:#000000;font-size:11pt}.c33{color:#000000;font-size:12pt}.c38{height:16pt}.c37{font-size:12pt}.c32{font-family:"Arial"}.c39{font-style:italic}.c41{font-weight:bold}.c40{color:#1155cc}.c48{color:#1d3b84}.c42{font-size:14pt}.c6{height:11pt}.c36{line-height:1.0}.c23{height:0pt}.c45{font-weight:normal}.c14{font-family:"Open Sans"}.c43{padding-top:10pt}.c25{color:#447adb}.c22{page-break-after:avoid}.c44{margin-left:13.5pt}.c46{text-decoration:underline}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
-</style>
-<link rel="stylesheet" type="text/css" href="/static/learn/css/css_override.css">
-<meta name="description" content="A tutorial on how to use statistical tools for free with Plotly">
+    <title>Basic Statistics Tutorial</title>
+    <link href="{{ PLOTLY_FAVICON_URL }}" rel="shortcut icon">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <style type="text/css">
+@import url('https://themes.googleusercontent.com/fonts/css?kit=chteh0fSOiSrmusp8u43YAdDjahd2IAEL5IFmyNQJ7o');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c7{border-bottom-width:0pt;border-top-style:solid;width:188.2pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c28{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c1{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:14.4pt 14.4pt 14.4pt 14.4pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:middle;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c27{border-bottom-width:0pt;border-top-style:solid;width:243.8pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#000000;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c0{line-height:1.15;padding-top:0pt;widows:2;orphans:2;height:11pt;text-align:left;direction:ltr;padding-bottom:0pt}.c2{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:right;direction:ltr;padding-bottom:0pt}.c18{line-height:1.0;padding-top:0pt;text-align:left;padding-bottom:0pt}.c10{line-height:1.15;padding-top:0pt;text-align:left;padding-bottom:0pt}.c11{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c24{color:#1155cc;font-size:12pt;text-decoration:underline}.c3{color:#434343;font-size:12pt;font-family:"Open Sans"}.c17{margin-right:auto;border-collapse:collapse;margin-left:auto}.c15{color:#447adb;font-size:12pt;font-family:"Consolas"}.c5{widows:2;orphans:2;direction:ltr}.c12{color:#000000;font-size:12pt;font-family:"Open Sans"}.c20{color:#000000;font-size:10pt;font-family:"Arial"}.c8{color:#1d3b84;font-size:18pt;font-family:"Open Sans"}.c47{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c9{margin-right:auto;border-collapse:collapse}.c13{color:#447adb;font-size:12pt;font-family:"Open Sans"}.c29{padding-left:0pt;margin-left:36pt}.c16{color:inherit;text-decoration:inherit}.c35{font-size:12pt;font-family:"Consolas"}.c19{color:#000000;font-size:14pt}.c30{color:#1d3b84;font-size:48pt}.c31{margin:0;padding:0}.c26{margin-right:270pt;margin-left:13.5pt}.c4{color:#999999;font-size:10pt}.c34{color:#1155cc;font-size:12pt}.c21{color:#000000;font-size:11pt}.c33{color:#000000;font-size:12pt}.c38{height:16pt}.c37{font-size:12pt}.c32{font-family:"Arial"}.c39{font-style:italic}.c41{font-weight:bold}.c40{color:#1155cc}.c48{color:#1d3b84}.c42{font-size:14pt}.c6{height:11pt}.c36{line-height:1.0}.c23{height:0pt}.c45{font-weight:normal}.c14{font-family:"Open Sans"}.c43{padding-top:10pt}.c25{color:#447adb}.c22{page-break-after:avoid}.c44{margin-left:13.5pt}.c46{text-decoration:underline}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+    </style>
+    <link href="/static/learn/css/css_override.css" rel="stylesheet" type=
+    "text/css">
+    <meta content=
+    "A tutorial on how to use statistical tools for free with Plotly" name=
+    "description">
 </head>
 
 <body class="c47">
-
-<div>
-
-<p class="c9">
-
-<iframe src="https://plot.ly/~mariahh/8/576/444" width="576.00" height="444" frameborder="0" 
-
-scrolling="no"></iframe>
-
-</p>
-
-<p class="c5 c6">
-
-<span class="c14">
-</span></p>
-
-<p class="c5">
-
-<span class="c3">Plotly has built in statistical tools to help you analyze data with only a few clicks.
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p>
-
-<p class="c5">
-
-<span class="c3">We&rsquo;re set up for both descriptive and inferential statistics, so whether you&rsquo;re looking to plot a graph with error bars (see our awesome tutorial 
-</span>
-
-<span class="c3 c46"><a class="c16" href="/how-to-make-a-graph-with-error-bars/">here</a>
-</span>
-
-<span class="c3">) or do a simple statistical analysis of the ages of Nobel Prize winners, you&rsquo;ve come to the right place.
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p>
-
-<p class="c5">
-
-<span class="c3">Our statistics tool computes the minimum and maximum values, mean, median, quartiles, standard deviation, variance and standard error. The data in this tutorial comes 
-</span>
-
-<span class="c3">from
-</span>
-
-<span class="c3">&nbsp;
-</span>
-
-<span class="c24 c14"><a class="c16" href="http://www.nber.org/nobel/">http://www.nber.org/nobel/</a>
-</span>
-
-<span class="c3">, which was used by Jones and Weinberg in their paper 
-</span>
-
-<span class="c24 c14"><a class="c16" href="http://www.pnas.org/content/108/47/18910">&ldquo;Age dynamics in scientific creativity&rdquo;</a>
-</span>
-
-<span class="c3">.
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p><h2 class="c5 c22"><a name="h.g5aeu1eklzq7"></a>
-
-<span class="c8">Step 
-</span>
-
-<span class="c8">1
-</span>
-
-<span class="c8">:
-</span>
-
-<span class="c8 c45">&nbsp;Set up the grid
-</span></h2>
-
-<p class="c5 c6">
-
-<span>
-</span></p>
-
-<p class="c5">
-
-<span class="c3">You can load data into Plotly by typing directly, cutting &amp; pasting or importing data from an external source. If you need help, our tutorial 
-</span>
-
-<span class="c24 c14"><a class="c16" href="/add-data-to-the-plotly-grid/">Add Data to Plotly&rsquo;s Grid</a>
-</span>
-
-<span class="c3">&nbsp;is the perfect place to start.
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p><a href="#" name="ae59e32f8d90c70fa6d0ebd81d63997c2c47df45"></a><a href="#" name="0"></a>
-<table cellpadding="0" cellspacing="0" class="c9"><tbody>
-<tr class="c23">
-<td class="c1">
-
-<p class="c10 c5">
-
-<span class="c11 c3">In this example, we&rsquo;ve loaded all the nobel prize winners in medicine, physics and chemistry, their birth years, and computed their age when they won their award.
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c3">
-</span></p>
-
-<p class="c5 c10">
-
-<span class="c3">Copy the data 
-</span>
-
-<span class="c3">here
-</span>
-
-<span class="c3">: 
-</span>
-
-<span class="c14 c24"><a class="c16" href="/~mariahh/8/">https://plot.ly/~mariahh/8/</a>
-</span></p>
-</td>
-<td class="c28">
-
-<p class="c2">
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 166.67px;"><img alt="Screen Shot 2014-08-11 at 12.23.46 PM.png" src="images/image08.png" style="width: 298.00px; height: 166.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-
-<p class="c18 c5 c6">
-
-<span class="c11 c33 c32">
-</span></p>
-
-<p class="c2 c6">
-
-<span class="c11 c33 c32"><a class="c16" href="http://www.google.com/url?q=http%3A%2F%2Fplotly&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNF4sCahSFPQH0q4Y1WjpKxUTl9yAQ"></a>
-</span></p>
-</td>
-</tr></tbody>
-</table><h2 class="c5 c22 c43"><a name="h.1ix2memx4mri"></a>
-
-<span class="c8">Step 2:
-</span>
-
-<span class="c8 c45">&nbsp;Running basic statistics
-</span></h2>
-
-<p class="c5 c6">
-
-<span>
-</span></p>
-
-<p class="c5">
-
-<span class="c3">Plotly has both descriptive and inferential statistical tools. For our example we&rsquo;re interested in quantitative features to describe our data set. This is exactly what 
-</span>
-
-<span class="c3 c39">descriptive statistics
-</span>
-
-<span class="c3">&nbsp;does.
-</span>
-
-<span class="c3">&nbsp;On the other hand, if you want to use a sample data set to make predictions about a larger population, 
-</span>
-
-<span class="c3 c39">Inferential Statistics
-</span>
-
-<span class="c3">&nbsp;is the tool you&rsquo;ll want to use.
-</span></p>
-
-<p class="c5 c6">
-
-<span class="c3">
-</span></p><a href="#" name="aaa1c7bf9fe86bfd164bea84e1541849417d5387"></a><a href="#" name="1"></a>
-<table cellpadding="0" cellspacing="0" class="c9"><tbody>
-<tr class="c23">
-<td class="c1">
-
-<p class="c10 c5">
-
-<span class="c3">Select &ldquo;Basic statistics&rdquo; from the 
-</span>
-
-<span class="c13">ANALYSIS
-</span>
-
-<span class="c14 c34">&nbsp;
-</span>
-
-<span class="c11 c3">menu.
-</span></p>
-</td>
-<td class="c28">
-
-<p class="c18 c5">
-
-<span class="c37">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 234.50px; height: 247.88px;"><img alt="Screen Shot 2014-08-11 at 12.38.35 PM.png" src="images/image00.png" style="width: 234.50px; height: 247.88px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr>
-<tr class="c23">
-<td class="c1">
-
-<p class="c10 c5">
-
-<span class="c3">Two things happen. First, a 
-</span>
-
-<span class="c13">STATISTICS
-</span>
-
-<span class="c3">&nbsp;box opens on the left of the browser window. We have two choices: &ldquo;Inferential (N-1)&rdquo; or &ldquo;Descriptive&rdquo;. &nbsp;&ldquo;Inferential (N-1)&rdquo; is the default, so we&rsquo;ve had to change our choice to 
-&ldquo;Descriptive&rdquo;.
-</p>
-
-</td>
-<td class="c28">
-
-<p class="c18 c5">
-
-<span class="c4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 229.00px; height: 235.00px;"><img alt="Screen Shot 2014-08-11 at 12.47.12 PM.png" src="images/image01.png" style="width: 229.00px; height: 235.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr>
-<tr class="c23">
-<td class="c1">
-
-<p class="c0">
-
-<span class="c11 c3">
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c3">
-</span></p>
-
-<p class="c0">
-
-<span class="c3 c11">
-</span></p>
-
-<p class="c10 c5">
-
-<span class="c3">Second, notice that the grid now gives lets you choose which columns you want to use for statistics. &nbsp;We&rsquo;ve only selected Column 5, containing the age data, but 
-</span>
-
-<span class="c24 c14"><a class="c16" href="/">Plotly</a>
-</span>
-
-<span class="c11 c3">&nbsp;can also run statistics on multiple columns. &nbsp;
-</span></p>
-</td>
-<td class="c28">
-
-<p class="c2 c6">
-
-<span class="c11 c20">
-</span></p>
-
-<p class="c18 c5 c6">
-
-<span class="c11 c12">
-</span></p>
-
-<p class="c2">
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 134.67px;"><img alt="Screen Shot 2014-08-11 at 12.52.37 PM.png" src="images/image07.png" style="width: 298.00px; height: 134.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr>
-<tr class="c23">
-<td class="c1">
-
-<p class="c10 c5">
-
-<span class="c3">Finally, click the blue 
-</span>
-
-<span class="c13">STATISTICS
-</span>
-
-<span class="c11 c3">&nbsp;button in the sidebar. 
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c3">
-</span></p>
-</td>
-<td class="c28">
-
-<p class="c5 c18">
-
-<span class="c37 c14">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 221.00px; height: 226.00px;"><img alt="Screen Shot 2014-08-11 at 12.54.53 PM.png" src="images/image02.png" style="width: 221.00px; height: 226.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr>
-<tr class="c23">
-<td class="c1">
-
-<p class="c10 c5">
-
-<span class="c11 c21 c14">The statistics now shows in the grid, just to the right of your last column.
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c14 c21">
-</span></p>
-
-<p class="c10 c5">
-
-<span class="c14">Some insights: the average (mean) age of a nobel prize winner is almost 56 years 
-</span>
-
-<span class="c14">old
-</span>
-
-<span class="c14">. Half or all Nobel Prize winners were between the ages of 47 and 64 when they received the prize (Q1 and Q3). &nbsp;The youngest winner (min) -- Lawrence Bragg -- was 25 years old.
-</span></p>
-</td>
-<td class="c28">
-
-<p class="c18 c5">
-
-<span>&nbsp;
-</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 288.00px; height: 204.00px;"><img alt="Screen Shot 2014-08-11 at 1.08.55 PM.png" src="images/image06.png" style="width: 288.00px; height: 204.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr></tbody>
-</table>
-
-<p class="c5 c6 c26">
-
-<span>
-</span></p>
-
-<p class="c5 c44">
-
-<span>&nbsp;
-</span></p>
-
-<p class="c5">
-
-<span class="c8 c41">Questions or Feedback?
-</span></p><a href="#" name="fb9fb93011ad78ca1e36c4c1e56fdf04d009bd67"></a><a href="#" name="2"></a>
-<table cellpadding="0" cellspacing="0" class="c17"><tbody></tbody>
-</table>
-
-<p class="c5 c6">
-
-<span class="c14 c42">
-</span></p><a href="#" name="5e089004eda0ae2bca707683a806569b7b0f18dc"></a><a href="#" name="3"></a>
-<table cellpadding="0" cellspacing="0" class="c9"><tbody>
-<tr class="c23">
-<td class="c27">
-
-<p class="c10 c5">
-
-<span class="c11 c12">About Plotly:
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c12">
-</span></p>
-<ul class="c31 lst-kix_ahdtx5kblk1i-0 start">
-<li class="c10 c5 c29">
-
-<span class="c37 c14">email: 
-</span>
-
-<span class="c15"><a class="c16" href="mailto:feedback@plot.ly">feedback@plot.ly</a>
-</span></li>
-<li class="c10 c5 c29">
-
-<span class="c14 c37">tweet: 
-</span>
-
-<span class="c11 c15">@plotlygraphs
-</span></li>
-</ul>
-
-<p class="c0">
-
-<span class="c11 c35 c40">
-</span></p>
-
-<p class="c10 c5">
-
-<span class="c11 c3">About Chart Tutorials:
-</span></p>
-
-<p class="c0">
-
-<span class="c11 c3">
-</span></p>
-<ul class="c31 lst-kix_hljnb7pn5yly-0 start">
-<li class="c10 c5 c29">
-
-<span class="c37 c14">email: 
-</span>
-
-<span class="c15"><a class="c16" href="mailto:rosie@plot.ly">rosie@plot.ly</a>
-</span></li>
-<li class="c10 c5 c29">
-
-<span class="c35">tweet: 
-</span>
-
-<span class="c15">@rosiecima
-</span></li>
-</ul>
-</td>
-<td class="c7">
-
-<p class="c2">
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 186.50px; height: 207.50px;"><img alt="" src="images/image05.png" style="width: 186.50px; height: 207.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title="">
-</span></p>
-</td>
-</tr></tbody>
-</table>
-
-<p class="c5 c6">
-
-<span class="c14">
-</span></p>
+    <div>
+        <p class="c9"><iframe frameborder="0" height="444" scrolling="no" src=
+        "https://plot.ly/~chris/2730.embed" width="576.00"></iframe></p>
+
+        <p class="c5 c6"><span class="c14"></span></p>
+
+        <p class="c5"><span class="c3">Plotly has built in statistical tools to
+        help you analyze data with only a few clicks.</span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p>
+
+        <p class="c5"><span class="c3">We&rsquo;re set up for both descriptive
+        and inferential statistics, so whether you&rsquo;re looking to plot a
+        graph with error bars (see our awesome tutorial</span> <span class=
+        "c3 c46"><a class="c16" href=
+        "/how-to-make-a-graph-with-error-bars/">here</a></span> <span class=
+        "c3">) or do a simple statistical analysis of the ages of Nobel Prize
+        winners, you&rsquo;ve come to the right place.</span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p>
+
+        <p class="c5"><span class="c3">Our statistics tool computes the minimum
+        and maximum values, mean, median, quartiles, standard deviation,
+        variance and standard error. The data in this tutorial comes</span>
+        <span class="c3">from</span> <span class="c3">&nbsp;</span>
+        <span class="c24 c14"><a class="c16" href=
+        "http://www.nber.org/nobel/">http://www.nber.org/nobel/</a></span>
+        <span class="c3">, which was used by Jones and Weinberg in their
+        paper</span> <span class="c24 c14"><a class="c16" href=
+        "http://www.pnas.org/content/108/47/18910">&ldquo;Age dynamics in
+        scientific creativity&rdquo;</a></span> <span class="c3">.</span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p>
+
+        <h2 class="c5 c22"><a id="h.g5aeu1eklzq7" name="h.g5aeu1eklzq7"></a>
+        <span class="c8">Step</span> <span class="c8">1</span> <span class=
+        "c8">:</span> <span class="c8 c45">&nbsp;Set up the grid</span></h2>
+
+        <p class="c5 c6"><span></span></p>
+
+        <p class="c5"><span class="c3">You can load data into Plotly by typing
+        directly, cutting &amp; pasting or importing data from an external
+        source. If you need help, our tutorial</span> <span class=
+        "c24 c14"><a class="c16" href="/add-data-to-the-plotly-grid/">Add Data
+        to Plotly&rsquo;s Grid</a></span> <span class="c3">&nbsp;is the perfect
+        place to start.</span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p><a href="#" id=
+        "ae59e32f8d90c70fa6d0ebd81d63997c2c47df45" name=
+        "ae59e32f8d90c70fa6d0ebd81d63997c2c47df45"></a><a href="#" id="0" name=
+        "0"></a>
+
+        <table cellpadding="0" cellspacing="0" class="c9">
+            <tbody>
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c10 c5"><span class="c11 c3">In this example,
+                        we&rsquo;ve loaded all the nobel prize winners in
+                        medicine, physics and chemistry, their birth years, and
+                        computed their age when they won their
+                        award.</span></p>
+
+                        <p class="c0"><span class="c11 c3"></span></p>
+
+                        <p class="c5 c10"><span class="c3">Copy the data</span>
+                        <span class="c3">here</span> <span class="c3">:</span>
+                        <span class="c14 c24"><a class="c16" href=
+                        "/~mariahh/8/">https://plot.ly/~mariahh/8/</a></span></p>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c2"><span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 166.67px;">
+                        <img alt="Screen Shot 2014-08-11 at 12.23.46 PM.png"
+                        src="images/image08.png" style=
+                        "width: 298.00px; height: 166.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+
+                        <p class="c18 c5 c6"><span class=
+                        "c11 c33 c32"></span></p>
+
+                        <p class="c2 c6"><span class="c11 c33 c32"><a class=
+                        "c16" href=
+                        "http://www.google.com/url?q=http%3A%2F%2Fplotly&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNF4sCahSFPQH0q4Y1WjpKxUTl9yAQ">
+                        </a></span></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="c5 c22 c43"><a id="h.1ix2memx4mri" name=
+        "h.1ix2memx4mri"></a> <span class="c8">Step 2:</span> <span class=
+        "c8 c45">&nbsp;Running basic statistics</span></h2>
+
+        <p class="c5 c6"><span></span></p>
+
+        <p class="c5"><span class="c3">Plotly has both descriptive and
+        inferential statistical tools. For our example we&rsquo;re interested
+        in quantitative features to describe our data set. This is exactly
+        what</span> <span class="c3 c39">descriptive statistics</span>
+        <span class="c3">&nbsp;does.</span> <span class="c3">&nbsp;On the other
+        hand, if you want to use a sample data set to make predictions about a
+        larger population,</span> <span class="c3 c39">Inferential
+        Statistics</span> <span class="c3">&nbsp;is the tool you&rsquo;ll want
+        to use.</span></p>
+
+        <p class="c5 c6"><span class="c3"></span></p><a href="#" id=
+        "aaa1c7bf9fe86bfd164bea84e1541849417d5387" name=
+        "aaa1c7bf9fe86bfd164bea84e1541849417d5387"></a><a href="#" id="1" name=
+        "1"></a>
+
+        <table cellpadding="0" cellspacing="0" class="c9">
+            <tbody>
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c10 c5"><span class="c3">Select &ldquo;Basic
+                        statistics&rdquo; from the</span> <span class=
+                        "c13">ANALYSIS</span> <span class=
+                        "c14 c34">&nbsp;</span> <span class=
+                        "c11 c3">menu.</span></p>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c18 c5"><span class="c37">&nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> <span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 234.50px; height: 247.88px;">
+                        <img alt="Screen Shot 2014-08-11 at 12.38.35 PM.png"
+                        src="images/image00.png" style=
+                        "width: 234.50px; height: 247.88px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c10 c5"><span class="c3">Two things happen.
+                        First, a</span> <span class="c13">STATISTICS</span>
+                        <span class="c3">&nbsp;box opens on the left of the
+                        browser window. We have two choices: &ldquo;Inferential
+                        (N-1)&rdquo; or &ldquo;Descriptive&rdquo;.
+                        &nbsp;&ldquo;Inferential (N-1)&rdquo; is the default,
+                        so we&rsquo;ve had to change our choice to
+                        &ldquo;Descriptive&rdquo;.</span></p><span class=
+                        "c3"></span>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c18 c5"><span class="c4">&nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                        <span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 229.00px; height: 235.00px;">
+                        <img alt="Screen Shot 2014-08-11 at 12.47.12 PM.png"
+                        src="images/image01.png" style=
+                        "width: 229.00px; height: 235.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c0"><span class="c11 c3"></span></p>
+
+                        <p class="c0"><span class="c11 c3"></span></p>
+
+                        <p class="c0"><span class="c3 c11"></span></p>
+
+                        <p class="c10 c5"><span class="c3">Second, notice that
+                        the grid now gives lets you choose which columns you
+                        want to use for statistics. &nbsp;We&rsquo;ve only
+                        selected Column 5, containing the age data, but</span>
+                        <span class="c24 c14"><a class="c16" href=
+                        "/">Plotly</a></span> <span class="c11 c3">&nbsp;can
+                        also run statistics on multiple columns.
+                        &nbsp;</span></p>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c2 c6"><span class="c11 c20"></span></p>
+
+                        <p class="c18 c5 c6"><span class="c11 c12"></span></p>
+
+                        <p class="c2"><span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 134.67px;">
+                        <img alt="Screen Shot 2014-08-11 at 12.52.37 PM.png"
+                        src="images/image07.png" style=
+                        "width: 298.00px; height: 134.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c10 c5"><span class="c3">Finally, click the
+                        blue</span> <span class="c13">STATISTICS</span>
+                        <span class="c11 c3">&nbsp;button in the
+                        sidebar.</span></p>
+
+                        <p class="c0"><span class="c11 c3"></span></p>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c5 c18"><span class="c37 c14">&nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                        <span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 221.00px; height: 226.00px;">
+                        <img alt="Screen Shot 2014-08-11 at 12.54.53 PM.png"
+                        src="images/image02.png" style=
+                        "width: 221.00px; height: 226.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+
+                <tr class="c23">
+                    <td class="c1">
+                        <p class="c10 c5"><span class="c11 c21 c14">The
+                        statistics now shows in the grid, just to the right of
+                        your last column.</span></p>
+
+                        <p class="c0"><span class="c11 c14 c21"></span></p>
+
+                        <p class="c10 c5"><span class="c14">Some insights: the
+                        average (mean) age of a nobel prize winner is almost 56
+                        years</span> <span class="c14">old.</span> Half or all Nobel Prize winners were between
+                        the ages of 47 and 64 when they received the prize (Q1
+                        and Q3). &nbsp;The youngest winner (min) -- Lawrence
+                        Bragg -- was 25 years old.</span></p>
+                    </td>
+
+                    <td class="c28">
+                        <p class="c18 c5"><span>&nbsp;</span> <span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 288.00px; height: 204.00px;">
+                        <img alt="Screen Shot 2014-08-11 at 1.08.55 PM.png"
+                        src="images/image06.png" style=
+                        "width: 288.00px; height: 204.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="c5 c6 c26"><span></span></p>
+
+        <p class="c5 c44"><span>&nbsp;</span></p>
+
+        <p class="c5"><span class="c8 c41">Questions or
+        Feedback?</span></p><a href="#" id=
+        "fb9fb93011ad78ca1e36c4c1e56fdf04d009bd67" name=
+        "fb9fb93011ad78ca1e36c4c1e56fdf04d009bd67"></a><a href="#" id="2" name=
+        "2"></a>
+
+        <table cellpadding="0" cellspacing="0" class="c17">
+            <tbody></tbody>
+        </table>
+
+        <p class="c5 c6"><span class="c14 c42"></span></p><a href="#" id=
+        "5e089004eda0ae2bca707683a806569b7b0f18dc" name=
+        "5e089004eda0ae2bca707683a806569b7b0f18dc"></a><a href="#" id="3" name=
+        "3"></a>
+
+        <table cellpadding="0" cellspacing="0" class="c9">
+            <tbody>
+                <tr class="c23">
+                    <td class="c27">
+                        <p class="c10 c5"><span class="c11 c12">About
+                        Plotly:</span></p>
+
+                        <p class="c0"><span class="c11 c12"></span></p>
+
+                        <ul class="c31 lst-kix_ahdtx5kblk1i-0 start">
+                            <li class="c10 c5 c29"><span class=
+                            "c37 c14">email:</span> <span class="c15"><a class=
+                            "c16" href=
+                            "mailto:feedback@plot.ly">feedback@plot.ly</a></span></li>
+
+                            <li class="c10 c5 c29"><span class=
+                            "c14 c37">tweet:</span> <span class=
+                            "c11 c15">@plotlygraphs</span></li>
+                        </ul>
+
+                        <p class="c0"><span class="c11 c35 c40"></span></p>
+
+                        <p class="c10 c5"><span class="c11 c3">About Chart
+                        Tutorials:</span></p>
+
+                        <p class="c0"><span class="c11 c3"></span></p>
+
+                        <ul class="c31 lst-kix_hljnb7pn5yly-0 start">
+                            <li class="c10 c5 c29"><span class=
+                            "c37 c14">email:</span> <span class="c15"><a class=
+                            "c16" href=
+                            "mailto:rosie@plot.ly">rosie@plot.ly</a></span></li>
+
+                            <li class="c10 c5 c29"><span class=
+                            "c35">tweet:</span> <span class=
+                            "c15">@rosiecima</span></li>
+                        </ul>
+                    </td>
+
+                    <td class="c7">
+                        <p class="c2"><span style=
+                        "overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 186.50px; height: 207.50px;">
+                        <img alt="" src="images/image05.png" style=
+                        "width: 186.50px; height: 207.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                        title=""></span></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="c5 c6"><span class="c14"></span></p>
+    </div>
 </body>
 </html>
