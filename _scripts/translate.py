@@ -105,7 +105,7 @@ def translate_link_href(soup, dir_url, translate_static):
 
 # Translate anchor hyperref
 def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
-    href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/']
+    href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/', '/']
     A = soup.findAll('a')
     for a in A:
         if not a.has_attr('href'):
@@ -119,10 +119,20 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
                 break
         for href_start in href_starts:
             if a['href'].startswith(href_start): # case 2
-                if a['href'].startswith('https://plot.ly/~'): # but not shareplot!
+                if a['href'].startswith(href_start+'~'): # but not shareplot!
+                    status.log(NAME,(
+                        'href found linking to shareplot:', a['href']
+                    ))
+                    a['href'] = a['href'].replace(href_start, 'https://plot.ly/', 1)
+                    status.log(NAME,(
+                        '... I am guessing that this is referring to a plot on prod'
+                    ))
+                    status.log(NAME,('... translated to: ', a['href']))
                     continue
-                status.log(NAME,('href (filename_url) to translate found: ', a['href']))
-                a['href'] = a['href'].replace(href_start, '/')
+                status.log(NAME,(
+                    'href (filename_url) to translate found: ', a['href']
+                ))
+                a['href'] = a['href'].replace(href_start, '/', 1)
                 for href_tail in translate_filename_url.keys():
                     if href_tail in a['href']:
                         status.log(NAME,('href to translate found: ', a['href']))
