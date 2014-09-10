@@ -1,0 +1,591 @@
+
+ <div>
+  <p>
+   <span>
+   </span>
+  </p>
+ </div>
+ <h1>
+  <a>
+  </a>
+ </h1>
+ <h1>
+  <a>
+  </a>
+  <span>
+   <img alt="" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image02.png" title=""/>
+  </span>
+ </h1>
+ <h1>
+  <a>
+  </a>
+  <span>
+   Polynomial fits
+  </span>
+  <span>
+   with Plotly.
+  </span>
+ </h1>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   <img alt="Screen Shot 2014-09-08 at 4.13.08 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image06.png" title=""/>
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   Plotly offers free, online tools for analyzing data and making graphs. In this tutorial we’ll show you how to fit polynomial curves to your data and explain what that means. Make sure to check out our other tutorials to learn how to fit your data with gaussians, exponentials and logarithms.
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   A polynomial fit is a method of modeling data with polynomial. If your data set looks like a parabola, you will want use model with a 2nd degree polynomial-the idea is to find the equation of a polynomial whose graph closely matches the scatter plot of you data. Developing an intuition for the best function to fit to your data takes some practice, and Plotly is a great tool to test your guesses. Keep in mind that with n data points, there is a unique n-1 degree polynomial that will fit the points exactly, but this polynomial won’t tell us much about our data. In discovering trends, we need to be careful that we don’t overfit our data.
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   We can fit our data with a polynomial curve by choosing coefficients that minimize the mean squared error. Plotly does this calculation for us by running a gradient descent algorithm. The closer the R^2 value is to 1, the better the fit.
+  </span>
+ </p>
+ <h2>
+  <a>
+  </a>
+ </h2>
+ <h2>
+  <a>
+  </a>
+  <span>
+   Step 1:
+  </span>
+  <span>
+   Make a plot.
+  </span>
+ </h2>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   We have lots of great tutorials to help you make line graphs, scatter plots, histograms, bar charts and more. If you need help, you’ll find everything you need on our
+  </span>
+  <span>
+   <a href="http://www.google.com/url?q=http%3A%2F%2Fplot.ly%2Flearn&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFs1jVKg6Dvx2tus2rgLXakpy1ucA" target="_blank">
+    learn page
+   </a>
+  </span>
+  <span>
+   .
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <a href="#">
+ </a>
+ <a href="#">
+ </a>
+ <table cellpadding="0" cellspacing="0">
+  <tbody>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       You can import files from Google Drive, Dropbox, or excel for your graphs. You’ll find more details in our
+      </span>
+      <span>
+       <a href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fadd-data-to-the-plotly-grid%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHdKIibjXmyCWutd_oNKQtoUBz2mg" target="_blank">
+        “How to make a plot from the grid”
+       </a>
+      </span>
+      <span>
+       tutorial.
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       For this tutorial we’ll use a data set that you can find at:
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       <a href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F51&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNE__k4kqzR2rNB7CBmFSM_YS_GKog" target="_blank">
+        https://plot.ly/~mariahh/51
+       </a>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 3.46.43 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image05.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p>
+  <span>
+  </span>
+ </p>
+ <h2>
+  <a>
+  </a>
+  <span>
+   Step 2:
+  </span>
+  <span>
+   Polynomial regression.
+  </span>
+ </h2>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <a href="#">
+ </a>
+ <a href="#">
+ </a>
+ <table cellpadding="0" cellspacing="0">
+  <tbody>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       To find the curve of best fit, we’ll use the
+      </span>
+      <span>
+       Fit Data button
+      </span>
+      <span>
+       . You can find this button in the toolbar just above your plot. Because this data set closely resembles squares, it makes sense to fit the data with a quadratic curve.
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       When you click fit data, you’ll see the
+      </span>
+      <span>
+       Fitting to trace
+      </span>
+      <span>
+       box open. Select
+      </span>
+      <span>
+       Add fit to this trace
+      </span>
+      <span>
+       .
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.04.35 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image10.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       Select
+      </span>
+      <span>
+       Polynomial
+      </span>
+      <span>
+       from the drop down menu.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.05.30 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image08.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       You’ll be given the option to choose the degree of the polynomial-in this case, select
+      </span>
+      <span>
+       2nd order
+      </span>
+      <span>
+       .
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       Now click on the blue
+      </span>
+      <span>
+       Run this fit
+      </span>
+      <span>
+       button.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.07.50 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image00.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       Our advance fit features offer even more flexibility. You can incorporate error data into your fit, restrict the fit to a subset of your data, and change the points in the output fit.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 10.51.27 AM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image09.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       By selecting
+      </span>
+      <span>
+       Add results as plot annotation
+      </span>
+      <span>
+       , your graph will include the line of best fit equation and R^2-value.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.09.44 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image03.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       You can close the fit box by clicking the “x” in the upper right corner. We can drag the equation so it doesn’t interfere with our data and even style our graph with Plotly’s online tools. You might want to check out the
+      </span>
+      <span>
+       Traces
+      </span>
+      <span>
+       button.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.18.07 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image07.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       It’s easy to add another fit to our graph to compare. In the picture on the right, I’ve added a linear fit, and we can see that it isn’t a good choice.
+      </span>
+     </p>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="Screen Shot 2014-09-08 at 4.24.38 PM.png" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image01.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p>
+  <span>
+  </span>
+ </p>
+ <a href="#">
+ </a>
+ <a href="#">
+ </a>
+ <table cellpadding="0" cellspacing="0">
+  <tbody>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       Love what you made? You can
+      </span>
+      <span>
+       <a href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fshare-print%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG4tjkmi7pCo2gLe7yqURPByY3gKQ" target="_blank">
+        share, print, download
+       </a>
+      </span>
+      <span>
+       and
+      </span>
+      <span>
+       <a href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fembed%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFMbTtbzhmI15aFhxynABUxTdobkQ" target="_blank">
+        embed
+       </a>
+      </span>
+      <span>
+      </span>
+      <span>
+       your plots.
+      </span>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+  </span>
+ </p>
+ <p>
+  <span>
+   Questions or Feedback?
+  </span>
+ </p>
+ <a href="#">
+ </a>
+ <a href="#">
+ </a>
+ <table cellpadding="0" cellspacing="0">
+  <tbody>
+  </tbody>
+ </table>
+ <p>
+  <span>
+  </span>
+ </p>
+ <a href="#">
+ </a>
+ <a href="#">
+ </a>
+ <table cellpadding="0" cellspacing="0">
+  <tbody>
+   <tr>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       About Plotly:
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <ul>
+      <li>
+       <span>
+        email:
+       </span>
+       <span>
+        <a href="mailto:feedback@plot.ly">
+         feedback@plot.ly
+        </a>
+       </span>
+      </li>
+      <li>
+       <span>
+        tweet:
+       </span>
+       <span>
+        @plotlygraphs
+       </span>
+      </li>
+     </ul>
+     <p>
+      <span>
+      </span>
+     </p>
+     <p>
+      <span>
+       About Chart Tutorials:
+      </span>
+     </p>
+     <p>
+      <span>
+      </span>
+     </p>
+     <ul>
+      <li>
+       <span>
+        email:
+       </span>
+       <span>
+        <a href="mailto:education@plot.ly">
+         education@plot.l
+        </a>
+       </span>
+       <span>
+        y
+       </span>
+      </li>
+     </ul>
+    </td>
+    <td colspan="1" rowspan="1">
+     <p>
+      <span>
+       <img alt="" src="/static/learn/images/data_literacy/how-to-make-a-polynomial-fit/image04.png" title=""/>
+      </span>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p>
+  <span>
+  </span>
+ </p>
