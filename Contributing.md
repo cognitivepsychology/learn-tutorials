@@ -39,15 +39,15 @@ $ git checkout my-branch
 
 #### 3. Go to
 
-- [#Case-A:-Update-content-of-an-existing-page](Case A: Update content of an existing page)
-- [#Case-B:-Update-meta-information-of-an-existing-page](Case B: Update meta information of an existing page)
-- [#Case-C:-Add-a-new-tutorial-page](Case C: Add a new tutorial page)
-- [#Case-D:-Modify-the-URL-of-an-existing-page](Case D: Modify the URL of an existing page)
+- [Case A: Update content of an existing page](#case-a-update-content-of-an-existing-page)
+- [Case B: Update meta information of an existing page](#case-b-update-meta-information-of-an-existing-page)
+- [Case C: Add a new tutorial page](#case-c-add-a-new-tutorial-page)
+- [Case D: Modify the URL of an existing page](#case-d-modify-the-url-of-an-existing-page)
 
 
 ### Case A: Update content of an existing page
 
-### 0. Find corresponding *raw* HTML file
+#### 0. Find corresponding *raw* HTML file
 
 Each tutorial page has a corresponding *raw* (i.e. not-publishable) HTML file.
 Raw HTML files are part of the output folder when exporting a Google document to
