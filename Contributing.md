@@ -1,6 +1,6 @@
 # How to contribute
 
-*Please, don't be scared but the length of this how-to file, most of the steps
+*Please don't be scared by the length of this document, most of the steps
 are git commands.*
 
 
@@ -95,13 +95,13 @@ where "web_app_tutorials" is the content directory name in this case.
 
 ### Case B: Update meta information of an existing page
 
-That is, a page's title (seen in your browser's header), meta description and
+That is, a page's title (seen in browsers' window header), meta description and
 breadcrumb title (and maybe more fields in the future).
 
 #### B-0. Find corresponding `config.json` JSON file
 
 All meta information of a given page is stored in one `config.json` JSON file
-located in the `published/` subfolder. The full directory path is:
+located in the `published/` subfolder. The full path is given by:
 
 ```
 learn_tutorials/<content-directory>/published/includes/<url-of-tutorial-page>/config.json
@@ -130,13 +130,13 @@ Then, save and close.
 
 #### C-1. Choose a content directory 
 
-Each content directory correspond to one Django template. Each Django template
-inserting breadcrumb and layout unique to each content directory.
+Each content directory corresponds to an individual Django template. Each Django
+template inserts breadcrumb, link and layout unique to each content directory.
 
 #### C-2. Export Google document to `raw/` 
 
-Note that the name of the output folder makes now difference in the publish
-process.
+Note that the name of the output folder makes no difference in the publish
+process. You just have to keep track of the name of the raw HTML file.
 
 #### C-3. Pick a URL, add a key-value pair in `translate_filename_url.json`
 
@@ -195,13 +195,15 @@ how to make a pull request on Github.
 
 - If only minor modifications were made (like in [case
   A](#case-a-update-content-of-an-existing-page) or [case
-  B](#case-b-update-meta-information-of-an-existing-page), you can merge the
+  B](#case-b-update-meta-information-of-an-existing-page)), you can merge the
   changes right away. 
 
 - If major modifications were made, mention a few potential reviewers and wait
   for a review before merging.
 
-#### 3. Clone or pull `streambed/`
+#### 3. Clone or pull `streambed/` 
+
+*The subsequent step can only be made by Plotly organization members.*
 
 We recommend placing `streambed/` one level down relative to `learn_tutorials/`.
 If you choose otherwise, update the `streambed_path` variable (see
@@ -211,7 +213,7 @@ the `learn_tutorials/` `makefile`.
 So, clone `streambed/` by running:
 
 ```
-$ git clone https://github.com/plotly/learn-tutorials.git
+$ git clone https://github.com/plotly/streambed.git
 ```
 
 **OR** 
