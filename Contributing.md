@@ -258,6 +258,8 @@ $ git checkout my-branch
 From `learn-tutorials/`, run
 
 ```
+$ git checkout master
+$ git pull origin master
 $ make push-to-streambed folder=web_app_tutorials
 ```
 
