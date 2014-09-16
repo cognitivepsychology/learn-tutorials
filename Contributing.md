@@ -16,9 +16,9 @@ $ pip install ipython[all]
 
 - [BeautifulSoup](http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup/)
 
-#### 1. Clone or pull `learn_tutorials/`
+#### 1. Clone or pull `learn-tutorials/`
 
-From the directory of your choice, clone `learn_tutorials/` by running:
+From the directory of your choice, clone `learn-tutorials/` by running:
 
 ```
 $ git clone https://github.com/plotly/learn-tutorials.git
@@ -26,19 +26,19 @@ $ git clone https://github.com/plotly/learn-tutorials.git
 
 **OR** 
 
-If you already have a copy of `learn_tutorials/` on your machine, then pull
-in the latest version by running from `learn_tutorials/` with
+If you already have a copy of `learn-tutorials/` on your machine, then pull
+in the latest version by running from `learn-tutorials/` with
 
 ```
 $ git checkout master
 $ git pull origin master
 ```
 
-#### 2. Make a new branch in `learn_tutorials/`
+#### 2. Make a new branch in `learn-tutorials/`
 
 > For completeness, call this new branch "my-branch".
 
-Form `learn_tutorials/`, run
+Form `learn-tutorials/`, run
 
 ```
 $ git branch my-branch
@@ -73,24 +73,25 @@ the raw HTML are listed on the left-hand column.
 
 > For completeness, say we are updating the bar chart web app tutorial
  [page](https://plot.ly/how-to-make-a-bar-chart-online/). The corresponding raw
- HTML file is: `web_app_tutorials/raw/BarChartTutorial/BarChartTutorial.html`.
+ HTML file is: `web_app_tutorials/raw/BarChartTutorial/BarChartTutorial.html`
+ and set
+ [here](https://github.com/plotly/learn-tutorials/blob/master/web_app_tutorials/translate_filename_url.json).
 
 #### A-1. Update raw HTML content
 
 **Either**:
 
-- Update the up-to-date Google document, convert to HTML and overwrite
-  folder `web_app_tutorials/raw/BarChartTutorial/` with the generated output
-  folder. 
+Update the up-to-date Google document, convert to HTML and overwrite folder
+`web_app_tutorials/raw/BarChartTutorial/` with the generated output folder. 
 
-**OR**
+**OR**:
 
-- Update `web_app_tutorials/raw/BarChartTutorial/BarChartTutorial.html`
-  directly in HTML.
+Update `web_app_tutorials/raw/BarChartTutorial/BarChartTutorial.html` directly
+in HTML.
 
 #### A-2. Publish the updated content
 
-From `learn_tutorials/`, run
+From `learn-tutorials/`, run
 
 ```
 $ make publish folder=web_app_tutorials
@@ -114,7 +115,7 @@ All meta information of a given page is stored in one `config.json` JSON file
 located in the `published/` subfolder. The full path is given by:
 
 ```
-learn_tutorials/<content-directory>/published/includes/<url-of-tutorial-page>/config.json
+learn-tutorials/<content-directory>/published/includes/<url-of-tutorial-page>/config.json
 ```
 
 Each `config.json` JSON file has:
@@ -157,7 +158,7 @@ right-hand side) is the URL of the tutorial page.
 
 #### C-4. Publish the new tutorial page 
 
-From `learn_tutorials/`, run
+From `learn-tutorials/`, run
 
 ```
 $ make publish folder=web_app_tutorials
@@ -185,9 +186,9 @@ See [case B](#case-B-update-meta-information-of-an-existing-page)
 
 ### After all cases
 
-#### 1. Commit and push to the `learn_tutorials/` on Github 
+#### 1. Commit and push to the `learn-tutorials/` on Github 
 
-From `learn_tutorials/`, run
+From `learn-tutorials/`, run
 
 ```
 $ git add --all
@@ -198,7 +199,7 @@ $ git push origin my-branch
 where `my-branch` is the name of the branch created [before all
 cases](#before-all-cases).
 
-#### 2. Make a pull request on the online `learn_tutorials/` repository
+#### 2. Make a pull request on the online `learn-tutorials/` repository
 
 See this [tutorial](https://help.github.com/articles/creating-a-pull-request) on
 how to make a pull request on Github.
@@ -215,10 +216,10 @@ how to make a pull request on Github.
 
 *The subsequent step can only be made by Plotly organization members.*
 
-We recommend placing `streambed/` one level down relative to `learn_tutorials/`.
+We recommend placing `streambed/` one level down relative to `learn-tutorials/`.
 If you choose otherwise, update the `streambed_path` variable (see
 [here](https://github.com/plotly/learn-tutorials/blob/master/makefile#L4)) in
-the `learn_tutorials/` `makefile`.
+the `learn-tutorials/` `makefile`.
 
 So, clone `streambed/` by running:
 
@@ -228,7 +229,7 @@ $ git clone https://github.com/plotly/streambed.git
 
 **OR** 
 
-If you already have a copy of `streambed` on your machine, then pull
+If you already have a copy of `streambed/` on your machine, then pull
 in the latest version by running from `streambed/` with
 
 ```
@@ -252,9 +253,9 @@ and then checkout to your new branch with
 $ git checkout my-branch
 ```
 
-#### 4. Sync published `learn_tutorials` content with `streambed/` !
+#### 4. Sync published `learn-tutorials` content with `streambed/` !
 
-From `learn_tutorials/`, run
+From `learn-tutorials/`, run
 
 ```
 $ make push-to-streambed folder=web_app_tutorials
@@ -265,21 +266,32 @@ where "web_app_tutorials" is an example of a content directory name.
 If you made modifications in more than one content directory, run `$ make
 push-to-streambed` in sequence with the appropriate `folder` tag.
 
-
 #### 5. Preview/Test new or updated content
 
 **Either**:
 
-- Use the stage environment by typing "plot, deploy my-branch to stage" in the
-  Plotly Hipchat room.
+Use the stage environment by:
 
-**OR**
+1. Committing your modifications and pushing to the online repo:
+
+From `streambed/`, run
+
+```
+$ git add --all
+$ git commit -m "a commit message describing the modifications made"
+$ git push origin my-branch
+```
+
+2. Deploying to stage, by typing "plot, deploy my-branch to stage" in the Plotly
+   Hipchat room.
+
+**OR**:
 
 - Use a local instance of plotly (the installation guidelines are
   [here](https://github.com/plotly/deployment/tree/ansible#local-vagrant-development-environment)).
 
 
-#### 6. Make a pull request on online `learn_tutorials/` repository
+#### 6. Make a pull request on online `learn-tutorials/` repository
 
 See this [tutorial](https://help.github.com/articles/creating-a-pull-request) on
 how to make a pull request on Github.
