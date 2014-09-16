@@ -107,6 +107,8 @@ def check_translate(folder, paths_html, translate_filename_url):
                 "will NOT be published"
             ).format(diff='\n'.join(diff),folder=folder,
                      to_be=to_be,to_have=to_have))
+            return [path_html for path_html in paths_html
+                   if (path_html in files_html)]
         else:
             diff = list(set(files_html_translate) - set(files_html))
             to_be = 'is' if len(diff)==1 else 'are'
@@ -121,7 +123,7 @@ def check_translate(folder, paths_html, translate_filename_url):
                 "`{folder}/raw` CANNOT be published"
             ).format(diff='\n'.join(diff),folder=folder,
                      to_be=to_be,to_have=to_have))
-        status.stop(NAME)
+            status.stop(NAME)
 
 # Check if there are directories to redirect, copy them over if so.
 def check_redirects(folder, translate_redirects):
