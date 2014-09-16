@@ -6,6 +6,16 @@ are git commands.*
 
 ### Before all cases
 
+#### 0. What you need to install 
+
+- [IPython](http://ipython.org/install.html) (easier with pip)
+
+```
+$ pip install ipython[all]
+```
+
+- [BeautifulSoup](http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup/)
+
 #### 1. Clone or pull `learn_tutorials/`
 
 From the directory of your choice, clone `learn_tutorials/` by running:
