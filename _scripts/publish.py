@@ -153,8 +153,8 @@ def check_redirects(folder, translate_redirects):
 
 # Check if {folder}/published/ subdirectories corresp. to translate_filename_url
 def check_published_subdirectories(folder, translate_filename_url):
-    path_includes = os.path.join(folder,'published','includes')
-    path_images = os.path.join(folder,'published','static','images')
+    path_includes = os.path.join(folder, 'published', 'includes')
+    path_images = os.path.join(folder, 'published', 'static', 'images')
     try:
         subdirectories_includes = os.listdir(path_includes)
     except:
@@ -179,12 +179,15 @@ def check_published_subdirectories(folder, translate_filename_url):
             "from `{folder}/published/includes/`\n"
             "and `{folder}/published/static/images/`\n"
             "{to_be} not listed in `{folder}/translate_filename_url.json`.\n\n"
-            "Please investigate:\n"
+            "Please investigate:\n\n"
             "  - Did you change a url in {folder}/translate_filename_url.json\n"
-            "    not meant to be redirected (e.g. you fixed a typo)?\n"
+            "    not meant to be redirected (e.g. you fixed a typo)?\n\n"
             "    Then, please remove\n"
             "    {folder}/published/includes/{diff}/ and\n"
-            "    {folder}/published/static/images/{diff}/"
+            "    {folder}/published/static/images/{diff}/\n\n"
+            "  - If you removed a url in {folder}/translate_filename_url.json\n"
+            "    to not publish some raw/ HTML file just yet,\n"
+            "    ignore this warning."
             ).format(diff='\n'.join(diff),folder=folder,to_be=to_be))
     elif not len(subdirectories_includes) <= len(dirs_url):
         pass
