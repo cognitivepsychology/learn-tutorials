@@ -55,6 +55,23 @@ def get_new(old,s,dir_url):
 
 # -------------------------------------------------------------------------------
 
+def add_img_alt(img):
+    src = img['src']
+    alt = os.path.split(os.path.split(src)[0])[1] + '/' + os.path.basename(src)
+    img['alt'] = alt
+    status.log(NAME,("... img, add alt='{}'").format(alt))
+    return img
+
+# Add target blank attributes to anchors with outbound href
+def add_a_target_blank(a):
+    if a.has_attr('href'):
+        if a['href'].startswith('http://') or a['href'].startswith('https://'):
+            a['target'] = '_blank'
+            status.log(NAME,("... an outbound link, add target='_blank' tag"))
+    return a
+
+# -------------------------------------------------------------------------------
+
 # Translate image source and make list of image paths
 def translate_img_src(soup, path_html, dir_url, translate_static):
     folder_html = os.path.split(path_html)[0]
@@ -70,6 +87,7 @@ def translate_img_src(soup, path_html, dir_url, translate_static):
                 new = get_new(img['src'],translate_static[src_head],dir_url)
                 img['src'] = img['src'].replace(src_head,new)
                 status.log(NAME,('... translated to: ', img['src']))
+                img = add_img_alt(img)
                 break
     return soup, paths_image
 
@@ -88,7 +106,7 @@ def translate_script_src(soup, dir_url, translate_static):
                 break
     return soup
 
-# Translate link hyperref
+# Translate link href
 def translate_link_href(soup, dir_url, translate_static):
     Link = soup.findAll('link')
     for link in Link:
@@ -103,60 +121,76 @@ def translate_link_href(soup, dir_url, translate_static):
                 break
     return soup
 
-# Translate anchor hyperref
+# Translate anchor href
 def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
+    # List of valid outbound href starts to plot.ly
     href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/', '/']
     A = soup.findAll('a')
     for a in A:
+        is_translated = False
         if not a.has_attr('href'):
             continue
-        for href_head in translate_static.keys(): # case 1 
+        status.log(NAME,('Anchor found! href: ', a['href']))
+        # Case 1: <a> to static location
+        for href_head in translate_static.keys():
             if a['href'].startswith(href_head):
-                status.log(NAME,('href (static) to translate found: ', a['href']))
+                status.log(NAME,('... href has a *static* start: ', href_head))
                 new = get_new(a['href'],translate_static[href_head],dir_url)
                 a['href'] = a['href'].replace(href_head,new)
-                status.log(NAME,('... translated to: ', a['href']))
+                is_translated = True
                 break
+        # Case 2: <a> to url location
         for href_start in href_starts:
-            if a['href'].startswith(href_start): # case 2
-                if a['href'].startswith(href_start+'~'): # but not shareplot!
-                    status.log(NAME,(
-                        'href found linking to shareplot:', a['href']
-                    ))
+            if a['href'].startswith(href_start):
+                # 2.1 href to shareplot should have full URI
+                if a['href'].startswith(href_start+'~'):
+                    status.log(NAME,('... href links to shareplot:', a['href']))
+                    status.log(NAME,('... guessing this is referring to a plot on prod'))
                     a['href'] = a['href'].replace(href_start, 'https://plot.ly/', 1)
-                    status.log(NAME,(
-                        '... I am guessing that this is referring to a plot on prod'
-                    ))
-                    status.log(NAME,('... translated to: ', a['href']))
+                    is_translated = True
                     continue
-                status.log(NAME,(
-                    'href (filename_url) to translate found: ', a['href']
-                ))
-                a['href'] = a['href'].replace(href_start, '/', 1)
+                # 2.2 Translate href start to django root
+                if not a['href'].startswith('/'):
+                    status.log(NAME,('... href *url* start: ', href_start))
+                    a['href'] = a['href'].replace(href_start, '/', 1)
+                    is_translated = True
+                # 2.3 Translate href to other document using translate_filename_url
                 for href_tail in translate_filename_url.keys():
                     if href_tail in a['href']:
-                        status.log(NAME,('href to translate found: ', a['href']))
+                        status.log(NAME,('... href has tail: ', a['href']))
                         a['href'] = a['href'].replace(href_head,translate_static[href_tail])
+                        is_translated = True
                         break
-                status.log(NAME,('... translated to: ', a['href']))
+        if is_translated:
+            status.log(NAME,('... translated to: ', a['href']))
+        else:
+            status.log(NAME,('... no translation required'))
+        # Add attributes
+        a = add_a_target_blank(a)
     return soup
 
-# Add target blank attributes to link out of plotly pages
-def add_target_blank(soup):
-    A = soup.findAll('a')
-    for a in A:
-        if not a.has_attr('href'):
+# Translate script source
+def translate_script_src(soup, dir_url, translate_static):
+    Script = soup.findAll('script')
+    for script in Script:
+        if not script.has_attr('src'):
             continue
-        if a['href'].startswith('http://') or a['href'].startswith('https://'):
-            a['target'] = '_blank'
+        for src_head in translate_static.keys():
+            if script['src'].startswith(src_head):
+                status.log(NAME,('src (static) to translate found: ', script['src']))
+                new = get_new(script['src'],translate_static[src_head],dir_url)
+                script['src'] = script['src'].replace(src_head,new)
+                status.log(NAME,('... translated to (but will get stripped): ', script['src']))
+                break
+
     return soup
 
 # -------------------------------------------------------------------------------
+
 
 def translate(soup, path_html, dir_url, translate_static, translate_filename_url):
     soup, paths_image  = translate_img_src(soup, path_html, dir_url, translate_static)
     soup = translate_script_src(soup, dir_url, translate_static)
     soup = translate_link_href(soup, dir_url, translate_static)
     soup = translate_a_href(soup, dir_url, translate_static, translate_filename_url)
-    soup = add_target_blank(soup)
     return soup, paths_image
