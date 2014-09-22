@@ -55,6 +55,7 @@ def get_new(old,s,dir_url):
 
 # -------------------------------------------------------------------------------
 
+# Add alt attribute to images
 def add_img_alt(img):
     src = img['src']
     alt = os.path.split(os.path.split(src)[0])[1] + '/' + os.path.basename(src)
@@ -62,7 +63,7 @@ def add_img_alt(img):
     status.log(NAME,("... img, add alt='{}'").format(alt))
     return img
 
-# Add target blank attributes to anchors with outbound href
+# Add target blank attribute to anchors with outbound href
 def add_a_target_blank(a):
     if a.has_attr('href'):
         if a['href'].startswith('http://') or a['href'].startswith('https://'):
