@@ -6,6 +6,7 @@ import shutil
 
 import status
 import translate 
+import update_body
 import make_config
 import make_urls
 import make_redirects
@@ -86,44 +87,50 @@ def get_paths_html(folder):
         status.stop(NAME)
     return paths_html
 
+# -------------------------------------------------------------------------------
+
 # Check if paths are in translate_filename_url (update if necessary)
 def check_translate(folder, paths_html, translate_filename_url):
     files_html_translate = translate_filename_url.keys()
     files_html = [os.path.split(path_html)[1] for path_html in paths_html]
+    # Case 0: if .json and raw/ align, return paths_html
     if set(files_html_translate) == set(files_html):
         return paths_html
+    # Case 1: if .json < raw/, return part of paths_html contained in .json
+    elif len(files_html_translate) < len(files_html):
+        diff = list(set(files_html) - set(files_html_translate))
+        to_be = 'was' if len(diff)==1 else 'were'
+        to_have = 'has' if len(diff)==1 else 'have'
+        status.important(NAME,(
+            "File(s): \n\n {diff}\n\n"
+            "{to_be} found from `{folder}/raw/` but {to_have} "
+            "no correspondence\n"
+            "in `{folder}/translate_filename_url.json`.\n\n"
+            "Note that files not listed in "
+            "`{folder}/translate_filename_url.json`\n"
+            "will NOT be published"
+        ).format(diff='\n'.join(diff),folder=folder,
+                 to_be=to_be,to_have=to_have))
+        return [path_html
+                for path_html in paths_html
+                if (os.path.split(path_html)[1] in files_html_translate)]
+    # Case 2: if .json > raw/, stop execution
     else:
-        if len(files_html_translate) < len(files_html):
-            diff = list(set(files_html) - set(files_html_translate))
-            to_be = 'was' if len(diff)==1 else 'were'
-            to_have = 'has' if len(diff)==1 else 'have'
-            status.important(NAME,(
-                "File(s): \n\n {diff}\n\n"
-                "{to_be} found from `{folder}/raw/` but {to_have} "
-                "no correspondence\n"
-                "in `{folder}/translate_filename_url.json`.\n\n"
-                "Note that files not listed in "
-                "`{folder}/translate_filename_url.json`\n"
-                "will NOT be published"
-            ).format(diff='\n'.join(diff),folder=folder,
-                     to_be=to_be,to_have=to_have))
-            return [path_html for path_html in paths_html
-                   if (path_html in files_html)]
-        else:
-            diff = list(set(files_html_translate) - set(files_html))
-            to_be = 'is' if len(diff)==1 else 'are'
-            to_have = 'has' if len(diff)==1 else 'have'
-            status.important(NAME,(
-                "File(s): \n\n {diff}\n\n"
-                "{to_be} listed in "
-                "`{folder}/translate_filename_url.json` but {to_have} "
-                "no correspondence\n"
-                "in `{folder}/raw/`.\n\n"
-                "Note that files not found in "
-                "`{folder}/raw` CANNOT be published"
-            ).format(diff='\n'.join(diff),folder=folder,
-                     to_be=to_be,to_have=to_have))
-            status.stop(NAME)
+        diff = list(set(files_html_translate) - set(files_html))
+        to_be = 'is' if len(diff)==1 else 'are'
+        to_have = 'has' if len(diff)==1 else 'have'
+        status.important(NAME,(
+            "File(s): \n\n {diff}\n\n"
+            "{to_be} listed in "
+            "`{folder}/translate_filename_url.json` but {to_have} "
+            "no correspondence\n"
+            "in `{folder}/raw/`.\n\n"
+            "Note that files not found in "
+            "`{folder}/raw` CANNOT be published"
+        ).format(diff='\n'.join(diff),folder=folder,
+                 to_be=to_be,to_have=to_have))
+        status.stop(NAME)
+        return
 
 # Check if there are directories to redirect, copy them over if so.
 def check_redirects(folder, translate_redirects):
@@ -207,27 +214,6 @@ def get_body_head(soup):
     status.log(NAME,'Grabs <body> and <head>')
     return soup.body, soup.head
 
-# Strip all attributes, <script></script> and <body></body> from body
-def strip_body(body):
-    for attribute in ["class", "id", "name", "style"]:
-        del body[attribute]
-    for tag in body():
-        for attribute in ["class", "id", "name", "style"]:
-            del tag[attribute]
-    Script = body.findAll('script')
-    for script in Script:
-        script.extract()
-    body = body.prettify().encode('utf8')
-    body = body.replace('<body>','')
-    body = body.replace('</body>','')
-    return body
-
-#    plotly_classes = [  # TODO generalize!
-#        ['heading'], ["section__inner"], ['link--bold', 'link--impt'], 
-#        ['beta', 'push--ends'],  
-#        ['media', 'push--bottom'], ['media__body'], ["media__img--rev"],
-#        ['img-with-caption'], ['img-caption'], ['img--border push--bottom']
-#    ]
 # -------------------------------------------------------------------------------
 
 # Make directory tree
@@ -293,7 +279,7 @@ def main():
             dir_url = translate_filename_url[file_html]
             
             # Get published tree for this html file
-            tree_includes = make_tree([folder,'published','includes',dir_url])
+            tree_includes = make_tree([folder, 'published', 'includes', dir_url])
             
             # Get soup and split <body> and <head>
             soup = get_soup(path_html)
@@ -307,20 +293,25 @@ def main():
             # Get config info from head
             config = make_config.make_config(head, path_html, tree_includes)
 
-            # Strip <body> tags and all class attributes
-            body = strip_body(body)
+            # Update <body> !
+            body = update_body.update_body(body)
 
             # Overwrite body.html and config.json leaves
             overwrite_leaves(tree_includes,
-                             [(body,'body.html'),(config,'config.json')])
+                             [(body, 'body.html'),
+                              (config, 'config.json')])
 
             # (2) Copy images in the appropriate published/ subdirectories
-            tree_images = make_tree([folder,'published','static','images',dir_url])
+            tree_images = make_tree([folder,
+                                     'published',
+                                     'static',
+                                     'images',
+                                     dir_url])
             copy_leaves(tree_images,paths_image)
 
             status.log(NAME,'---- done with `{}`\n'.format(dir_url))
 
-        # (3) Make folder-wide urls, redirects and sitemaps files
+        # (3) Make/print folder-wide urls, redirects and sitemaps files
         make_urls.make_urls(folder, translate_filename_url)
         make_redirects.make_redirects(folder, translate_redirects)
         make_sitemaps.make_sitemaps(folder, translate_filename_url)
