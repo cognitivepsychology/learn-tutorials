@@ -4,9 +4,9 @@ import os
 import status
 
 # -------------------------------------------------------------------------------
-# 
+#
 # Methods to update body to publishable-level
-# 
+#
 # -------------------------------------------------------------------------------
 
 NAME="update_body"  # name of this module
@@ -20,7 +20,7 @@ def wrap(wrappend, wrap_tag, wrap_attrs):
     wrapper = _soup.new_tag(wrap_tag, **wrap_attrs)
     contents = wrappend.replaceWith(wrapper)
     wrapper.append(contents)
-    return 
+    return
 
 # -------------------------------------------------------------------------------
 
