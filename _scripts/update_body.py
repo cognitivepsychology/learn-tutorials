@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 import os
 
 import status
@@ -24,7 +24,7 @@ def wrap(wrappend, wrap_tag, wrap_attrs):
 
 # -------------------------------------------------------------------------------
 
-# Strip all attributes, <script></script> and <body></body> from body
+# Strip all attributes, <script></script> from body
 def strip(body):
     attrs_to_rm = ["class", "id", "name", "style"]
     for attr in attrs_to_rm:
@@ -32,9 +32,13 @@ def strip(body):
     for tag in body():
         for attr in attrs_to_rm:
             del tag[attr]
+    status.log(NAME, (
+        "Striping attributes", ' | '.join(attrs_to_rm), 'inside body !')
+    )
     Script = body.findAll('script')
     for script in Script:
         script.extract()
+    status.log(NAME, "Striping all <script> inside body !")
     return body
 
 # Add lightbox anchors to images
@@ -55,7 +59,7 @@ def add_lightbox(body):
             status.log(NAME, ("... <a> found around it, doing nothing"))
     return body
 
-# Prettify and remove <body>
+# Prettify and remove <body> and </body>
 def prettify(body):
     body = body.prettify().encode('utf8')
     body = body.replace('<body>','')
