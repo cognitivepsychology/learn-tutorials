@@ -124,15 +124,13 @@ def translate_link_href(soup, dir_url, translate_static):
 
 # Translate anchor href
 def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
-    # List of valid outbound href starts to plot.ly
-    href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/', '/']
     A = soup.findAll('a')
     for a in A:
-        is_translated = False
+        is_translated = False  # to log relevant output
         if not a.has_attr('href'):
             continue
         status.log(NAME,('Anchor found! href: ', a['href']))
-        # Case 1: <a> to static location
+        # Case 1: <a> to static location (translated from streambed)
         for href_head in translate_static.keys():
             if a['href'].startswith(href_head):
                 status.log(NAME,('... href has a *static* start: ', href_head))
@@ -140,7 +138,16 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
                 a['href'] = a['href'].replace(href_head,new)
                 is_translated = True
                 break
-        # Case 2: <a> to url location
+        # Case *: handle Google redirects
+        google_start = 'https://www.google.com/url?q='
+        google_end = '&'  # TODO could this be more strict?
+        if a['href'].startswith(google_start):
+            status.log(NAME, ('... href has a google redirect'))
+            _s = a['href'].find(google_start) + len(google_start)
+            _e = a['href'].find(google_end)
+            a['href'] = a['href'][_s:_e].replace('%3A',':').replace('%2F','/')
+        # Case 2: <a> to url location (translated to relative domain)
+        href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/', '/']
         for href_start in href_starts:
             if a['href'].startswith(href_start):
                 # 2.1 href to shareplot should have full URI
@@ -162,6 +169,8 @@ def translate_a_href(soup, dir_url, translate_static, translate_filename_url):
                         a['href'] = a['href'].replace(href_head,translate_static[href_tail])
                         is_translated = True
                         break
+
+        # Log output
         if is_translated:
             status.log(NAME,('... translated to: ', a['href']))
         else:
