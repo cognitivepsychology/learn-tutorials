@@ -9,7 +9,7 @@ Make updating, adding content to and fixing typos in
 learn tutorials fast and easy, for all!
 
 Make contents in goggle documents
-([example](https://drive.google.com/a/plot.ly/folderview?id=0B0R1cz1nz1fZWGdmanprZnN1ZFE&usp=sharing)) 
+([examples](https://drive.google.com/a/plot.ly/#folders/0B2KhXoOOCkxHdmpmdkNpNEE5WEU)) 
 one command away from being *plot.ly-ready*.
 
 ### Files and folders in this repo:
