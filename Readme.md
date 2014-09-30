@@ -4,13 +4,12 @@
 
 ### Goals of this repo
 
-Make updating, adding content to and fixing typos in
-[plot.ly](https://plot/ly/learn)
-learn tutorials fast and easy, for all!
+- Make updating, adding content to and fixing typos in
+  [plot.ly](https://plot/ly/learn) learn tutorials fast and easy, for all!
 
-Make contents in goggle documents
-([examples](https://drive.google.com/a/plot.ly/#folders/0B2KhXoOOCkxHdmpmdkNpNEE5WEU)) 
-one command away from being *plot.ly-ready*.
+- Make contents in goggle documents
+  ([examples](https://drive.google.com/a/plot.ly/#folders/0B2KhXoOOCkxHdmpmdkNpNEE5WEU))
+  one command away from being *plot.ly-ready*.
 
 ### Files and folders in this repo:
 
