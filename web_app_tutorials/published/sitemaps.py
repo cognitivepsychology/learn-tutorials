@@ -76,6 +76,16 @@ def items():
             priority=0.5
         ),
         dict(
+            location='/how-to-make-a-box-plot-online/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'how-to-make-a-box-plot-online',
+                'body.html'),
+            priority=0.5
+        ),
+        dict(
             location='/how-to-make-a-bar-chart-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
@@ -96,12 +106,12 @@ def items():
             priority=0.5
         ),
         dict(
-            location='/how-to-make-a-box-plot-online/',
+            location='/how-to-make-a-3d-line-chart-online/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
                 'templates', 'learn', 'includes',
                 'web_app_tutorials',
-                'how-to-make-a-box-plot-online',
+                'how-to-make-a-3d-line-chart-online',
                 'body.html'),
             priority=0.5
         ),

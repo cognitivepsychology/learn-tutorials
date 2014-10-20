@@ -11,5 +11,6 @@
     "MultipleAxesTemplateRevTwo.html" : ["multiple-axes-tutorial", "how-to-make-a-graph-with-multiple-axes-online"],
     "SignUp.html" : "how-to-sign-up-to-plotly",
     "embedinteractiveplotlygraphsinwebsitesblogsif.html" : ["embed", "how-to-embed-plotly-graphs-in-websites"],
-    "HowtoshareandprintgraphsonPlotly.html" : ["share-print", "how-to-share-and-print-plotly-graphs"]
+    "HowtoshareandprintgraphsonPlotly.html" : ["share-print", "how-to-share-and-print-plotly-graphs"],
+    "Howtomakea3dlinechart.html" : "how-to-make-a-3d-line-chart-online"
 }
