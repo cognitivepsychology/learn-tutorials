@@ -40,3 +40,9 @@ open-config:
 # 	$ make show-log
 show-log:
 	@more publish.log | cat | less
+
+# Un-minify a raw html file
+# 	 $ make unminify file=<name-of-file>
+# or $ make unminify file="<name-of-files>"
+unminify:
+	ipython _scripts/unminify_raw.py $(file)
