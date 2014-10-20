@@ -4,21 +4,23 @@ import os
 import status
 
 # -------------------------------------------------------------------------------
-# 
+#
 # Makes a django urls file containing all the patterns for a given folder
 #
 # -------------------------------------------------------------------------------
 
-NAME="make_urls"  # name of this module
-tab = "    "      # tab in space
+NAME = "make_urls"  # name of this module
+tab = "    "  # tab in space
+
 
 # Get urls patterns
 def get_urls(translate_filename_url):
     tutorials = translate_filename_url.values()
     urls = []
-    for tutorial in tutorials:  
+    for tutorial in tutorials:
         urls += [r'(?P<tutorial>{})/$'.format(tutorial)]
     return urls
+
 
 # Generate urls.py file
 # See streambed/shelly/learn/ for more info
@@ -29,25 +31,27 @@ def get_urls_py(folder, urls):
         "urlpatterns = patterns(\n"
         "{tab}'',\n"
     ).format(tab=tab)
-    for url in urls: # TODO generalize views!
+    for url in urls:  # TODO generalize views!
         urls_py += (
             '{tab}url("'+url+'",\n'
             '{tab}{tab}learn.views.{folder}_template)'
-        ).format(tab=tab,folder=folder)
+        ).format(tab=tab, folder=folder)
         if url != urls[-1]:
             urls_py += ",\n"
     urls_py += "\n)\n"
     return urls_py
 
+
 # Overwrite urls.py
-def overwrite_urls(folder,urls_py):
+def overwrite_urls(folder, urls_py):
     f_urls = "{}/published/urls.py".format(folder)
     with open(f_urls, "w") as f:
-        status.log(NAME,('Writes in', f_urls))
+        status.log(NAME, ('Writes in', f_urls))
         f.write(urls_py)
     return
 
 # -------------------------------------------------------------------------------
+
 
 # Make and overwrite urls.py file
 def make_urls(folder, translate_filename_url):

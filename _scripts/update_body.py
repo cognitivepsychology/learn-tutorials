@@ -9,9 +9,10 @@ import status
 #
 # -------------------------------------------------------------------------------
 
-NAME="update_body"  # name of this module
+NAME = "update_body"  # name of this module
 
 # -------------------------------------------------------------------------------
+
 
 # Wrap tag around an other
 # source: http://stackoverflow.com/a/10192634
@@ -22,11 +23,13 @@ def wrap(wrappend, wrap_tag, wrap_attrs):
     wrapper.append(contents)
     return
 
+
 # Strip contents inside tag but keep tag
 def strip_contents(tag):
     for content in tag.contents:
         content.extract()
     return
+
 
 # Insert tag inside an other
 # source: http://stackoverflow.com/a/21356230/4068492
@@ -40,6 +43,7 @@ def insert(insertend, insert_tag, insert_attrs, insert_content, replace=True):
     return
 
 # -------------------------------------------------------------------------------
+
 
 # Strip all attributes, <script></script> from body
 def strip(body):
@@ -58,6 +62,7 @@ def strip(body):
     status.log(NAME, "Striping all <script> inside body !")
     return body
 
+
 # Add lightbox anchors to images
 def add_lightbox(body):
     Img = body.findAll('img')
@@ -66,15 +71,18 @@ def add_lightbox(body):
         status.log(NAME, ('Image found! src:', img['src']))
         # If not <a> around <img />, add lightbox !
         if not img.findParent('a'):  # TODO maybe only lightbox <a>
+            src = img['src']
+            data = os.path.splitext(os.path.basename(img['src']))[0]
             wrap_attrs = {
-                'href': img['src'],
-                'data-lightbox': os.path.splitext(os.path.basename(img['src']))[0]
+                'href': src,
+                'data-lightbox': data
             }
             wrap(img, wrap_tag, wrap_attrs)
             status.log(NAME, ('... wrap with lightbox <a>'))
         else:
             status.log(NAME, ("... <a> found around it, doing nothing"))
     return body
+
 
 # Add anchor to headers (for easy link sharing)
 def add_header_anchors(body):
@@ -91,7 +99,7 @@ def add_header_anchors(body):
                 status.log(NAME, ('... is empty, removing it!'))
                 continue
             # Add id attr to <h{}>
-            _id = text.replace(' ','-').lower()
+            _id = text.replace(' ', '-').lower()
             h['id'] = _id
             status.log(NAME, (
                 "... add id: '{}'"
@@ -105,14 +113,16 @@ def add_header_anchors(body):
             ).format(_href.encode('utf8')))
     return body
 
+
 # Prettify and remove <body> and </body>
 def prettify(body):
     body = body.prettify().encode('utf8')
-    body = body.replace('<body>','')
-    body = body.replace('</body>','')
+    body = body.replace('<body>', '')
+    body = body.replace('</body>', '')
     return body
 
 # -------------------------------------------------------------------------------
+
 
 def update_body(body):
     body = strip(body)

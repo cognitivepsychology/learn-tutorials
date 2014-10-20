@@ -6,22 +6,25 @@ import sys
 #
 # -------------------------------------------------------------------------------
 
+
 # Shortcut to print status along with the name of the script
 def log(NAME, s):
-    if isinstance(s,list) or isinstance(s,tuple):
+    if isinstance(s, list) or isinstance(s, tuple):
         s = ' '.join(s)
     S = "[{}]".format(NAME) + ' ' + s
     with open('publish.log', 'a') as f:
         f.write(S+"\n")
     return
 
+
 # Print important message to screen
 def important(NAME, s):
-    S = "[{NAME}] ** IMPORTANT!\n\n{s}\n**\n".format(NAME=NAME,s=s)
+    S = "[{NAME}] ** IMPORTANT!\n\n{s}\n**\n".format(NAME=NAME, s=s)
     print S
     with open('publish.log', 'a') as f:
         f.write(S+"\n")
     return
+
 
 # Stop execution
 def stop(NAME):

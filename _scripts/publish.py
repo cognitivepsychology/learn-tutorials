@@ -5,7 +5,7 @@ import os
 import shutil
 
 import status
-import translate 
+import translate
 import update_body
 import make_config
 import make_urls
@@ -13,23 +13,24 @@ import make_redirects
 import make_sitemaps
 
 # -------------------------------------------------------------------------------
-# 
+#
 # Publish script converting raw html content to plot.ly-ready content
 #
 # - Argument(s) is/are folder(s) from the learn_tutorials/ repository root.
 #   Not that these folders must be published as a whole (hence this format).
 #
-# step (1) : Make body.html and config.json for each html file 
+# step (1) : Make body.html and config.json for each html file
 # step (2) : Copy images in the appropriate published/ subdirectories
 # step (3) : Make folder-wide urls and sitemaps files
-# 
+#
 # -------------------------------------------------------------------------------
 
-NAME="publish"  # name of this script
+NAME = "publish"  # name of this script
 
 # -------------------------------------------------------------------------------
 
-# Get input arguments 
+
+# Get input arguments
 def get_args():
     _args = sys.argv[1:]
     if not _args:
@@ -42,11 +43,11 @@ def get_args():
         ).format(NAME=NAME)
         status.stop(NAME)
     elif not all(os.path.isdir(_arg) for _arg in _args):
-        dirs_available = [i for i in os.listdir(os.getcwd()) 
-                          if (os.path.isdir(i) and 
-                              not i.startswith('.') and 
+        dirs_available = [i for i in os.listdir(os.getcwd())
+                          if (os.path.isdir(i) and
+                              not i.startswith('.') and
                               not i.startswith('_'))]
-        status.important(NAME,(
+        status.important(NAME, (
             'Arguments must be directories from the repo root.\n\n'
             'The available directories are:\n'
             '  {}'.format('\n  '.join(dirs_available))
@@ -58,12 +59,13 @@ def get_args():
 
 # -------------------------------------------------------------------------------
 
+
 # Get list of HTML files in folder
 def get_paths_html(folder):
     paths_html = []
-    folder_raw = os.path.join(folder,'raw')
+    folder_raw = os.path.join(folder, 'raw')
     if not os.path.isdir(folder_raw):
-        status.important(NAME,(
+        status.important(NAME, (
             'Folder `{}` must contain a `raw/` subfolder'.format(folder)
         ))
         status.stop(NAME)
@@ -71,23 +73,24 @@ def get_paths_html(folder):
         for subfolder in subfolders:
             if subfolder == '__MACOSX':
                 path_MACOSX = os.path.join(path_folder, subfolder)
-                status.important(NAME,(
+                status.important(NAME, (
                     "Removing `{}`\n - Not needed (this is no big deal)"
                 ).format(path_MACOSX))
                 shutil.rmtree(path_MACOSX)
     for path_folder, subfolders, files in os.walk(folder_raw):
         for f in files:
             if f.endswith('.html'):
-                path_html = os.path.join(path_folder,f)
+                path_html = os.path.join(path_folder, f)
                 paths_html.append(path_html)
     if not paths_html:
-        status.important(NAME,(
+        status.important(NAME, (
             'No .html files located inside `{}`'.format(folder)
         ))
         status.stop(NAME)
     return paths_html
 
 # -------------------------------------------------------------------------------
+
 
 # Check if paths are in translate_filename_url (update if necessary)
 def check_translate(folder, paths_html, translate_filename_url):
@@ -99,9 +102,9 @@ def check_translate(folder, paths_html, translate_filename_url):
     # Case 1: if .json < raw/, return part of paths_html contained in .json
     elif len(files_html_translate) < len(files_html):
         diff = list(set(files_html) - set(files_html_translate))
-        to_be = 'was' if len(diff)==1 else 'were'
-        to_have = 'has' if len(diff)==1 else 'have'
-        status.important(NAME,(
+        to_be = 'was' if len(diff) == 1 else 'were'
+        to_have = 'has' if len(diff) == 1 else 'have'
+        status.important(NAME, (
             "File(s): \n\n {diff}\n\n"
             "{to_be} found from `{folder}/raw/` but {to_have} "
             "no correspondence\n"
@@ -109,17 +112,17 @@ def check_translate(folder, paths_html, translate_filename_url):
             "Note that files not listed in "
             "`{folder}/translate_filename_url.json`\n"
             "will NOT be published"
-        ).format(diff='\n'.join(diff),folder=folder,
-                 to_be=to_be,to_have=to_have))
+        ).format(diff='\n'.join(diff), folder=folder,
+                 to_be=to_be, to_have=to_have))
         return [path_html
                 for path_html in paths_html
                 if (os.path.split(path_html)[1] in files_html_translate)]
     # Case 2: if .json > raw/, stop execution
     else:
         diff = list(set(files_html_translate) - set(files_html))
-        to_be = 'is' if len(diff)==1 else 'are'
-        to_have = 'has' if len(diff)==1 else 'have'
-        status.important(NAME,(
+        to_be = 'is' if len(diff) == 1 else 'are'
+        to_have = 'has' if len(diff) == 1 else 'have'
+        status.important(NAME, (
             "File(s): \n\n {diff}\n\n"
             "{to_be} listed in "
             "`{folder}/translate_filename_url.json` but {to_have} "
@@ -127,38 +130,41 @@ def check_translate(folder, paths_html, translate_filename_url):
             "in `{folder}/raw/`.\n\n"
             "Note that files not found in "
             "`{folder}/raw` CANNOT be published"
-        ).format(diff='\n'.join(diff),folder=folder,
-                 to_be=to_be,to_have=to_have))
+        ).format(diff='\n'.join(diff), folder=folder,
+                 to_be=to_be, to_have=to_have))
         status.stop(NAME)
         return
+
 
 # Check if there are directories to redirect, copy them over if so.
 def check_redirects(folder, translate_redirects):
     paths_subdirs = [
-        os.path.join(folder,'published','includes'),
-        os.path.join(folder,'published','static','images')
+        os.path.join(folder, 'published', 'includes'),
+        os.path.join(folder, 'published', 'static', 'images')
     ]
     for path_subdirs in paths_subdirs:
         for new, olds in translate_redirects.items():
             path_subdir_new = os.path.join(path_subdirs, new) + '/'
             path_subdir_old = os.path.join(path_subdirs, olds[-1]) + '/'
-            if (os.path.isdir(path_subdir_old) and 
-                not os.path.isdir(path_subdir_new)):
-                status.log(NAME,('Making', path_subdir_new))
+            if (os.path.isdir(path_subdir_old) and not
+                    os.path.isdir(path_subdir_new)):
+                status.log(NAME, ('Making', path_subdir_new))
                 os.makedirs(path_subdir_new)
                 for item in os.listdir(path_subdir_old):
                     path_item = os.path.join(path_subdir_old, item)
                     shutil.copy(path_item, path_subdir_new)
-                    status.log(NAME,(
+                    status.log(NAME, (
                         'Copying {} to {}'
                     ).format(path_item, path_subdir_new))
                 shutil.rmtree(path_subdir_old)
-                status.log(NAME,(
+                status.log(NAME, (
                     'Removing directory {}'
                 ).format(path_subdir_old))
     return
 
-# Check if {folder}/published/ subdirectories corresp. to translate_filename_url
+
+# Check if {folder}/published/ subdirectories correspond
+# to translate_filename_url
 def check_published_subdirectories(folder, translate_filename_url):
     path_includes = os.path.join(folder, 'published', 'includes')
     path_images = os.path.join(folder, 'published', 'static', 'images')
@@ -172,65 +178,71 @@ def check_published_subdirectories(folder, translate_filename_url):
         subdirectories_images = []
     dirs_url = translate_filename_url.values()
     if set(subdirectories_includes) != set(subdirectories_images):
-        status.important(NAME,(
+        status.important(NAME, (
             "Directories `{folder}/published/includes/`\n"
             "and `{folder}/published/static/images/`\n"
             "do not have to same subdirectories.\n\n"
             "Please investigate (that's a weird one)."
         ).format(folder=folder))
-    elif len(subdirectories_includes) > len(dirs_url): 
+    elif len(subdirectories_includes) > len(dirs_url):
         diff = list(set(subdirectories_includes) - set(dirs_url))
-        to_be = 'is' if len(diff)==1 else 'are'
-        status.important(NAME,(
+        to_be = 'is' if len(diff) == 1 else 'are'
+        status.important(NAME, (
             "Subdirectory(ies):\n\n {diff}\n\n"
             "from `{folder}/published/includes/`\n"
             "and `{folder}/published/static/images/`\n"
             "{to_be} not listed in `{folder}/translate_filename_url.json`.\n\n"
             "Please investigate:\n\n"
-            "  - Did you change a url in {folder}/translate_filename_url.json\n"
+            "  - Did you change a url in "
+            "{folder}/translate_filename_url.json\n"
             "    not meant to be redirected (e.g. you fixed a typo)?\n\n"
-            "  - Or, did you remove a url in {folder}/translate_filename_url.json\n"
+            "  - Or, did you remove a url in "
+            "{folder}/translate_filename_url.json\n"
             "    so that some raw/ HTML file is not published just yet?\n\n"
             "    Then, please remove\n"
             "    {folder}/published/includes/{diff}/ and\n"
             "    {folder}/published/static/images/{diff}/ !\n\n"
             "    If you don't, $ make push-to-streambed will copy\n"
             "    unnecessary files over to streambed/ !"
-            ).format(diff='\n'.join(diff),folder=folder,to_be=to_be))
+            ).format(diff='\n'.join(diff), folder=folder, to_be=to_be))
     elif not len(subdirectories_includes) <= len(dirs_url):
         pass
     return
 
 # -------------------------------------------------------------------------------
 
+
 # Get HTML soup from HTML file path
 def get_soup(path_html):
     with open(path_html, "r") as f:
-        status.log(NAME,("Opening", path_html))
+        status.log(NAME, ("Opening", path_html))
         return BeautifulSoup(f)
+
 
 # Get HTML <body> and <head>
 def get_body_head(soup):
-    status.log(NAME,'Grabs <body> and <head>')
+    status.log(NAME, 'Grabs <body> and <head>')
     return soup.body, soup.head
 
 # -------------------------------------------------------------------------------
+
 
 # Make directory tree
 def make_tree(tree_segments):
     tree = os.path.join(*tree_segments)
     if not os.path.exists(tree):
-        status.log(NAME,('Making', tree))
+        status.log(NAME, ('Making', tree))
         os.makedirs(tree)
     else:
-        status.log(NAME,('Tree', tree, 'already exists OK'))
+        status.log(NAME, ('Tree', tree, 'already exists OK'))
     return tree
+
 
 # Overwrite tree leaf
 def overwrite_leaves(tree, leaves):
     for leaf in leaves:
         path_leaf = os.path.join(tree, leaf[1])
-        status.log(NAME,('Writing in', path_leaf))
+        status.log(NAME, ('Writing in', path_leaf))
         with open(path_leaf, 'wb') as f:
             if leaf[1].endswith('.json'):
                 json.dump(leaf[0], f, indent=4)
@@ -239,14 +251,16 @@ def overwrite_leaves(tree, leaves):
                 f.write(str(leaf[0]))
     return
 
+
 # Copy leaves to tree
 def copy_leaves(tree, paths_leaf):
-    status.log(NAME,('Copying leaves to', tree))
+    status.log(NAME, ('Copying leaves to', tree))
     for path_leaf in paths_leaf:
         shutil.copy(path_leaf, tree)
     return
 
 # -------------------------------------------------------------------------------
+
 
 def main():
 
@@ -263,7 +277,9 @@ def main():
         paths_html = get_paths_html(folder)
 
         # Check if paths are in translate_filename_url (update if necessary)
-        paths_html = check_translate(folder, paths_html, translate_filename_url)
+        paths_html = check_translate(folder,
+                                     paths_html,
+                                     translate_filename_url)
 
         # Check if there are directories to redirect
         check_redirects(folder, translate_redirects)
@@ -271,22 +287,27 @@ def main():
         # Check if {folder}/published/* corresp. to translate_filename_url
         check_published_subdirectories(folder, translate_filename_url)
 
-        # (1) Make body.html and config.json for each html file 
+        # (1) Make body.html and config.json for each html file
         for path_html in paths_html:
 
             # Get published files directory url (and name, they are the same!)
             file_html = os.path.split(path_html)[1]
             dir_url = translate_filename_url[file_html]
-            
+
             # Get published tree for this html file
-            tree_includes = make_tree([folder, 'published', 'includes', dir_url])
-            
+            tree_includes = make_tree([folder,
+                                       'published',
+                                       'includes',
+                                       dir_url])
+
             # Get soup and split <body> and <head>
             soup = get_soup(path_html)
-            body, head = get_body_head(soup) 
+            body, head = get_body_head(soup)
 
-            # Translate 'href' and 'src' in body 
-            body, paths_image = translate.translate(body,path_html,dir_url,
+            # Translate 'href' and 'src' in body
+            body, paths_image = translate.translate(body,
+                                                    path_html,
+                                                    dir_url,
                                                     translate_static,
                                                     translate_filename_url)
 
@@ -307,9 +328,9 @@ def main():
                                      'static',
                                      'images',
                                      dir_url])
-            copy_leaves(tree_images,paths_image)
+            copy_leaves(tree_images, paths_image)
 
-            status.log(NAME,'---- done with `{}`\n'.format(dir_url))
+            status.log(NAME, '---- done with `{}`\n'.format(dir_url))
 
         # (3) Make/print folder-wide urls, redirects and sitemaps files
         make_urls.make_urls(folder, translate_filename_url)
