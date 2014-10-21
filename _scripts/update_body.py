@@ -115,8 +115,8 @@ def add_header_anchors(body):
     return body
 
 
-# Get inline latex content (i.e. remove html tags)
-def get_inline_latex_content(body):
+# Get display mode latex content (i.e. remove html tags)
+def get_display_latex_content(body):
     latex_starts = ("$$", "\\begin{equation}")
     latex_ends = ("$$", "\\end{equation}")
     Span = body.findAll('span')
@@ -176,6 +176,6 @@ def update_body(body):
     body = strip(body)
     body = add_lightbox(body)
     body = add_header_anchors(body)
-    body = get_inline_latex_content(body)
+    body = get_display_latex_content(body)
     body = prettify(body)
     return body
