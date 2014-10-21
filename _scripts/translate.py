@@ -78,6 +78,18 @@ def add_a_target_blank(a):
                 "... an outbound link, add target='_blank' tag"))
     return a
 
+
+# Add 'link--impt' class to anchor
+def add_a_class(a):
+    _class = "link--impt"
+    if a.has_attr('href'):
+        if not a['href'].startswith('/static'):
+            a['class'] = _class
+            status.log(NAME, (
+                "... add class '{}' to anchor"
+            ).format(_class))
+    return a
+
 # -------------------------------------------------------------------------------
 
 
@@ -149,8 +161,18 @@ def translate_a_href(soup, dir_url,
     A = soup.findAll('a')
     for a in A:
         is_translated = False  # to log relevant output
-        if not a.has_attr('href'):
+        # Clean up case
+        if not a.getText(strip=True) and not a.findChildren():
+            a.extract()
+            status.log(NAME, (
+                'Anchor with nothing in it found, removing it!'))
             continue
+        if not a.has_attr('href'):
+            a.extract()
+            status.log(NAME, (
+                'Anchor without href found, removing it!!'))
+            continue
+        # Now if 'real' anchor found
         status.log(NAME, ('Anchor found! href: ', a['href']))
         # Case 1: <a> to static location (translated from streambed)
         for href_head in translate_static.keys():
@@ -206,6 +228,7 @@ def translate_a_href(soup, dir_url,
         else:
             status.log(NAME, ('... no translation required'))
         # Add attributes
+        a = add_a_class(a)
         a = add_a_target_blank(a)
     return soup
 

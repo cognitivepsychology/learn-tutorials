@@ -300,9 +300,10 @@ def main():
                                        'includes',
                                        dir_url])
 
-            # Get soup and split <body> and <head>
+            # Get soup, split <body> and <head> and strip style
             soup = get_soup(path_html)
             body, head = get_body_head(soup)
+            body = update_body.strip(body)
 
             # Translate 'href' and 'src' in body
             body, paths_image = translate.translate(body,

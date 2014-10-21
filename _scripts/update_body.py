@@ -28,7 +28,10 @@ def wrap(wrappend, wrap_tag, wrap_attrs):
 # Strip contents inside tag but keep tag
 def strip_contents(tag):
     for content in tag.contents:
-        content.extract()
+        if content == u'\n':  # Need this to not mess up loop
+            pass
+        else:
+            content.extract()
     return
 
 
@@ -48,7 +51,8 @@ def insert(insertend, insert_tag, insert_attrs, insert_content, replace=True):
 
 # Strip all attributes, <script></script> from body
 def strip(body):
-    attrs_to_rm = ["class", "id", "name", "style"]
+    attrs_to_rm = ["class", "id", "name", "style",
+                   "colspan", "rowspan", "cellpadding", "cellspacing"]
     for attr in attrs_to_rm:
         del body[attr]
     for tag in body():
@@ -62,6 +66,8 @@ def strip(body):
         script.extract()
     status.log(NAME, "Striping all <script> inside body !")
     return body
+
+# -------------------------------------------------------------------------------
 
 
 # Add lightbox anchors to images
@@ -86,6 +92,7 @@ def add_lightbox(body):
 
 
 # Add anchor to headers (for easy link sharing)
+# -> add class to headings
 def add_header_anchors(body):
     H_str = ['h1', 'h2', 'h3', 'h4']
     for h_str in H_str:
@@ -93,8 +100,9 @@ def add_header_anchors(body):
         insert_tag = 'a'
         for h in H:
             text = h.getText(strip=True, separator=u' ')
-            status.log(NAME, ('Header found! text:', text.encode('utf8')))
-            # If <h{} />  is empty, remove it
+            status.log(NAME, (
+                'Header found! text:', text.encode('utf8')))
+            # If <h{}>  is empty, remove it
             if not text:
                 h.extract()
                 status.log(NAME, ('... is empty, removing it!'))
@@ -106,12 +114,20 @@ def add_header_anchors(body):
                 "... add id: '{}'"
             ).format(_id.encode('utf8')))
             # Add <a href= > around text
+            # -> add class to <a>
             _href = '#' + _id
-            insert_attrs = {'href': _href}
+            _class = "link--impt"
+            insert_attrs = {'href': _href, 'class': _class}
             insert(h, insert_tag, insert_attrs, text)
             status.log(NAME, (
-                "... insert <a href='{}'>"
-            ).format(_href.encode('utf8')))
+                "... insert <a href='{}' class='{}'>"
+            ).format(_href.encode('utf8'), _class.encode('utf8')))
+            # -> add class to <h{}>
+            h_class = "heading alpha push--ends text--center"
+            h['class'] = h_class
+            status.log(NAME, (
+                "... add class '{}' to header"
+            ).format(h_class))
     return body
 
 
@@ -173,7 +189,6 @@ def prettify(body):
 
 
 def update_body(body):
-    body = strip(body)
     body = add_lightbox(body)
     body = add_header_anchors(body)
     body = get_display_latex_content(body)
