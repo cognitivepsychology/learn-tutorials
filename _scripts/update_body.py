@@ -1,3 +1,4 @@
+import bs4
 from bs4 import BeautifulSoup
 import os
 
@@ -114,6 +115,53 @@ def add_header_anchors(body):
     return body
 
 
+# Get inline latex content (i.e. remove html tags)
+def get_inline_latex_content(body):
+    latex_starts = ("$$", "\\begin{equation}")
+    latex_ends = ("$$", "\\end{equation}")
+    Span = body.findAll('span')
+    for span in Span:
+        try:
+            # Loop through possible latex starts
+            for latex_start in latex_starts:
+                if latex_start in span.contents[0]:
+                    # Init. latex content and trackers
+                    in_latex = True
+                    in_latex_content = span.contents
+                    in_latex_tags = [span]
+                    status.log(NAME, (
+                        "<span> containing latex (i.e. {start}) found:"
+                    ).format(start=latex_start))
+                    # Get next tag, TODO generalize?
+                    _next = span.findNext(('p', 'span'))
+                    while in_latex:
+                        if _next.name != 'span':
+                            # If not span, find next span
+                            in_latex_tags += [_next]
+                            _next = _next.findChild('span')
+                            continue
+                        # Add content to leading span
+                        in_latex_content += _next.contents
+                        status.log(NAME, (
+                            '... more in-line latex content:',
+                            ' '.join((_next.contents)).replace('\n', '')
+                        ))
+                        for latex_end in latex_ends:
+                            # Check if latex end is reached
+                            if latex_end in _next.contents[0]:
+                                in_latex = False
+                        # Add in latex tag, for tracking
+                        in_latex_tags += [_next]
+                        _next = _next.findNext(('p', 'span'))
+                    # Delete in latex tags
+                    for in_latex_tag in in_latex_tags[1:]:
+                        in_latex_tag.extract()
+                    # TODO wrap in latex content in "$$" ?
+        except (IndexError, TypeError):  # TODO generalize?
+            pass
+    return body
+
+
 # Prettify and remove <body> and </body>
 def prettify(body):
     body = body.prettify().encode('utf8')
@@ -128,5 +176,6 @@ def update_body(body):
     body = strip(body)
     body = add_lightbox(body)
     body = add_header_anchors(body)
+    body = get_inline_latex_content(body)
     body = prettify(body)
     return body
