@@ -121,10 +121,11 @@ learn-tutorials/<content-directory>/published/includes/<url-of-tutorial-page>/co
 Each `config.json` JSON file has:
 
 - `tutorial_name` : is the name that appears in the header (or breadcrumb)
-- `banner_image` : is iframe url or static image file name used in the banner
-  (set `banner_image` to `false` for no banner image)
 - `tags.title` : is the page title that appears at the top of your browser window
 - `tags.meta_description` : is the meta description
+- `banner_image` : (support for `web_app_tutorial/` at the moment) is iframe url
+  or static image file name used in the banner (set `banner_image` to `false`
+  for no banner image)
 
 > For completeness, say we are updating meta information for the bar chart web
  app tutorial [page](https://plot.ly/how-to-make-a-bar-chart-online/). The
