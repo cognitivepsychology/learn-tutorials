@@ -123,6 +123,9 @@ Each `config.json` JSON file has:
 - `tutorial_name` : is the name that appears in the header (or breadcrumb)
 - `tags.title` : is the page title that appears at the top of your browser window
 - `tags.meta_description` : is the meta description
+- `banner_image` : (support for `web_app_tutorial/` at the moment) is iframe url
+  or static image file name used in the banner (set `banner_image` to `false`
+  for no banner image)
 
 > For completeness, say we are updating meta information for the bar chart web
  app tutorial [page](https://plot.ly/how-to-make-a-bar-chart-online/). The
@@ -168,7 +171,7 @@ where "web_app_tutorials" is the content directory name in this case.
 
 #### C-5 Modify the `config.json` JSON file of the new tutorial page
 
-See [case B](#case-B-update-meta-information-of-an-existing-page)
+For more info, see [case B](#case-B-update-meta-information-of-an-existing-page)
 
 #### C-6. Go to
 
@@ -239,18 +242,18 @@ $ git pull origin master
 
 #### 4. Make a new branch in `streambed/`
 
-> For completeness, call this new branch "my-branch".
+> For completeness, call this new branch "sync-learn-tutorials".
 
 Form `streambed/`, run
 
 ```
-$ git branch my-branch
+$ git branch sync-learn-tutorials
 ```
 
 and then checkout to your new branch with
 
 ```
-$ git checkout my-branch
+$ git checkout sync-learn-tutorials
 ```
 
 #### 4. Sync published `learn-tutorials` content with `streambed/` !
@@ -281,10 +284,10 @@ From `streambed/`, run
 ```
 $ git add --all
 $ git commit -m "a commit message describing the modifications made"
-$ git push origin my-branch
+$ git push origin sync-learn-tutorials
 ```
 
-2. Deploying to stage, by typing "plot, deploy my-branch to stage" in the Plotly
+2. Deploying to stage, by typing "plot, deploy sync-learn-tutorials to stage" in the Plotly
    Hipchat room.
 
 **OR**:

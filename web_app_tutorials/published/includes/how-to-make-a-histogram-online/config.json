@@ -1,5 +1,6 @@
 {
     "tutorial_name": "Histograms", 
+    "banner_image": "https://plot.ly/~cimar/214/", 
     "tags": {
         "meta_description": "A tutorial on how to make a histogram online. Plotly is the easiest and fastest way to make and share graphs online.", 
         "title": "How to make a histogram online | plotly"

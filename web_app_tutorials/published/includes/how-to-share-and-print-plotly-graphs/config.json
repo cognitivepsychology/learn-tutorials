@@ -1,5 +1,6 @@
 {
     "tutorial_name": "Share and print graphs", 
+    "banner_image": "https://plot.ly/~abtran/14/", 
     "tags": {
         "meta_description": "A tutorial on how to share and print plotly graphs. Plotly is the easiest and fastest way to make and share graphs online.", 
         "title": "How to share and print plotly graphs | plotly"

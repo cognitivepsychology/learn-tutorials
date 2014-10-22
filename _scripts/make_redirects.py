@@ -4,14 +4,15 @@ import os
 import status
 
 # -------------------------------------------------------------------------------
-# 
-# Makes a django urls file containing all the redirect patterns 
+#
+# Makes a django urls file containing all the redirect patterns
 # for a given folder
 #
 # -------------------------------------------------------------------------------
 
-NAME="make_redirects"  # name of this module
+NAME = "make_redirects"  # name of this module
 tab = "    "           # tab in space
+
 
 # Get redirects patterns
 def get_redirects(translate_redirects):
@@ -26,6 +27,7 @@ def get_redirects(translate_redirects):
             ).format(old=old, current=current, tab=tab)]
     return redirects
 
+
 # Generate redirects.py file
 # See streambed/shelly/learn/ for more info
 def get_redirects_py(redirects):
@@ -36,7 +38,7 @@ def get_redirects_py(redirects):
         "urlpatterns = patterns(\n"
         "{tab}'',\n"
     ).format(tab=tab)
-    for redirect in redirects: 
+    for redirect in redirects:
         redirects_py += (
             "{tab}url("+redirect+")"
         ).format(tab=tab)
@@ -45,19 +47,20 @@ def get_redirects_py(redirects):
     redirects_py += "\n)\n"
     return redirects_py
 
+
 # Overwrite redirects.py
 def overwrite_redirects(folder, redirects_py):
     f_redirects = "{}/published/redirects.py".format(folder)
     with open(f_redirects, "w") as f:
-        status.log(NAME,('Writes in', f_redirects))
+        status.log(NAME, ('Writes in', f_redirects))
         f.write(redirects_py)
     return
 
 # -------------------------------------------------------------------------------
+
 
 # Make and overwrite redirects.py file (if redirects are presents)
 def make_redirects(folder, translate_redirects):
     redirects = get_redirects(translate_redirects)
     redirects_py = get_redirects_py(redirects)
     overwrite_redirects(folder, redirects_py)
-

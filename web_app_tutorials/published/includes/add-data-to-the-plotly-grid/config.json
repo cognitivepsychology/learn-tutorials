@@ -1,7 +1,8 @@
 {
     "tutorial_name": "Plot from the grid", 
+    "banner_image": "image00.png", 
     "tags": {
-        "meta_description": "A tutorial on how to make a plot with the plotly online grid. Plotly is the easiest and fastest way to make and share graphs online.", 
-        "title": "How to make a plot from the online grid | plotly"
+        "meta_description": "A tutorial on how to plot from the grid online and for free with Plotly", 
+        "title": "How to plot from the grid online"
     }
 }

@@ -1,5 +1,6 @@
 {
     "tutorial_name": "Heatmaps", 
+    "banner_image": "https://plot.ly/~cimar/200/", 
     "tags": {
         "meta_description": "A tutorial on how to make a heatmap online. Plotly is the easiest and fastest way to make and share graphs online.", 
         "title": "How to make a heatmap online | plotly"
