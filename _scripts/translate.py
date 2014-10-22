@@ -60,12 +60,17 @@ def get_new(old, s, dir_url):
 
 
 # Add alt attribute to images
+# -> Capitalized url with ' ' instead of '-' + file name or number
 def add_img_alt(img):
-    src = img['src']
-    alt = os.path.split(os.path.split(src)[0])[1] + '/' + os.path.basename(src)
-    img['alt'] = alt
+    _src = img['src']
+    _url = os.path.split(os.path.split(_src)[0])[1]
+    _filepath = os.path.basename(_src)
+    _filename, _ = os.path.splitext(_filepath)
+    _id = _filename.replace('image', '')
+    _alt = _url.replace('-', ' ').capitalize() + ' ' + _id
+    img['alt'] = _alt
     status.log(NAME, (
-        "... img, add alt='{}'").format(alt))
+        "... img, add alt='{}'").format(_alt))
     return img
 
 
