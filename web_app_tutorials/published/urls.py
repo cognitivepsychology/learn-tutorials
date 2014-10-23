@@ -23,6 +23,8 @@ urlpatterns = patterns(
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-bar-chart-online)/$",
         learn.views.web_app_tutorials_template),
+    url("(?P<tutorial>how-to-make-a-3d-scatter-plot-online)/$",
+        learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-share-and-print-plotly-graphs)/$",
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-3d-line-chart-online)/$",
