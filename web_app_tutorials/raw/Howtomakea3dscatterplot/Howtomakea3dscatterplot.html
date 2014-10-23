@@ -1,1 +1,764 @@
-<html><head><title>How to make a 3d scatter plot</title><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?kit=dB3GuSCq0f_LRNaO3opFPA');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c3{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c27{border-bottom-width:0pt;border-top-style:solid;width:468pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c15{border-bottom-width:0pt;border-top-style:solid;width:229pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c4{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:normal}.c8{line-height:1.0;padding-top:0pt;text-align:left;padding-bottom:0pt}.c26{line-height:1.15;padding-top:0pt;text-align:left;padding-bottom:0pt}.c20{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c0{widows:2;orphans:2;height:11pt;direction:ltr}.c30{line-height:1.0;padding-top:0pt;text-align:center;padding-bottom:0pt}.c7{color:#1155cc;font-family:"Open Sans";text-decoration:underline}.c28{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c12{margin-right:auto;border-collapse:collapse}.c10{widows:2;orphans:2;direction:ltr}.c1{font-size:12pt;font-family:"Open Sans"}.c19{line-height:1.0;page-break-after:avoid}.c16{color:#1d3b84;font-size:48pt}.c6{font-size:11pt;font-family:"Arial"}.c14{color:#447adb;font-weight:bold}.c17{height:11pt;direction:ltr}.c11{color:#1d3b84;font-size:18pt}.c5{color:inherit;text-decoration:inherit}.c24{color:#434343}.c9{font-family:"Open Sans"}.c2{height:0pt}.c23{page-break-after:avoid}.c25{background-color:#f0f0f0}.c13{font-size:12pt}.c22{font-weight:normal}.c21{font-weight:bold}.c18{direction:ltr}.c29{padding-top:10pt}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}</style></head><body class="c28"><div><p class="c0"><span></span></p></div><h1 class="c10 c19"><a name="h.69knwpd1our8"></a><span class="c16 c9">How to make a 3d scatter </span><span class="c16 c9">plot</span></h1><p class="c0"><span></span></p><p class="c10"><span class="c9">Most graphs have two axes, referred to often as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A three</span><span class="c9">-dimensional</span><span class="c9">&nbsp;graph lets you introduce a third axis, typically called the $z$ axis, and can help you understand the relationship between three variables. </span><span class="c9">Three-dimensional</span><span class="c9">&nbsp;scatter plots are best when you have at least three features that you want to highlight in your graph. Using color and size you can highlight two additional features in your graph. Plotly&rsquo;s interactive tools also let you explore your plot by zooming, hovering, and rotating your plot.</span></p><p class="c0"><span class="c9"></span></p><p class="c10"><span class="c9">For this tutorial, we&rsquo;re </span><span class="c9">using the &ldquo;Prestige&rdquo; </span><span class="c9">dataset</span><span class="c9">&nbsp;from R&rsquo;s </span><span class="c9">&ldquo;car&rdquo; package</span><span class="c9">. The data set contains information about status (quantified with the Pineo-Porter index), salary, years of schooling, and gender for job categories in the 1970s. You can learn more </span><span class="c7"><a class="c5" href="http://www.google.com/url?q=http%3A%2F%2Fwww.princeton.edu%2F~otorres%2FRegression101R.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGnngSNcRfFqh9i5dkV9HfUBXejmg">here</a></span><span class="c9">. If you follow along with the R tutorial at the link, you can take advantage of Plotly&rsquo;s awesome </span><span class="c7"><a class="c5" href="http://www.google.com/url?q=http%3A%2F%2Fvimeo.com%2F94000688&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFYxRX7GRv_AdrSx--KeQapABbUA">styling</a></span><span class="c9">, collaboration and </span><span class="c7"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fshare-print%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG4tjkmi7pCo2gLe7yqURPByY3gKQ">sharing</a></span><span class="c9">&nbsp;tools. If you want to know about integrating Plotly with R, we have </span><span class="c7"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFslbZRBmjZwkuMkJfM9szrlp_1gg">excellent</a></span><span class="c7"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFslbZRBmjZwkuMkJfM9szrlp_1gg">&nbsp;documentation</a></span><span class="c9">!</span></p><p class="c0"><span class="c1 c24"></span></p><h2 class="c10 c23"><a name="h.ollv6t9bey0g"></a><span class="c11 c9">Step 1:</span><span class="c11 c9 c22">&nbsp;Set up the grid</span></h2><p class="c0"><span></span></p><p class="c0"><span class="c1"></span></p><a href="#" name="4046a0922fed0e6485dc63a5d3732df350a8a99c"></a><a href="#" name="0"></a><table cellpadding="0" cellspacing="0" class="c12"><tbody><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c26 c10"><span class="c1">For this tutorial, go to: </span><span class="c7 c13"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F85&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFozoWq0rrg-esu0qFRXX7Wfra0Yg">https://plot.ly/~mariahh/85</a></span><span class="c1">. Click on </span><span class="c1 c14">Fork and edit</span><span class="c4 c1">&nbsp;to open this data set in your workspace.</span></p><p class="c26 c0"><span class="c4 c1"></span></p><p class="c10 c26"><span class="c4 c1">Don&rsquo;t forget to save the file!</span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 177.33px;"><img alt="Screen Shot 2014-10-10 at 11.00.40 AM.png" src="images/image01.png" style="width: 298.00px; height: 177.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span class="c1">Select </span><span class="c1 c14">3d scatter plots</span><span class="c1">&nbsp;from the </span><span class="c1 c14">MAKE A PLOT</span><span class="c4 c1">&nbsp;menu. We&rsquo;re going to compare education, income and prestige.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">We&rsquo;ll put &ldquo;income (1971)&rdquo; on the </span><span class="c1">x</span><span class="c1">$ axis by selecting </span><span class="c1 c14">choose as x</span><span class="c1">&nbsp;and &ldquo;education&rdquo; (this is the number of years of education required for a certain job) on the </span><span class="c1">y</span><span class="c1">&nbsp;axis by selecting </span><span class="c1 c14">choose as y</span><span class="c1">. Finally, we put &ldquo;Pineo-Porter prestige score&rdquo; on the </span><span class="c1">z</span><span class="c1">&nbsp;axis by selecting </span><span class="c1 c14">choose as z</span><span class="c4 c1">.</span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 164.00px;"><img alt="Screen Shot 2014-10-10 at 11.05.02 AM.png" src="images/image05.png" style="width: 298.00px; height: 164.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">We can assign color as a variable for &ldquo;gender&rdquo; in our 3d plot with the </span><span class="c1 c14">Group by</span><span class="c1">&nbsp;option, located in the sidebar. Select </span><span class="c1 c14">choose as G</span><span class="c4 c1">&nbsp;in the column labeled &ldquo;gender&rdquo;.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c4 c1">Click the blue plot button, in the sidebar, to create the chart.</span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 297.00px; height: 180.00px;"><img alt="Screen Shot 2014-10-10 at 4.22.11 PM.png" src="images/image08.png" style="width: 297.00px; height: 180.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr></tbody></table><p class="c0"><span></span></p><h2 class="c10 c23 c29"><a name="h.1ix2memx4mri"></a><span class="c9 c11">Step 2:</span><span class="c11 c9 c22">&nbsp;Style it</span></h2><p class="c0"><span></span></p><p class="c0"><span></span></p><a href="#" name="699e8b4b9214f357e57f6eb6ae936bb9b473bb45"></a><a href="#" name="1"></a><table cellpadding="0" cellspacing="0" class="c12"><tbody><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c4 c1">Your plot should look something like this. </span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 260.00px;"><img alt="Screen Shot 2014-10-10 at 4.25.17 PM.png" src="images/image06.png" style="width: 298.00px; height: 260.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">Open the </span><span class="c1 c14">TRACES</span><span class="c4 c1">&nbsp;popover in the toolbar.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">Using the </span><span class="c1 c14">Style</span><span class="c4 c1">&nbsp;tab you can change the style, thickness, and color of the data points. Here we&rsquo;ve made the jobs dominated by women blue and those dominated by men green.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">To close the </span><span class="c1 c14">Traces</span><span class="c1">&nbsp;popover, click the </span><span class="c1 c14">X</span><span class="c4 c1">&nbsp;in the upper right.</span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 282.67px;"><img alt="Screen Shot 2014-10-21 at 3.19.32 PM.png" src="images/image03.png" style="width: 298.00px; height: 282.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c0 c8"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">You can add a title by clicking on </span><span class="c1 c14">Click to enter Plot title</span><span class="c4 c1">.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">You can change the font and size of the title and other annotations using the </span><span class="c1 c14">LAYOUT</span><span class="c1">&nbsp;popover</span><span class="c1">, and </span><span class="c1 c14">Global Font</span><span class="c4 c1">.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 305.33px;"><img alt="Screen Shot 2014-10-21 at 3.20.26 PM.png" src="images/image07.png" style="width: 298.00px; height: 305.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c1 c4"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">Still in the </span><span class="c1 c14">LAYOUT</span><span class="c1">&nbsp;popover, we can change the </span><span class="c1 c14">Scene color</span><span class="c4 c1">, the margin color, and more. </span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 286.67px;"><img alt="Screen Shot 2014-10-21 at 3.21.39 PM.png" src="images/image02.png" style="width: 298.00px; height: 286.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c3" colspan="1" rowspan="1"><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">Don&rsquo;t forget to save your work by clicking on </span><span class="c1 c14">SAVE</span><span class="c1">&nbsp;in the toolbar above your graph.</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">Once you&rsquo;ve saved your graph, you can use the </span><span class="c1 c14">Share</span><span class="c4 c1">&nbsp;popover to add collaborators (they&rsquo;ll have access to both your graph and your data). </span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c1">If you make your graph public, you can share it via Facebook, Twitter or Google+. Need help embedding your graph in a website or blog? We have a </span><span class="c7 c13"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fhow-to-embed-plotly-graphs-in-websites%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHJCJg1f85lN2tE-5GXytkX6qElyw">tutorial</a></span><span class="c4 c1">&nbsp;for that.</span></p></td><td class="c3" colspan="1" rowspan="1"><p class="c8 c10"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 357.33px;"><img alt="Screen Shot 2014-10-10 at 4.42.22 PM.png" src="images/image00.png" style="width: 298.00px; height: 357.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr></tbody></table><p class="c0"><span></span></p><a href="#" name="6565cbbb93cd86a6b6ed3d85f643d28beea1d197"></a><a href="#" name="2"></a><table cellpadding="0" cellspacing="0" class="c12"><tbody><tr class="c2"><td class="c27" colspan="1" rowspan="1"><p class="c8 c10"><span class="c11 c9 c21">Step 3:</span><span class="c20 c11 c9">&nbsp;It&rsquo;s interactive!</span></p><p class="c8 c0"><span class="c11 c9 c20"></span></p><a href="#" name="da2aed6637ccc940106748a272c550bc0ec10212"></a><a href="#" name="3"></a><table cellpadding="0" cellspacing="0" class="c12"><tbody><tr class="c2"><td class="c15" colspan="1" rowspan="1"><p class="c8 c18"><span class="c4 c1">Your 3d scatter plot is interactive! Different views help us understand different information contained in the data set.</span></p><p class="c8 c17"><span class="c4 c1"></span></p><p class="c8 c18"><span class="c1">In this view, we can see information about prestige and years of schooling. We can see that the number of years of schooling is correlated to </span><span class="c1">prestige</span><span class="c4 c1">. This relationship appears to hold true for jobs dominated by both men (in green) and women (in blue). </span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c8 c18"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 290.00px; height: 200.00px;"><img alt="Screen Shot 2014-10-21 at 3.23.22 PM.png" src="images/image04.png" style="width: 290.00px; height: 200.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c2"><td class="c15" colspan="1" rowspan="1"><p class="c8 c17"><span class="c4 c1"></span></p><p class="c8 c17"><span class="c4 c1"></span></p><p class="c8 c17"><span class="c4 c1"></span></p><p class="c8 c18"><span class="c4 c1">Changing the view allows us to compare salary and schooling. In this view we see clearly that jobs dominated by women tend to be lower wage jobs.</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c8 c18"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 290.00px; height: 253.33px;"><img alt="Screen Shot 2014-10-21 at 3.24.38 PM.png" src="images/image09.png" style="width: 290.00px; height: 253.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr></tbody></table><p class="c8 c0"><span class="c20 c11 c9"></span></p><p class="c8 c10"><span class="c1">Love what you made? You can </span><span class="c7 c13"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fshare-print%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG4tjkmi7pCo2gLe7yqURPByY3gKQ">share, download</a></span><span class="c1">&nbsp;and </span><span class="c7 c13"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fembed%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFMbTtbzhmI15aFhxynABUxTdobkQ">embed</a></span><span class="c1">&nbsp;</span><span class="c4 c1">your plots. </span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c8 c10"><span class="c4 c1">You can find the graph used in this tutorial, and the underlying data at:</span></p><p class="c8 c0"><span class="c4 c1"></span></p><p class="c10 c30"><span class="c7 c13 c25"><a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F90&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFlTgXup5zv1YTiQ4ipUSkGtj9hkg">https://plot.ly/~mariahh/90</a></span></p></td></tr></tbody></table><p class="c0"><span class="c9"></span></p></body></html>
+<html>
+ <head>
+  <title>
+   How to make a 3d scatter plot
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <style type="text/css">
+   @import url('https://themes.googleusercontent.com/fonts/css?kit=dB3GuSCq0f_LRNaO3opFPA');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c3{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c27{border-bottom-width:0pt;border-top-style:solid;width:468pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c15{border-bottom-width:0pt;border-top-style:solid;width:229pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c4{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:normal}.c8{line-height:1.0;padding-top:0pt;text-align:left;padding-bottom:0pt}.c26{line-height:1.15;padding-top:0pt;text-align:left;padding-bottom:0pt}.c20{vertical-align:baseline;font-style:normal;text-decoration:none;font-weight:normal}.c0{widows:2;orphans:2;height:11pt;direction:ltr}.c30{line-height:1.0;padding-top:0pt;text-align:center;padding-bottom:0pt}.c7{color:#1155cc;font-family:"Open Sans";text-decoration:underline}.c28{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c12{margin-right:auto;border-collapse:collapse}.c10{widows:2;orphans:2;direction:ltr}.c1{font-size:12pt;font-family:"Open Sans"}.c19{line-height:1.0;page-break-after:avoid}.c16{color:#1d3b84;font-size:48pt}.c6{font-size:11pt;font-family:"Arial"}.c14{color:#447adb;font-weight:bold}.c17{height:11pt;direction:ltr}.c11{color:#1d3b84;font-size:18pt}.c5{color:inherit;text-decoration:inherit}.c24{color:#434343}.c9{font-family:"Open Sans"}.c2{height:0pt}.c23{page-break-after:avoid}.c25{background-color:#f0f0f0}.c13{font-size:12pt}.c22{font-weight:normal}.c21{font-weight:bold}.c18{direction:ltr}.c29{padding-top:10pt}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+  </style>
+ </head>
+ <body class="c28">
+  <div>
+   <p class="c0">
+    <span>
+    </span>
+   </p>
+  </div>
+  <h1 class="c10 c19">
+   <a name="h.69knwpd1our8">
+   </a>
+   <span class="c16 c9">
+    How to make a 3d scatter
+   </span>
+   <span class="c16 c9">
+    plot
+   </span>
+  </h1>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <p class="c10">
+   <span class="c9">
+    Most graphs have two axes, referred to often as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A three
+   </span>
+   <span class="c9">
+    -dimensional
+   </span>
+   <span class="c9">
+    graph lets you introduce a third axis, typically called the $z$ axis, and can help you understand the relationship between three variables.
+   </span>
+   <span class="c9">
+    Three-dimensional
+   </span>
+   <span class="c9">
+    scatter plots are best when you have at least three features that you want to highlight in your graph. Using color and size you can highlight two additional features in your graph. Plotly’s interactive tools also let you explore your plot by zooming, hovering, and rotating your plot.
+   </span>
+  </p>
+  <p class="c0">
+   <span class="c9">
+   </span>
+  </p>
+  <p class="c10">
+   <span class="c9">
+    For this tutorial, we’re
+   </span>
+   <span class="c9">
+    using the “Prestige”
+   </span>
+   <span class="c9">
+    dataset
+   </span>
+   <span class="c9">
+    from R’s
+   </span>
+   <span class="c9">
+    “car” package
+   </span>
+   <span class="c9">
+    . The data set contains information about status (quantified with the Pineo-Porter index), salary, years of schooling, and gender for job categories in the 1970s. You can learn more
+   </span>
+   <span class="c7">
+    <a class="c5" href="http://www.google.com/url?q=http%3A%2F%2Fwww.princeton.edu%2F~otorres%2FRegression101R.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGnngSNcRfFqh9i5dkV9HfUBXejmg">
+     here
+    </a>
+   </span>
+   <span class="c9">
+    . If you follow along with the R tutorial at the link, you can take advantage of Plotly’s awesome
+   </span>
+   <span class="c7">
+    <a class="c5" href="http://www.google.com/url?q=http%3A%2F%2Fvimeo.com%2F94000688&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFYxRX7GRv_AdrSx--KeQapABbUA">
+     styling
+    </a>
+   </span>
+   <span class="c9">
+    , collaboration and
+   </span>
+   <span class="c7">
+    <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fshare-print%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG4tjkmi7pCo2gLe7yqURPByY3gKQ">
+     sharing
+    </a>
+   </span>
+   <span class="c9">
+    tools. If you want to know about integrating Plotly with R, we have
+   </span>
+   <span class="c7">
+    <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFslbZRBmjZwkuMkJfM9szrlp_1gg">
+     excellent
+    </a>
+   </span>
+   <span class="c7">
+    <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFslbZRBmjZwkuMkJfM9szrlp_1gg">
+     documentation
+    </a>
+   </span>
+   <span class="c9">
+    !
+   </span>
+  </p>
+  <p class="c0">
+   <span class="c1 c24">
+   </span>
+  </p>
+  <h2 class="c10 c23">
+   <a name="h.ollv6t9bey0g">
+   </a>
+   <span class="c11 c9">
+    Step 1:
+   </span>
+   <span class="c11 c9 c22">
+    Set up the grid
+   </span>
+  </h2>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <p class="c0">
+   <span class="c1">
+   </span>
+  </p>
+  <a href="#" name="4046a0922fed0e6485dc63a5d3732df350a8a99c">
+  </a>
+  <a href="#" name="0">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c12">
+   <tbody>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c26 c10">
+       <span class="c1">
+        For this tutorial, go to:
+       </span>
+       <span class="c7 c13">
+        <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F85&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFozoWq0rrg-esu0qFRXX7Wfra0Yg">
+         https://plot.ly/~mariahh/85
+        </a>
+       </span>
+       <span class="c1">
+        . Click on
+       </span>
+       <span class="c1 c14">
+        Fork and edit
+       </span>
+       <span class="c4 c1">
+        to open this data set in your workspace.
+       </span>
+      </p>
+      <p class="c26 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c10 c26">
+       <span class="c4 c1">
+        Don’t forget to save the file!
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 177.33px;">
+        <img alt="Screen Shot 2014-10-10 at 11.00.40 AM.png" src="images/image01.png" style="width: 298.00px; height: 177.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span class="c1">
+        Select
+       </span>
+       <span class="c1 c14">
+        3d scatter plots
+       </span>
+       <span class="c1">
+        from the
+       </span>
+       <span class="c1 c14">
+        MAKE A PLOT
+       </span>
+       <span class="c4 c1">
+        menu. We’re going to compare education, income and prestige.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        We’ll put “income (1971)” on the
+       </span>
+       <span class="c1">
+        x
+       </span>
+       <span class="c1">
+        $ axis by selecting
+       </span>
+       <span class="c1 c14">
+        choose as x
+       </span>
+       <span class="c1">
+        and “education” (this is the number of years of education required for a certain job) on the
+       </span>
+       <span class="c1">
+        y
+       </span>
+       <span class="c1">
+        axis by selecting
+       </span>
+       <span class="c1 c14">
+        choose as y
+       </span>
+       <span class="c1">
+        . Finally, we put “Pineo-Porter prestige score” on the
+       </span>
+       <span class="c1">
+        z
+       </span>
+       <span class="c1">
+        axis by selecting
+       </span>
+       <span class="c1 c14">
+        choose as z
+       </span>
+       <span class="c4 c1">
+        .
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 164.00px;">
+        <img alt="Screen Shot 2014-10-10 at 11.05.02 AM.png" src="images/image05.png" style="width: 298.00px; height: 164.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        We can assign color as a variable for “gender” in our 3d plot with the
+       </span>
+       <span class="c1 c14">
+        Group by
+       </span>
+       <span class="c1">
+        option, located in the sidebar. Select
+       </span>
+       <span class="c1 c14">
+        choose as G
+       </span>
+       <span class="c4 c1">
+        in the column labeled “gender”.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c4 c1">
+        Click the blue plot button, in the sidebar, to create the chart.
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 297.00px; height: 180.00px;">
+        <img alt="Screen Shot 2014-10-10 at 4.22.11 PM.png" src="images/image08.png" style="width: 297.00px; height: 180.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <h2 class="c10 c23 c29">
+   <a name="h.1ix2memx4mri">
+   </a>
+   <span class="c9 c11">
+    Step 2:
+   </span>
+   <span class="c11 c9 c22">
+    Style it
+   </span>
+  </h2>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="699e8b4b9214f357e57f6eb6ae936bb9b473bb45">
+  </a>
+  <a href="#" name="1">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c12">
+   <tbody>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c4 c1">
+        Your plot should look something like this.
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 260.00px;">
+        <img alt="Screen Shot 2014-10-10 at 4.25.17 PM.png" src="images/image06.png" style="width: 298.00px; height: 260.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Open the
+       </span>
+       <span class="c1 c14">
+        TRACES
+       </span>
+       <span class="c4 c1">
+        popover in the toolbar.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Using the
+       </span>
+       <span class="c1 c14">
+        Style
+       </span>
+       <span class="c4 c1">
+        tab you can change the style, thickness, and color of the data points. Here we’ve made the jobs dominated by women blue and those dominated by men green.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        To close the
+       </span>
+       <span class="c1 c14">
+        Traces
+       </span>
+       <span class="c1">
+        popover, click the
+       </span>
+       <span class="c1 c14">
+        X
+       </span>
+       <span class="c4 c1">
+        in the upper right.
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 282.67px;">
+        <img alt="Screen Shot 2014-10-21 at 3.19.32 PM.png" src="images/image03.png" style="width: 298.00px; height: 282.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c0 c8">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        You can add a title by clicking on
+       </span>
+       <span class="c1 c14">
+        Click to enter Plot title
+       </span>
+       <span class="c4 c1">
+        .
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        You can change the font and size of the title and other annotations using the
+       </span>
+       <span class="c1 c14">
+        LAYOUT
+       </span>
+       <span class="c1">
+        popover
+       </span>
+       <span class="c1">
+        , and
+       </span>
+       <span class="c1 c14">
+        Global Font
+       </span>
+       <span class="c4 c1">
+        .
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 305.33px;">
+        <img alt="Screen Shot 2014-10-21 at 3.20.26 PM.png" src="images/image07.png" style="width: 298.00px; height: 305.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c1 c4">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Still in the
+       </span>
+       <span class="c1 c14">
+        LAYOUT
+       </span>
+       <span class="c1">
+        popover, we can change the
+       </span>
+       <span class="c1 c14">
+        Scene color
+       </span>
+       <span class="c4 c1">
+        , the margin color, and more.
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 286.67px;">
+        <img alt="Screen Shot 2014-10-21 at 3.21.39 PM.png" src="images/image02.png" style="width: 298.00px; height: 286.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c2">
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Don’t forget to save your work by clicking on
+       </span>
+       <span class="c1 c14">
+        SAVE
+       </span>
+       <span class="c1">
+        in the toolbar above your graph.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Once you’ve saved your graph, you can use the
+       </span>
+       <span class="c1 c14">
+        Share
+       </span>
+       <span class="c4 c1">
+        popover to add collaborators (they’ll have access to both your graph and your data).
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        If you make your graph public, you can share it via Facebook, Twitter or Google+. Need help embedding your graph in a website or blog? We have a
+       </span>
+       <span class="c7 c13">
+        <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fhow-to-embed-plotly-graphs-in-websites%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHJCJg1f85lN2tE-5GXytkX6qElyw">
+         tutorial
+        </a>
+       </span>
+       <span class="c4 c1">
+        for that.
+       </span>
+      </p>
+     </td>
+     <td class="c3" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 357.33px;">
+        <img alt="Screen Shot 2014-10-10 at 4.42.22 PM.png" src="images/image00.png" style="width: 298.00px; height: 357.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c0">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="6565cbbb93cd86a6b6ed3d85f643d28beea1d197">
+  </a>
+  <a href="#" name="2">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c12">
+   <tbody>
+    <tr class="c2">
+     <td class="c27" colspan="1" rowspan="1">
+      <p class="c8 c10">
+       <span class="c11 c9 c21">
+        Step 3:
+       </span>
+       <span class="c20 c11 c9">
+        It’s interactive!
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c11 c9 c20">
+       </span>
+      </p>
+      <a href="#" name="da2aed6637ccc940106748a272c550bc0ec10212">
+      </a>
+      <a href="#" name="3">
+      </a>
+      <table cellpadding="0" cellspacing="0" class="c12">
+       <tbody>
+        <tr class="c2">
+         <td class="c15" colspan="1" rowspan="1">
+          <p class="c8 c18">
+           <span class="c4 c1">
+            Your 3d scatter plot is interactive! Different views help us understand different information contained in the data set.
+           </span>
+          </p>
+          <p class="c8 c17">
+           <span class="c4 c1">
+           </span>
+          </p>
+          <p class="c8 c18">
+           <span class="c1">
+            In this view, we can see information about prestige and years of schooling. We can see that the number of years of schooling is correlated to
+           </span>
+           <span class="c1">
+            prestige
+           </span>
+           <span class="c4 c1">
+            . This relationship appears to hold true for jobs dominated by both men (in green) and women (in blue).
+           </span>
+          </p>
+         </td>
+         <td class="c15" colspan="1" rowspan="1">
+          <p class="c8 c18">
+           <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 290.00px; height: 200.00px;">
+            <img alt="Screen Shot 2014-10-21 at 3.23.22 PM.png" src="images/image04.png" style="width: 290.00px; height: 200.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c2">
+         <td class="c15" colspan="1" rowspan="1">
+          <p class="c8 c17">
+           <span class="c4 c1">
+           </span>
+          </p>
+          <p class="c8 c17">
+           <span class="c4 c1">
+           </span>
+          </p>
+          <p class="c8 c17">
+           <span class="c4 c1">
+           </span>
+          </p>
+          <p class="c8 c18">
+           <span class="c4 c1">
+            Changing the view allows us to compare salary and schooling. In this view we see clearly that jobs dominated by women tend to be lower wage jobs.
+           </span>
+          </p>
+         </td>
+         <td class="c15" colspan="1" rowspan="1">
+          <p class="c8 c18">
+           <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 290.00px; height: 253.33px;">
+            <img alt="Screen Shot 2014-10-21 at 3.24.38 PM.png" src="images/image09.png" style="width: 290.00px; height: 253.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+           </span>
+          </p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p class="c8 c0">
+       <span class="c20 c11 c9">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c1">
+        Love what you made? You can
+       </span>
+       <span class="c7 c13">
+        <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fshare-print%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNG4tjkmi7pCo2gLe7yqURPByY3gKQ">
+         share, download
+        </a>
+       </span>
+       <span class="c1">
+        and
+       </span>
+       <span class="c7 c13">
+        <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fembed%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFMbTtbzhmI15aFhxynABUxTdobkQ">
+         embed
+        </a>
+       </span>
+       <span class="c1">
+       </span>
+       <span class="c4 c1">
+        your plots.
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c8 c10">
+       <span class="c4 c1">
+        You can find the graph used in this tutorial, and the underlying data at:
+       </span>
+      </p>
+      <p class="c8 c0">
+       <span class="c4 c1">
+       </span>
+      </p>
+      <p class="c10 c30">
+       <span class="c7 c13 c25">
+        <a class="c5" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F90&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFlTgXup5zv1YTiQ4ipUSkGtj9hkg">
+         https://plot.ly/~mariahh/90
+        </a>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c0">
+   <span class="c9">
+   </span>
+  </p>
+ </body>
+</html>
