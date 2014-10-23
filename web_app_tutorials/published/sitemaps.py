@@ -96,6 +96,16 @@ def items():
             priority=0.5
         ),
         dict(
+            location='/how-to-make-a-3d-scatter-plot-online/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'how-to-make-a-3d-scatter-plot-online',
+                'body.html'),
+            priority=0.5
+        ),
+        dict(
             location='/how-to-share-and-print-plotly-graphs/',
             lmfile=os.path.join(
                 settings.TOP_DIR, 'shelly',
