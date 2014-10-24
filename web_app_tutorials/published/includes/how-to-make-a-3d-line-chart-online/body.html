@@ -1,935 +1,539 @@
 
- <p>
-  <span>
-   Most graphs have two axes, often referred to as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A 3-dimensional graph lets you introduce a third axis, typically called the $z$ axis, and can help you to understand the relationship between all three variables.
-  </span>
+ <p class="push-half--ends">
+  Most graphs have two axes, often referred to as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A 3-dimensional graph lets you introduce a third axis, typically called the $z$ axis, and can help you to understand the relationship between all three variables.
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-   Three-dimensional line graphs are often used by mathematicians and scientists to draw functions of two variables.
-  </span>
-  <span>
-   For example, a
-  </span>
-  <span>
-   helix
-  </span>
-  <span>
-   is a smooth curve in 3 dimensions with a spiral shape that is common in biology. Mathematically, we can describe a helix using parametric equations, that is, as three functions of a single parameter, often labeled $t$. The example that we’ll use
-  </span>
-  <span>
-   in this tutorial is the following:
-  </span>
+ <p class="push-half--ends">
+  Three-dimensional line graphs are often used by mathematicians and scientists to draw functions of two variables.
+  For example, a
+  helix
+  is a smooth curve in 3 dimensions with a spiral shape that is common in biology. Mathematically, we can describe a helix using parametric equations, that is, as three functions of a single parameter, often labeled $t$. The example that we’ll use
+  in this tutorial is the following:
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-   \begin{equation}
-   \left\{
-   \begin{aligned}
-   x(t) &amp;= \cos(t) \quad\\
-   y(t) &amp;= \sin(t) \quad\\
-   z(t) &amp;= t
-   \end{aligned}
-   \right.
-   \end{equation}
-  </span>
+ <p class="push-half--ends">
+  \begin{equation}
+  \left\{
+  \begin{aligned}
+  x(t) &amp;= \cos(t) \quad\\
+  y(t) &amp;= \sin(t) \quad\\
+  z(t) &amp;= t
+  \end{aligned}
+  \right.
+  \end{equation}
  </p>
  <h2 class="heading alpha push--ends text--center" id="step-1:-set-up-the-grid">
   <a class="link--impt" href="#step-1:-set-up-the-grid">
    Step 1: Set up the grid
   </a>
  </h2>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-   We’re going to set up the grid with three columns of data, each representing one of the functions of $t$ above. If you want a shortcut, you can find the data at:
-  </span>
-  <span>
-   <a class="link--impt" href="https://plot.ly/~mariahh/71" target="_blank">
-    https://plot.ly/~mariahh/71
-   </a>
-  </span>
-  <span>
-   .
-  </span>
+ <p class="push-half--ends">
+  We’re going to set up the grid with three columns of data, each representing one of the functions of $t$ above. If you want a shortcut, you can find the data at:
+  <a class="link--impt" href="https://plot.ly/~mariahh/71" target="_blank">
+   https://plot.ly/~mariahh/71
+  </a>
+  .
  </p>
  <table>
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       To start,
-      </span>
-      <span>
-       visit the Plotly workspace at
-      </span>
-      <span>
-      </span>
+     <p class="push-half--ends">
+      To start,
+      visit the Plotly workspace at
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       <a class="link--impt" href="/plot">
-        https://plot.ly/plot
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a class="link--impt" href="/plot">
+       https://plot.ly/plot
+      </a>
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Select
-      </span>
-      <span>
-       +NEW
-      </span>
-      <span>
-       ,
-      </span>
-      <span>
-       and then
-      </span>
-      <span>
-       Grid
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      Select
+      +NEW
+      ,
+      and then
+      Grid
+      .
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image10" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image10.png">
-        <img alt="How to make a 3d line chart online 10" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image10.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image10" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image10.png">
+       <img alt="How to make a 3d line chart online 10" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image10.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Select
-      </span>
-      <span>
-       3d line plots
-      </span>
-      <span>
-       from the
-      </span>
-      <span>
-       MAKE A PLOT
-      </span>
-      <span>
-       menu.
-      </span>
+     <p class="push-half--ends">
+      Select
+      3d line plots
+      from the
+      MAKE A PLOT
+      menu.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       The instructions in the sidebar explain the structure of the data we will need to produce.
-      </span>
+     <p class="push-half--ends">
+      The instructions in the sidebar explain the structure of the data we will need to produce.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image05.png">
-        <img alt="How to make a 3d line chart online 05" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image05.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image05.png">
+       <img alt="How to make a 3d line chart online 05" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image05.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       First, we will generate the $z(t)=t$ values using the
-      </span>
-      <span>
-       Generate x-values
-      </span>
-      <span>
-       option in the
-      </span>
-      <span>
-       DATA TOOLS
-      </span>
-      <span>
-       menu.
-      </span>
+     <p class="push-half--ends">
+      First, we will generate the $z(t)=t$ values using the
+      Generate x-values
+      option in the
+      DATA TOOLS
+      menu.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image04" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image04.png">
-        <img alt="How to make a 3d line chart online 04" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image04.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image04" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image04.png">
+       <img alt="How to make a 3d line chart online 04" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image04.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       We’re going to plot two periods of the helix. Since the helix described above has period $2\pi$, this means we want $t$ values between 0 and ~12.57. We generate 200 values.
-      </span>
+     <p class="push-half--ends">
+      We’re going to plot two periods of the helix. Since the helix described above has period $2\pi$, this means we want $t$ values between 0 and ~12.57. We generate 200 values.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image09" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image09.png">
-        <img alt="How to make a 3d line chart online 09" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image09.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image09" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image09.png">
+       <img alt="How to make a 3d line chart online 09" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image09.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       We can rename the column of data by clicking on the arrow next to the title “Linear scale”. Select
-      </span>
-      <span>
-       Rename
-      </span>
-      <span>
-       , and type in the label for your column.
-      </span>
+     <p class="push-half--ends">
+      We can rename the column of data by clicking on the arrow next to the title “Linear scale”. Select
+      Rename
+      , and type in the label for your column.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image02.png">
-        <img alt="How to make a 3d line chart online 02" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image02.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image02.png">
+       <img alt="How to make a 3d line chart online 02" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image02.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       To generate values for $x(t)$ and $y(t)$, we will again use Plotly’s built-in data tools. From the
-      </span>
-      <span>
-       DATA TOOLS
-      </span>
-      <span>
-       menu, select
-      </span>
-      <span>
-       Formulas f(x)
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      To generate values for $x(t)$ and $y(t)$, we will again use Plotly’s built-in data tools. From the
+      DATA TOOLS
+      menu, select
+      Formulas f(x)
+      .
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png">
-        <img alt="How to make a 3d line chart online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png">
+       <img alt="How to make a 3d line chart online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-       To generate the values for $x(t)$, we enter the function $\cos(x)$ in the sidebar (Plotly’s functions take the variables $x$ and $y$, so to apply the function, we set $x=t$). To tell Plotly which values we want to apply the cosine function to, we select
-      </span>
-      <span>
-       choose as x
-      </span>
-      <span>
-       just below the label “t” in the first column of the grid.
-      </span>
+     <p class="push-half--ends">
+      To generate the values for $x(t)$, we enter the function $\cos(x)$ in the sidebar (Plotly’s functions take the variables $x$ and $y$, so to apply the function, we set $x=t$). To tell Plotly which values we want to apply the cosine function to, we select
+      choose as x
+      just below the label “t” in the first column of the grid.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Click
-      </span>
-      <span>
-       Run
-      </span>
-      <span>
-       in the
-      </span>
-      <span>
-       Formulas f(x)
-      </span>
-      <span>
-       sidebar to generate the $x(t)$ values.
-      </span>
+     <p class="push-half--ends">
+      Click
+      Run
+      in the
+      Formulas f(x)
+      sidebar to generate the $x(t)$ values.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       We follow the same steps to produce the values for $y(t)$, entering the function $\sin(x)$ in the sidebar.
-      </span>
+     <p class="push-half--ends">
+      We follow the same steps to produce the values for $y(t)$, entering the function $\sin(x)$ in the sidebar.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png">
-        <img alt="How to make a 3d line chart online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png">
+       <img alt="How to make a 3d line chart online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image01.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Finally, select
-      </span>
-      <span>
-       3d line plots
-      </span>
-      <span>
-       from the
-      </span>
-      <span>
-       MAKE A PLOT
-      </span>
-      <span>
-       menu. Choose the column “t” as
-      </span>
-      <span>
-       z
-      </span>
-      <span>
-       , column “sin(t)” as
-      </span>
-      <span>
-       y
-      </span>
-      <span>
-       , and “cos(t)” as
-      </span>
-      <span>
-       x
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      Finally, select
+      3d line plots
+      from the
+      MAKE A PLOT
+      menu. Choose the column “t” as
+      z
+      , column “sin(t)” as
+      y
+      , and “cos(t)” as
+      x
+      .
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Click the blue button in the sidebar to create the plot.
-      </span>
+     <p class="push-half--ends">
+      Click the blue button in the sidebar to create the plot.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image07" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image07.png">
-        <img alt="How to make a 3d line chart online 07" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image07.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image07" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image07.png">
+       <img alt="How to make a 3d line chart online 07" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image07.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <h2 class="heading alpha push--ends text--center" id="step-2:-style-it">
   <a class="link--impt" href="#step-2:-style-it">
    Step 2: Style it
   </a>
  </h2>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <table>
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Your plot should look something like this.
-      </span>
+     <p class="push-half--ends">
+      Your plot should look something like this.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image08" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image08.png">
-        <img alt="How to make a 3d line chart online 08" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image08.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image08" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image08.png">
+       <img alt="How to make a 3d line chart online 08" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image08.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Open the
-      </span>
-      <span>
-       TRACES
-      </span>
-      <span>
-       popover in the toolbar.
-      </span>
+     <p class="push-half--ends">
+      Open the
+      TRACES
+      popover in the toolbar.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Using the
-      </span>
-      <span>
-       Style
-      </span>
-      <span>
-       tab you can change the style, thickness and color of the helix.
-      </span>
+     <p class="push-half--ends">
+      Using the
+      Style
+      tab you can change the style, thickness and color of the helix.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       To close the
-      </span>
-      <span>
-       Traces
-      </span>
-      <span>
-       popover, click on the “X” in the upper right.
-      </span>
+     <p class="push-half--ends">
+      To close the
+      Traces
+      popover, click on the “X” in the upper right.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image00.png">
-        <img alt="How to make a 3d line chart online 00" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image00.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image00.png">
+       <img alt="How to make a 3d line chart online 00" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image00.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       You can add a title by clicking on
-      </span>
-      <span>
-       Click to enter Plot title
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      You can add a title by clicking on
+      Click to enter Plot title
+      .
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image03.png">
-        <img alt="How to make a 3d line chart online 03" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image03.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image03.png">
+       <img alt="How to make a 3d line chart online 03" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image03.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Wait, there’s more! In the
-      </span>
-      <span>
-       LAYOUT
-      </span>
-      <span>
-       popover, we can change the
-      </span>
-      <span>
-       Scene color
-      </span>
-      <span>
-       , the margin color, the font of the title and more.
-      </span>
+     <p class="push-half--ends">
+      Wait, there’s more! In the
+      LAYOUT
+      popover, we can change the
+      Scene color
+      , the margin color, the font of the title and more.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image12" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image12.png">
-        <img alt="How to make a 3d line chart online 12" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image12.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image12" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image12.png">
+       <img alt="How to make a 3d line chart online 12" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image12.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Want to see the original points that generated your 3d line plot? Go back to the
-      </span>
-      <span>
-       TRACES
-      </span>
-      <span>
-       popover. Change the
-      </span>
-      <span>
-       Lines/Markers
-      </span>
-      <span>
-       to the dot with line.
-      </span>
+     <p class="push-half--ends">
+      Want to see the original points that generated your 3d line plot? Go back to the
+      TRACES
+      popover. Change the
+      Lines/Markers
+      to the dot with line.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image11" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image11.png">
-        <img alt="How to make a 3d line chart online 11" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image11.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image11" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image11.png">
+       <img alt="How to make a 3d line chart online 11" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image11.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Don’t forget to save your work by clicking on
-      </span>
-      <span>
-       SAVE
-      </span>
-      <span>
-       in the toolbar above your graph.
-      </span>
+     <p class="push-half--ends">
+      Don’t forget to save your work by clicking on
+      SAVE
+      in the toolbar above your graph.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Once you’ve saved your graph, you can use the Share popover to add collaborators (they’ll have access to both your graph and your data).
-      </span>
+     <p class="push-half--ends">
+      Once you’ve saved your graph, you can use the Share popover to add collaborators (they’ll have access to both your graph and your data).
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       If you make your graph public, you can share using Facebook, Twitter or Google+. Need help embedding your graph in your website or blog? We have a
-      </span>
-      <span>
-       <a class="link--impt" href="/how-to-embed-plotly-graphs-in-websites/">
-        tutorial
-       </a>
-      </span>
-      <span>
-       for that.
-      </span>
+     <p class="push-half--ends">
+      If you make your graph public, you can share using Facebook, Twitter or Google+. Need help embedding your graph in your website or blog? We have a
+      <a class="link--impt" href="/how-to-embed-plotly-graphs-in-websites/">
+       tutorial
+      </a>
+      for that.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image06" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image06.png">
-        <img alt="How to make a 3d line chart online 06" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image06.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image06" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image06.png">
+       <img alt="How to make a 3d line chart online 06" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image06.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Don’t forget, your graph is
-      </span>
-      <span>
-       interactive
-      </span>
-      <span>
-       ! Using your mouse, you can drag the helix to change perspective.
-      </span>
+     <p class="push-half--ends">
+      Don’t forget, your graph is
+      interactive
+      ! Using your mouse, you can drag the helix to change perspective.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image13" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image13.png">
-        <img alt="How to make a 3d line chart online 13" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image13.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image13" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image13.png">
+       <img alt="How to make a 3d line chart online 13" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-line-chart-online/image13.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <table>
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-       Love what you made? You can
-      </span>
-      <span>
-       <a class="link--impt" href="/share-print/">
-        share, download
-       </a>
-      </span>
-      <span>
-       and
-      </span>
-      <span>
-       <a class="link--impt" href="/embed/">
-        embed
-       </a>
-      </span>
-      <span>
-      </span>
-      <span>
-       your plots.
-      </span>
+     <p class="push-half--ends">
+      Love what you made? You can
+      <a class="link--impt" href="/share-print/">
+       share, download
+      </a>
+      and
+      <a class="link--impt" href="/embed/">
+       embed
+      </a>
+      your plots.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       You can find the graph used in this tutorial, and the underlying data at:
-      </span>
+     <p class="push-half--ends">
+      You can find the graph used in this tutorial, and the underlying data at:
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       <a class="link--impt" href="https://plot.ly/~mariahh/72" target="_blank">
-        https://plot.ly/~mariahh/72
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a class="link--impt" href="https://plot.ly/~mariahh/72" target="_blank">
+       https://plot.ly/~mariahh/72
+      </a>
      </p>
     </td>
    </tr>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
 

@@ -1,600 +1,330 @@
 
  <div>
-  <p>
-   <span>
-   </span>
+  <p class="push-half--ends">
   </p>
  </div>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-   Most graphs have two axes, referred to often as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A three
-  </span>
-  <span>
-   -dimensional
-  </span>
-  <span>
-   graph lets you introduce a third axis, typically called the $z$ axis, and can help you understand the relationship between three variables.
-  </span>
-  <span>
-   Three-dimensional
-  </span>
-  <span>
-   scatter plots are best when you have at least three features that you want to highlight in your graph. Using color and size you can highlight two additional features in your graph. Plotly’s interactive tools also let you explore your plot by zooming, hovering, and rotating your plot.
-  </span>
+ <p class="push-half--ends">
+  Most graphs have two axes, referred to often as the $x$ axis and the $y$ axis. We use a graph to understand the relationship between these two variables. A three
+  -dimensional
+  graph lets you introduce a third axis, typically called the $z$ axis, and can help you understand the relationship between three variables.
+  Three-dimensional
+  scatter plots are best when you have at least three features that you want to highlight in your graph. Using color and size you can highlight two additional features in your graph. Plotly’s interactive tools also let you explore your plot by zooming, hovering, and rotating your plot.
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-   For this tutorial, we’re
-  </span>
-  <span>
-   using the “Prestige”
-  </span>
-  <span>
-   dataset
-  </span>
-  <span>
-   from R’s
-  </span>
-  <span>
-   “car” package
-  </span>
-  <span>
-   . The data set contains information about status (quantified with the Pineo-Porter index), salary, years of schooling, and gender for job categories in the 1970s. You can learn more
-  </span>
-  <span>
-   <a class="link--impt" href="http://www.google.com/url?q=http%3A%2F%2Fwww.princeton.edu%2F~otorres%2FRegression101R.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGnngSNcRfFqh9i5dkV9HfUBXejmg" target="_blank">
-    here
-   </a>
-  </span>
-  <span>
-   . If you follow along with the R tutorial at the link, you can take advantage of Plotly’s awesome
-  </span>
-  <span>
-   <a class="link--impt" href="http://www.google.com/url?q=http%3A%2F%2Fvimeo.com%2F94000688&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFYxRX7GRv_AdrSx--KeQapABbUA" target="_blank">
-    styling
-   </a>
-  </span>
-  <span>
-   , collaboration and
-  </span>
-  <span>
-   <a class="link--impt" href="/share-print/">
-    sharing
-   </a>
-  </span>
-  <span>
-   tools. If you want to know about integrating Plotly with R, we have
-  </span>
-  <span>
-   <a class="link--impt" href="/r/">
-    excellent
-   </a>
-  </span>
-  <span>
-   <a class="link--impt" href="/r/">
-    documentation
-   </a>
-  </span>
-  <span>
-   !
-  </span>
+ <p class="push-half--ends">
+  For this tutorial, we’re
+  using the “Prestige”
+  dataset
+  from R’s
+  “car” package
+  . The data set contains information about status (quantified with the Pineo-Porter index), salary, years of schooling, and gender for job categories in the 1970s. You can learn more
+  <a class="link--impt" href="http://www.google.com/url?q=http%3A%2F%2Fwww.princeton.edu%2F~otorres%2FRegression101R.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGnngSNcRfFqh9i5dkV9HfUBXejmg" target="_blank">
+   here
+  </a>
+  . If you follow along with the R tutorial at the link, you can take advantage of Plotly’s awesome
+  <a class="link--impt" href="http://www.google.com/url?q=http%3A%2F%2Fvimeo.com%2F94000688&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEFYxRX7GRv_AdrSx--KeQapABbUA" target="_blank">
+   styling
+  </a>
+  , collaboration and
+  <a class="link--impt" href="/share-print/">
+   sharing
+  </a>
+  tools. If you want to know about integrating Plotly with R, we have
+  <a class="link--impt" href="/r/">
+   excellent
+  </a>
+  <a class="link--impt" href="/r/">
+   documentation
+  </a>
+  !
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <h2 class="heading alpha push--ends text--center" id="step-1:-set-up-the-grid">
   <a class="link--impt" href="#step-1:-set-up-the-grid">
    Step 1: Set up the grid
   </a>
  </h2>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <table>
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-       For this tutorial, go to:
-      </span>
-      <span>
-       <a class="link--impt" href="https://plot.ly/~mariahh/85" target="_blank">
-        https://plot.ly/~mariahh/85
-       </a>
-      </span>
-      <span>
-       . Click on
-      </span>
-      <span>
-       Fork and edit
-      </span>
-      <span>
-       to open this data set in your workspace.
-      </span>
+     <p class="push-half--ends">
+      For this tutorial, go to:
+      <a class="link--impt" href="https://plot.ly/~mariahh/85" target="_blank">
+       https://plot.ly/~mariahh/85
+      </a>
+      . Click on
+      Fork and edit
+      to open this data set in your workspace.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Don’t forget to save the file!
-      </span>
+     <p class="push-half--ends">
+      Don’t forget to save the file!
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image01.png">
-        <img alt="How to make a 3d scatter plot online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image01.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image01.png">
+       <img alt="How to make a 3d scatter plot online 01" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image01.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-       Select
-      </span>
-      <span>
-       3d scatter plots
-      </span>
-      <span>
-       from the
-      </span>
-      <span>
-       MAKE A PLOT
-      </span>
-      <span>
-       menu. We’re going to compare education, income and prestige.
-      </span>
+     <p class="push-half--ends">
+      Select
+      3d scatter plots
+      from the
+      MAKE A PLOT
+      menu. We’re going to compare education, income and prestige.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       We’ll put “income (1971)” on the
-      </span>
-      <span>
-       x
-      </span>
-      <span>
-       $ axis by selecting
-      </span>
-      <span>
-       choose as x
-      </span>
-      <span>
-       and “education” (this is the number of years of education required for a certain job) on the
-      </span>
-      <span>
-       y
-      </span>
-      <span>
-       axis by selecting
-      </span>
-      <span>
-       choose as y
-      </span>
-      <span>
-       . Finally, we put “Pineo-Porter prestige score” on the
-      </span>
-      <span>
-       z
-      </span>
-      <span>
-       axis by selecting
-      </span>
-      <span>
-       choose as z
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      We’ll put “income (1971)” on the
+      $x$
+      axis by selecting
+      choose as x
+      and “education” (this is the number of years of education required for a certain job) on the
+      y
+      axis by selecting
+      choose as y
+      . Finally, we put “Pineo-Porter prestige score” on the
+      z
+      axis by selecting
+      choose as z
+      .
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image05.png">
-        <img alt="How to make a 3d scatter plot online 05" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image05.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image05.png">
+       <img alt="How to make a 3d scatter plot online 05" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image05.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       We can assign color as a variable for “gender” in our 3d plot with the
-      </span>
-      <span>
-       Group by
-      </span>
-      <span>
-       option, located in the sidebar. Select
-      </span>
-      <span>
-       choose as G
-      </span>
-      <span>
-       in the column labeled “gender”.
-      </span>
+     <p class="push-half--ends">
+      We can assign color as a variable for “gender” in our 3d plot with the
+      Group by
+      option, located in the sidebar. Select
+      choose as G
+      in the column labeled “gender”.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Click the blue plot button, in the sidebar, to create the chart.
-      </span>
+     <p class="push-half--ends">
+      Click the blue plot button, in the sidebar, to create the chart.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image08" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image08.png">
-        <img alt="How to make a 3d scatter plot online 08" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image08.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image08" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image08.png">
+       <img alt="How to make a 3d scatter plot online 08" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image08.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <h2 class="heading alpha push--ends text--center" id="step-2:-style-it">
   <a class="link--impt" href="#step-2:-style-it">
    Step 2: Style it
   </a>
  </h2>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <table>
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Your plot should look something like this.
-      </span>
+     <p class="push-half--ends">
+      Your plot should look something like this.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image06" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image06.png">
-        <img alt="How to make a 3d scatter plot online 06" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image06.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image06" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image06.png">
+       <img alt="How to make a 3d scatter plot online 06" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image06.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Open the
-      </span>
-      <span>
-       TRACES
-      </span>
-      <span>
-       popover in the toolbar.
-      </span>
+     <p class="push-half--ends">
+      Open the
+      TRACES
+      popover in the toolbar.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Using the
-      </span>
-      <span>
-       Style
-      </span>
-      <span>
-       tab you can change the style, thickness, and color of the data points. Here we’ve made the jobs dominated by women blue and those dominated by men green.
-      </span>
+     <p class="push-half--ends">
+      Using the
+      Style
+      tab you can change the style, thickness, and color of the data points. Here we’ve made the jobs dominated by women blue and those dominated by men green.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       To close the
-      </span>
-      <span>
-       Traces
-      </span>
-      <span>
-       popover, click the
-      </span>
-      <span>
-       X
-      </span>
-      <span>
-       in the upper right.
-      </span>
+     <p class="push-half--ends">
+      To close the
+      Traces
+      popover, click the
+      X
+      in the upper right.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image03.png">
-        <img alt="How to make a 3d scatter plot online 03" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image03.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image03.png">
+       <img alt="How to make a 3d scatter plot online 03" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image03.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       You can add a title by clicking on
-      </span>
-      <span>
-       Click to enter Plot title
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      You can add a title by clicking on
+      Click to enter Plot title
+      .
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       You can change the font and size of the title and other annotations using the
-      </span>
-      <span>
-       LAYOUT
-      </span>
-      <span>
-       popover
-      </span>
-      <span>
-       , and
-      </span>
-      <span>
-       Global Font
-      </span>
-      <span>
-       .
-      </span>
+     <p class="push-half--ends">
+      You can change the font and size of the title and other annotations using the
+      LAYOUT
+      popover
+      , and
+      Global Font
+      .
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image07" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image07.png">
-        <img alt="How to make a 3d scatter plot online 07" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image07.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image07" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image07.png">
+       <img alt="How to make a 3d scatter plot online 07" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image07.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Still in the
-      </span>
-      <span>
-       LAYOUT
-      </span>
-      <span>
-       popover, we can change the
-      </span>
-      <span>
-       Scene color
-      </span>
-      <span>
-       , the margin color, and more.
-      </span>
+     <p class="push-half--ends">
+      Still in the
+      LAYOUT
+      popover, we can change the
+      Scene color
+      , the margin color, and more.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image02.png">
-        <img alt="How to make a 3d scatter plot online 02" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image02.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image02.png">
+       <img alt="How to make a 3d scatter plot online 02" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image02.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Don’t forget to save your work by clicking on
-      </span>
-      <span>
-       SAVE
-      </span>
-      <span>
-       in the toolbar above your graph.
-      </span>
+     <p class="push-half--ends">
+      Don’t forget to save your work by clicking on
+      SAVE
+      in the toolbar above your graph.
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Once you’ve saved your graph, you can use the
-      </span>
-      <span>
-       Share
-      </span>
-      <span>
-       popover to add collaborators (they’ll have access to both your graph and your data).
-      </span>
+     <p class="push-half--ends">
+      Once you’ve saved your graph, you can use the
+      Share
+      popover to add collaborators (they’ll have access to both your graph and your data).
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       If you make your graph public, you can share it via Facebook, Twitter or Google+. Need help embedding your graph in a website or blog? We have a
-      </span>
-      <span>
-       <a class="link--impt" href="/how-to-embed-plotly-graphs-in-websites/">
-        tutorial
-       </a>
-      </span>
-      <span>
-       for that.
-      </span>
+     <p class="push-half--ends">
+      If you make your graph public, you can share it via Facebook, Twitter or Google+. Need help embedding your graph in a website or blog? We have a
+      <a class="link--impt" href="/how-to-embed-plotly-graphs-in-websites/">
+       tutorial
+      </a>
+      for that.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image00.png">
-        <img alt="How to make a 3d scatter plot online 00" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image00.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image00.png">
+       <img alt="How to make a 3d scatter plot online 00" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image00.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
  <h3 class="heading alpha push--ends text--center" id="step-3:-it’s-interactive!">
   <a class="link--impt" href="#step-3:-it’s-interactive!">
@@ -605,118 +335,67 @@
   <tbody>
    <tr>
     <td>
-     <p>
-      <span>
-       Your 3d scatter plot is interactive! Different views help us understand different information contained in the data set.
-      </span>
-     </p>
-     <p>
-      <span>
-      </span>
-     </p>
-     <p>
-      <span>
-       In this view, we can see information about prestige and years of schooling. We can see that the number of years of schooling is correlated to
-      </span>
-      <span>
-       prestige
-      </span>
-      <span>
-       . This relationship appears to hold true for jobs dominated by both men (in green) and women (in blue).
-      </span>
+     <p class="push-half--ends">
+      Your 3d scatter plot is interactive! Different views help us understand different information contained in the data set.
+            In this view, we can see information about prestige and years of schooling. We can see that the number of years of schooling is correlated to
+            prestige. This relationship appears to hold true for jobs dominated by both men (in green) and women (in blue).
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image04" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image04.png">
-        <img alt="How to make a 3d scatter plot online 04" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image04.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image04" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image04.png">
+       <img alt="How to make a 3d scatter plot online 04" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image04.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
    <tr>
     <td>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-      </span>
+     <p class="push-half--ends">
      </p>
-     <p>
-      <span>
-       Changing the view allows us to compare salary and schooling. In this view we see clearly that jobs dominated by women tend to be lower wage jobs.
-      </span>
+     <p class="push-half--ends">
+      Changing the view allows us to compare salary and schooling. In this view we see clearly that jobs dominated by women tend to be lower wage jobs.
      </p>
     </td>
     <td>
-     <p>
-      <span>
-       <a data-lightbox="image09" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image09.png">
-        <img alt="How to make a 3d scatter plot online 09" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image09.png" title=""/>
-       </a>
-      </span>
+     <p class="push-half--ends">
+      <a data-lightbox="image09" href="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image09.png">
+       <img alt="How to make a 3d scatter plot online 09" src="/static/learn/images/web_app_tutorials/how-to-make-a-3d-scatter-plot-online/image09.png" title=""/>
+      </a>
      </p>
     </td>
    </tr>
-   <p>
-    <span>
-    </span>
+   <p class="push-half--ends">
    </p>
-   <p>
-    <span>
-     Love what you made? You can
-    </span>
-    <span>
-     <a class="link--impt" href="/share-print/">
-      share, download
-     </a>
-    </span>
-    <span>
-     and
-    </span>
-    <span>
-     <a class="link--impt" href="/embed/">
-      embed
-     </a>
-    </span>
-    <span>
-    </span>
-    <span>
-     your plots.
-    </span>
+   <p class="push-half--ends">
+    Love what you made? You can
+    <a class="link--impt" href="/share-print/">
+     share, download
+    </a>
+    and
+    <a class="link--impt" href="/embed/">
+     embed
+    </a>
+    your plots.
    </p>
-   <p>
-    <span>
-    </span>
+   <p class="push-half--ends">
    </p>
-   <p>
-    <span>
-     You can find the graph used in this tutorial, and the underlying data at:
-    </span>
+   <p class="push-half--ends">
+    You can find the graph used in this tutorial, and the underlying data at:
    </p>
-   <p>
-    <span>
-    </span>
+   <p class="push-half--ends">
    </p>
-   <p>
-    <span>
-     <a class="link--impt" href="https://plot.ly/~mariahh/90" target="_blank">
-      https://plot.ly/~mariahh/90
-     </a>
-    </span>
+   <p class="push-half--ends">
+    <a class="link--impt" href="https://plot.ly/~mariahh/90" target="_blank">
+     https://plot.ly/~mariahh/90
+    </a>
    </p>
   </tbody>
  </table>
- <p>
-  <span>
-  </span>
+ <p class="push-half--ends">
  </p>
 
