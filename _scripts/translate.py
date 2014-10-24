@@ -189,16 +189,18 @@ def translate_a_href(soup, dir_url,
                 is_translated = True
                 break
         # Case *: handle Google redirects
-        google_start = 'https://www.google.com/url?q='
+        google_starts = ('https://www.google.com/url?q=',
+                         'http://www.google.com/url?q=')
         google_end = '&'  # TODO could this be more strict?
-        if a['href'].startswith(google_start):
-            status.log(NAME, ('... href has a google redirect'))
-            _s = a['href'].find(google_start) + len(google_start)
-            _e = a['href'].find(google_end)
-            a['href'] = (
-                a['href'][_s:_e].replace('%3A', ':')
-                                .replace('%2F', '/')
-            )
+        for google_start in google_starts:
+            if a['href'].startswith(google_start):
+                status.log(NAME, ('... href has a google redirect'))
+                _s = a['href'].find(google_start) + len(google_start)
+                _e = a['href'].find(google_end)
+                a['href'] = (
+                    a['href'][_s:_e].replace('%3A', ':')
+                                    .replace('%2F', '/')
+                )
         # Case 2: <a> to url location (translated to relative domain)
         href_starts = ['https://plot.ly/', 'plot.ly/', 'http://plot.ly/', '/']
         for href_start in href_starts:

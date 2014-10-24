@@ -1,5 +1,5 @@
 import bs4
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag, NavigableString
 import os
 
 import status
@@ -37,7 +37,8 @@ def strip_contents(tag):
 
 # Insert tag inside an other
 # source: http://stackoverflow.com/a/21356230/4068492
-def insert(insertend, insert_tag, insert_attrs, insert_content, replace=True):
+def inserter(insertend, insert_tag, insert_attrs,
+             insert_content, replace=True):
     _soup = BeautifulSoup()
     to_insert = _soup.new_tag(insert_tag, **insert_attrs)
     to_insert.string = insert_content
@@ -45,6 +46,35 @@ def insert(insertend, insert_tag, insert_attrs, insert_content, replace=True):
         strip_contents(insertend)
     insertend.append(to_insert)
     return
+
+
+# Get inner contents from a content list:
+# set tag_ignore to retrieve nested inner content,
+# set string_ignore to ignore some strings.
+def get_inner_contents(contents, tag_ignore=False, string_ignore=False):
+    inner_contents = []
+    for content in contents:
+        if isinstance(content, Tag):
+            if content.name == tag_ignore:
+                inner_contents += get_inner_contents(
+                    content.contents,
+                    tag_ignore=tag_ignore,
+                    string_ignore=string_ignore)
+            else:
+                inner_contents += [content]
+        elif isinstance(content, NavigableString):
+            if content == string_ignore:
+                continue
+            else:
+                inner_contents += [content]
+    return inner_contents
+
+
+# Insert inner contents in tag form a list
+def insert_inner_contents(tag, inner_contents):
+    for i, inner_content in enumerate(inner_contents):
+        tag.insert(i, inner_content)
+    return tag
 
 # -------------------------------------------------------------------------------
 
@@ -68,6 +98,29 @@ def strip(body):
     return body
 
 # -------------------------------------------------------------------------------
+
+
+# Format paragraph: remove <span>, add class
+def format_paragraphs(body):
+    P = body.findAll('p')
+    p_class = 'push-half--ends'
+    for p in P:
+        status.log(NAME, ('Paragraph found!'))
+        # get new inner contents, strip old and insert new
+        inner_contents = get_inner_contents(p.contents,
+                                            tag_ignore='span',
+                                            string_ignore=u'\n')
+        strip_contents(p)
+        insert_inner_contents(p, inner_contents)
+        status.log(NAME, (
+            "... formatting it"
+        ).format(p_class))
+        # -> add class to <p>
+        p['class'] = p_class
+        status.log(NAME, (
+            "... add class '{}'"
+        ).format(p_class))
+    return body
 
 
 # Add lightbox anchors to images
@@ -95,6 +148,8 @@ def add_lightbox(body):
 # -> add class to headings
 def add_header_anchors(body):
     H_str = ['h1', 'h2', 'h3', 'h4']
+    h_class = "heading alpha push--ends text--center"
+    a_class = "link--impt"
     for h_str in H_str:
         H = body.findAll(h_str)
         insert_tag = 'a'
@@ -115,15 +170,13 @@ def add_header_anchors(body):
             ).format(_id.encode('utf8')))
             # Add <a href= > around text
             # -> add class to <a>
-            _href = '#' + _id
-            _class = "link--impt"
-            insert_attrs = {'href': _href, 'class': _class}
-            insert(h, insert_tag, insert_attrs, text)
+            a_href = '#' + _id
+            insert_attrs = {'href': a_href, 'class': a_class}
+            inserter(h, insert_tag, insert_attrs, text)
             status.log(NAME, (
                 "... insert <a href='{}' class='{}'>"
-            ).format(_href.encode('utf8'), _class.encode('utf8')))
+            ).format(a_href.encode('utf8'), a_class.encode('utf8')))
             # -> add class to <h{}>
-            h_class = "heading alpha push--ends text--center"
             h['class'] = h_class
             status.log(NAME, (
                 "... add class '{}' to header"
@@ -192,5 +245,6 @@ def update_body(body):
     body = add_lightbox(body)
     body = add_header_anchors(body)
     body = get_display_latex_content(body)
+    body = format_paragraphs(body)
     body = prettify(body)
     return body
