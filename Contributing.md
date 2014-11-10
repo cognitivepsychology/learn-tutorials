@@ -221,13 +221,22 @@ cases](#before-all-cases).
 See this [tutorial](https://help.github.com/articles/creating-a-pull-request) on
 how to make a pull request on Github.
 
-- If only minor modifications were made (like in [case
-  A](#case-a-update-content-of-an-existing-page) or [case
-  B](#case-b-update-meta-information-of-an-existing-page)), you can merge the
-  changes right away. 
+- Mention a few potential reviewers and wait for a review before merging.
 
-- If major modifications were made, mention a few potential reviewers and wait
-  for a review before merging.
+- After merging your pull request, delete the online branch (by clicking on the *Delete Branch* button on the PR page) and sync your local repository with:
+
+```
+git checkout master
+git pull origin master
+```
+
+Then, delete the merged branch with
+
+```
+git branch -d my-branch
+```
+
+cleaning up your repository.
 
 #### 3. Clone or pull `streambed/` 
 
@@ -256,7 +265,7 @@ git pull origin master
 
 #### 4. Make a new branch in `streambed/`
 
-> For completeness, call this new branch "sync-learn-tutorials".
+> For completeness, call this new branch "sync-learn-tutorials"
 
 Form `streambed/`, run
 
@@ -278,26 +287,24 @@ git checkout -b sync-learn-tutorials
 
 #### 4. Sync published `learn-tutorials/` content with `streambed/` !
 
-From `learn-tutorials/`, run
+From `learn-tutorials/`, run 
 
 ```
-git checkout master
-git pull origin master
 make push-to-streambed folder=web_app_tutorials
 ```
 
 where "web_app_tutorials" is an example of a content directory name.
 
-If you made modifications in more than one content directory, run `$ make
+If you made modifications in more than one content directory, run `make
 push-to-streambed` in sequence with the appropriate `folder` tag.
 
 #### 5. Preview/Test new or updated content
 
 **Either**:
 
-Use the stage environment by:
+Use the stage environment:
 
-1. Committing your modifications and pushing to the online repo:
+- Commit your modifications and pushing to the online repo:
 
 From `streambed/`, run
 
@@ -307,20 +314,27 @@ git commit -m "a commit message describing the modifications made"
 git push origin sync-learn-tutorials
 ```
 
-2. Deploying to stage, by typing "plot, deploy sync-learn-tutorials to stage" in the Plotly
-   Hipchat room.
+- Deploy to stage, by typing "plot, deploy sync-learn-tutorials to stage" in the Plotly or Streambed Hipchat room.
+
+- Then, preview content in the https://stage.plot.ly/ domain.
 
 **OR**:
 
-- Use a local instance of plotly (the installation guidelines are
-  [here](https://github.com/plotly/deployment/tree/ansible#local-vagrant-development-environment)).
+Use a local instance of plotly (the installation guidelines are [here](https://github.com/plotly/deployment/tree/ansible#local-vagrant-development-environment)).
+
+- To boot your local instance of plotly, run `vagrant up` in your `deploy/` directory. Note that `vagrant halt` halts it. 
+
+- Next open https://local.plot.ly . 
+
+- If you see an error run `./boom` in your `deploy/` directory.
+
+- If you are still seeing an error, run `./rewire` in your `deploy` directory.
+
+- Then, preview content in the https://local.plot.ly/ domain.
 
 
 #### 6. Make a pull request on online `learn-tutorials/` repository
 
-See this [tutorial](https://help.github.com/articles/creating-a-pull-request) on
-how to make a pull request on Github.
-
-- Mention a few potential reviewers and wait for a review before merging.
+- As in [step 2](#2-make-a-pull-request-on-the-online-learn-tutorials-repository), mention a few potential reviewers and wait for a review before merging.
 
 #### 7. Deploy to prod! 
