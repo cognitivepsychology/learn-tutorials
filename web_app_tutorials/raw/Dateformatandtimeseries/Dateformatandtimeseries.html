@@ -1,1 +1,666 @@
-<html><head><title>Date format and time series</title><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">@import url('https://themes.googleusercontent.com/fonts/css?kit=dB3GuSCq0f_LRNaO3opFPA');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c9{border-bottom-width:0pt;border-top-style:solid;width:468pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c12{border-bottom-width:0pt;border-top-style:solid;width:112pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c13{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c0{line-height:1.0;padding-top:0pt;widows:2;orphans:2;height:11pt;text-align:left;direction:ltr;padding-bottom:0pt}.c21{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:center;direction:ltr;padding-bottom:0pt}.c2{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:left;direction:ltr;padding-bottom:0pt}.c3{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:normal}.c15{line-height:1.0;padding-top:0pt;text-align:left;direction:ltr;padding-bottom:0pt}.c10{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:bold}.c14{padding-top:10pt;widows:2;orphans:2;direction:ltr;page-break-after:avoid}.c8{color:#1d3b84;font-size:18pt;font-family:"Open Sans";font-weight:normal}.c4{widows:2;orphans:2;height:11pt;direction:ltr}.c16{border-collapse:collapse;margin-left:auto}.c19{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c22{widows:2;orphans:2;direction:ltr}.c6{margin-right:auto;border-collapse:collapse}.c7{color:#1155cc;text-decoration:underline}.c11{color:inherit;text-decoration:inherit}.c25{color:#1d3b84;font-size:48pt}.c1{font-size:12pt;font-family:"Open Sans"}.c20{color:#447adb;font-weight:bold}.c18{font-size:11pt;font-family:"Arial"}.c23{page-break-after:avoid}.c24{font-family:"Open Sans"}.c5{height:0pt}.c26{color:#434343}.c27{line-height:1.0}.c17{height:11pt}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}</style></head><body class="c19"><div><p class="c4"><span></span></p></div><h1 class="c22 c23 c27"><a name="h.69knwpd1our8"></a><span class="c24 c25">Date format and time series</span></h1><p class="c4"><span></span></p><p class="c22"><span class="c1">Making a graph with dates and times?</span><span class="c1">&nbsp;If you&rsquo;re uploading data into the grid, our parsing algorithm checks your data against more than 400 date formats to find the best match, even when your dates are in several styles. It takes a bit of extra time, but we think you&rsquo;ll be happy with the results. Read more below to learn how to enter dates and times in the grid, and how to change the format displayed on your graph.</span></p><p class="c4"><span class="c1"></span></p><p class="c22"><span class="c1">Plotly&rsquo;s date format is `yyyy-mm-dd HH:MM:SS.ssssss`. You can enter this format directly, or depending on your data entry method, use our parsers to convert for you. </span></p><p class="c4"><span class="c1"></span></p><p class="c22"><span class="c1">For our API users, we have guides for time series in </span><span class="c7 c1"><a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fmatlab%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGik0eWaWGqooa3JVnDUM5dawYzNg">MATLAB</a></span><span class="c1">, </span><span class="c7 c1"><a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fpython%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNE8bAo8y3ZCeqFjZhSdrjd3TwzfoA">Python</a></span><span class="c1">,</span><span class="c1">&nbsp;and </span><span class="c1 c7"><a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHSQATbxdxaGBEFooE0QrUAmW_NPA">R</a></span><span class="c1">. If you&rsquo;re using Python, we accept `</span><span class="c1">datetime.date</span><span class="c1">` and `</span><span class="c1">datetime.datetime</span><span class="c1">` formats. For </span><span class="c1">plotly.js</span><span class="c1">, we support JavaScript Date objects. Using MATLAB, you can specify the date format directly so our parser knows what to do. In R, we support R&rsquo;s classes </span><span class="c1">Date</span><span class="c1">, POSIXlt and POSIXct in our ggplot2 to Plotly conversion. Scroll to the bottom for links to examples. </span></p><p class="c4"><span class="c1 c26"></span></p><h2 class="c22 c23"><a name="h.ollv6t9bey0g"></a><span class="c8">Entering dates and times in Plotly&rsquo;s grid</span></h2><a href="#" name="f1f59fa64d1015b60fec66d67f8fa03e4f1f3a37"></a><a href="#" name="0"></a><table cellpadding="0" cellspacing="0" class="c6"><tbody><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">To enter dates directly in the grid, you&rsquo;ll need to use the format</span></p><p class="c0"><span class="c3 c1"></span></p><p class="c21"><span class="c3 c1">yyyy-mm-dd HH:MM:SS.ssssss</span></p><p class="c21 c17"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">You can truncate the fractional seconds to any number of digits. All other truncations require you to keep entire fields. </span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">Note that the hour must be a number between 00 and 23, with hours 12 through 23 reserved for PM.</span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">Your entry must include the four-digit year.</span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><a href="#" name="f7d0dbcd3cd5df761899190c350ab63261fad2ee"></a><a href="#" name="1"></a><table cellpadding="0" cellspacing="0" class="c16"><tbody><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c1 c10">Correct</span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c10 c1">Incorrect</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm</span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-m</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yy-mm</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-dd HH</span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-d</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-dd H:MM</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-dd HH:MM:SS.sss</span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy-mm-dd HH:MM:S</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">yyyy/mm </span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">mm/yyyy</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c1 c3">mm-dd</span></p></td></tr><tr class="c5"><td class="c12" colspan="1" rowspan="1"><p class="c15 c17"><span class="c3 c1"></span></p></td><td class="c12" colspan="1" rowspan="1"><p class="c15"><span class="c3 c1">HH:MM:SS</span></p></td></tr></tbody></table><p class="c0"><span class="c3 c1"></span></p></td></tr></tbody></table><p class="c4"><span></span></p><h2 class="c22 c23"><a name="h.htqo7hab6s0y"></a><span class="c8">Importing files with dates and times</span></h2><p class="c4"><span></span></p><a href="#" name="ba6c76c40e5917102603f9aab667f58617f22820"></a><a href="#" name="2"></a><table cellpadding="0" cellspacing="0" class="c6"><tbody><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">Uploading a data set into the grid from your computer, Google Drive, or Dropbox?</span><span class="c3 c1">&nbsp;Plotly will parse the data for you into our native format so you&rsquo;re ready to customize your graph.</span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 197.33px;"><img alt="Screen Shot 2014-11-05 at 1.53.34 PM.png" src="images/image00.png" style="width: 298.00px; height: 197.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr></tbody></table><h2 class="c14"><a name="h.1ix2memx4mri"></a><span class="c8">Custom formats for your graph</span></h2><p class="c4"><span></span></p><p class="c4"><span></span></p><a href="#" name="3f86f2106cb32d2311fbe27b3a6f6adbfce337ef"></a><a href="#" name="3"></a><table cellpadding="0" cellspacing="0" class="c6"><tbody><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">When you make a graph in Plotly with dates and times, the default labeling picks spacing that fits the graph. Here our dates included both year and month, but as you can see, Plotly displays years on the $x$ axis. </span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 194.67px;"><img alt="Screen Shot 2014-11-05 at 2.10.20 PM.png" src="images/image01.png" style="width: 298.00px; height: 194.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">To customize, we select </span><span class="c1 c20">AXES</span><span class="c3 c1">&nbsp;in the toolbar. In the popover, select the axis you wish to modify.</span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 142.67px;"><img alt="Screen Shot 2014-11-05 at 2.17.38 PM.png" src="images/image04.png" style="width: 298.00px; height: 142.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">Select the </span><span class="c1 c20">Labels</span><span class="c3 c1">&nbsp;tab to reveal options for a &ldquo;Custom date format&rdquo; and &ldquo;Hover format&rdquo;.</span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">We use the time format </span><span class="c7 c1"><a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fmbostock%2Fd3%2Fwiki%2FTime-Formatting&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEM08vrYM1U9bZHYTLpqpGXEWqFrA">here</a></span><span class="c1">. For example, in &ldquo;Custom date format&rdquo;, `</span><span class="c1">%b</span><span class="c1">&nbsp;</span><span class="c1">%Y</span><span class="c3 c1">` tells Plotly to display an abbreviated month and the year with century.</span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">One extra option: </span><span class="c1">`</span><span class="c1">%{n}f</span><span class="c1">` </span><span class="c1">allows you to show fractional seconds, where </span><span class="c1">&ldquo;</span><span class="c1">n</span><span class="c1">&rdquo;</span><span class="c1">&nbsp;tells us the number of digits to include.</span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 277.33px;"><img alt="Screen Shot 2014-11-05 at 2.22.21 PM.png" src="images/image02.png" style="width: 298.00px; height: 277.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">The &ldquo;Hover format&rdquo;, `</span><span class="c1">%B %Y</span><span class="c3 c1">`, tells Plotly to show the full month name and year with century when using the hover feature to explore the data. </span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 194.67px;"><img alt="Screen Shot 2014-11-05 at 2.21.48 PM.png" src="images/image05.png" style="width: 298.00px; height: 194.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr><tr class="c5"><td class="c13" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c1">To change the number of values displayed on the time axis, use the </span><span class="c1 c20">Ticks</span><span class="c1">&nbsp;tab in the </span><span class="c1 c20">Axes</span><span class="c3 c1">&nbsp;popover.</span></p><p class="c0"><span class="c3 c1"></span></p><p class="c2"><span class="c3 c1">Pick a &ldquo;Max #&rdquo; of dates to display, and Plotly automatically finds the greatest lower bound to be evenly spaced along the axis.</span></p></td><td class="c13" colspan="1" rowspan="1"><p class="c2"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 192.00px;"><img alt="" src="images/image03.png" style="width: 298.00px; height: 192.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span></p></td></tr></tbody></table><p class="c4"><span></span></p><a href="#" name="1aebe24dda1b56316fca09844ec7bf63e4290b0d"></a><a href="#" name="4"></a><table cellpadding="0" cellspacing="0" class="c6"><tbody><tr class="c5"><td class="c9" colspan="1" rowspan="1"><p class="c0"><span class="c3 c1"></span></p></td></tr></tbody></table><p class="c4"><span class="c24"></span></p></body></html>
+<html>
+ <head>
+  <title>
+   Date format and time series
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <style type="text/css">
+   @import url('https://themes.googleusercontent.com/fonts/css?kit=dB3GuSCq0f_LRNaO3opFPA');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c9{border-bottom-width:0pt;border-top-style:solid;width:468pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c12{border-bottom-width:0pt;border-top-style:solid;width:112pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c13{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c0{line-height:1.0;padding-top:0pt;widows:2;orphans:2;height:11pt;text-align:left;direction:ltr;padding-bottom:0pt}.c21{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:center;direction:ltr;padding-bottom:0pt}.c2{line-height:1.0;padding-top:0pt;widows:2;orphans:2;text-align:left;direction:ltr;padding-bottom:0pt}.c3{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:normal}.c15{line-height:1.0;padding-top:0pt;text-align:left;direction:ltr;padding-bottom:0pt}.c10{vertical-align:baseline;color:#000000;font-style:normal;text-decoration:none;font-weight:bold}.c14{padding-top:10pt;widows:2;orphans:2;direction:ltr;page-break-after:avoid}.c8{color:#1d3b84;font-size:18pt;font-family:"Open Sans";font-weight:normal}.c4{widows:2;orphans:2;height:11pt;direction:ltr}.c16{border-collapse:collapse;margin-left:auto}.c19{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c22{widows:2;orphans:2;direction:ltr}.c6{margin-right:auto;border-collapse:collapse}.c7{color:#1155cc;text-decoration:underline}.c11{color:inherit;text-decoration:inherit}.c25{color:#1d3b84;font-size:48pt}.c1{font-size:12pt;font-family:"Open Sans"}.c20{color:#447adb;font-weight:bold}.c18{font-size:11pt;font-family:"Arial"}.c23{page-break-after:avoid}.c24{font-family:"Open Sans"}.c5{height:0pt}.c26{color:#434343}.c27{line-height:1.0}.c17{height:11pt}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+  </style>
+ </head>
+ <body class="c19">
+  <p class="c22">
+   <span class="c1">
+    Making a graph with dates and times?
+   </span>
+   <span class="c1">
+    If you’re uploading data into the grid, our parsing algorithm checks your data against more than 400 date formats to find the best match, even when your dates are in several styles. It takes a bit of extra time, but we think you’ll be happy with the results. Read more below to learn how to enter dates and times in the grid, and how to change the format displayed on your graph.
+   </span>
+  </p>
+  <p class="c4">
+   <span class="c1">
+   </span>
+  </p>
+  <p class="c22">
+   <span class="c1">
+    Plotly’s date format is `yyyy-mm-dd HH:MM:SS.ssssss`. You can enter this format directly, or depending on your data entry method, use our parsers to convert for you.
+   </span>
+  </p>
+  <p class="c4">
+   <span class="c1">
+   </span>
+  </p>
+  <p class="c22">
+   <span class="c1">
+    For our API users, we have guides for time series in
+   </span>
+   <span class="c7 c1">
+    <a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fmatlab%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGik0eWaWGqooa3JVnDUM5dawYzNg">
+     MATLAB
+    </a>
+   </span>
+   <span class="c1">
+    ,
+   </span>
+   <span class="c7 c1">
+    <a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fpython%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNE8bAo8y3ZCeqFjZhSdrjd3TwzfoA">
+     Python
+    </a>
+   </span>
+   <span class="c1">
+    ,
+   </span>
+   <span class="c1">
+    and
+   </span>
+   <span class="c1 c7">
+    <a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2Fr%2Ftime-series%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHSQATbxdxaGBEFooE0QrUAmW_NPA">
+     R
+    </a>
+   </span>
+   <span class="c1">
+    . If you’re using Python, we accept `
+   </span>
+   <span class="c1">
+    datetime.date
+   </span>
+   <span class="c1">
+    ` and `
+   </span>
+   <span class="c1">
+    datetime.datetime
+   </span>
+   <span class="c1">
+    ` formats. For
+   </span>
+   <span class="c1">
+    plotly.js
+   </span>
+   <span class="c1">
+    , we support JavaScript Date objects. Using MATLAB, you can specify the date format directly so our parser knows what to do. In R, we support R’s classes
+   </span>
+   <span class="c1">
+    Date
+   </span>
+   <span class="c1">
+    , POSIXlt and POSIXct in our ggplot2 to Plotly conversion. Scroll to the bottom for links to examples.
+   </span>
+  </p>
+  <p class="c4">
+   <span class="c1 c26">
+   </span>
+  </p>
+  <h2 class="c22 c23">
+   <a name="h.ollv6t9bey0g">
+   </a>
+   <span class="c8">
+    Entering dates and times in Plotly’s grid
+   </span>
+  </h2>
+  <a href="#" name="f1f59fa64d1015b60fec66d67f8fa03e4f1f3a37">
+  </a>
+  <a href="#" name="0">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c6">
+   <tbody>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        To enter dates directly in the grid, you’ll need to use the format
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c21">
+       <span class="c3 c1">
+        yyyy-mm-dd HH:MM:SS.ssssss
+       </span>
+      </p>
+      <p class="c21 c17">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        You can truncate the fractional seconds to any number of digits. All other truncations require you to keep entire fields.
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        Note that the hour must be a number between 00 and 23, with hours 12 through 23 reserved for PM.
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        Your entry must include the four-digit year.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <a href="#" name="f7d0dbcd3cd5df761899190c350ab63261fad2ee">
+      </a>
+      <a href="#" name="1">
+      </a>
+      <table cellpadding="0" cellspacing="0" class="c16">
+       <tbody>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c1 c10">
+            Correct
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c10 c1">
+            Incorrect
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-m
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yy-mm
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-dd HH
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-d
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-dd H:MM
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-dd HH:MM:SS.sss
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy-mm-dd HH:MM:S
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            yyyy/mm
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            mm/yyyy
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c1 c3">
+            mm-dd
+           </span>
+          </p>
+         </td>
+        </tr>
+        <tr class="c5">
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15 c17">
+           <span class="c3 c1">
+           </span>
+          </p>
+         </td>
+         <td class="c12" colspan="1" rowspan="1">
+          <p class="c15">
+           <span class="c3 c1">
+            HH:MM:SS
+           </span>
+          </p>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c4">
+   <span>
+   </span>
+  </p>
+  <h2 class="c22 c23">
+   <a name="h.htqo7hab6s0y">
+   </a>
+   <span class="c8">
+    Importing files with dates and times
+   </span>
+  </h2>
+  <p class="c4">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="ba6c76c40e5917102603f9aab667f58617f22820">
+  </a>
+  <a href="#" name="2">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c6">
+   <tbody>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        Uploading a data set into the grid from your computer, Google Drive, or Dropbox?
+       </span>
+       <span class="c3 c1">
+        Plotly will parse the data for you into our native format so you’re ready to customize your graph.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 197.33px;">
+        <img alt="Screen Shot 2014-11-05 at 1.53.34 PM.png" src="images/image00.png" style="width: 298.00px; height: 197.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="c14">
+   <a name="h.1ix2memx4mri">
+   </a>
+   <span class="c8">
+    Custom formats for your graph
+   </span>
+  </h2>
+  <p class="c4">
+   <span>
+   </span>
+  </p>
+  <p class="c4">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="3f86f2106cb32d2311fbe27b3a6f6adbfce337ef">
+  </a>
+  <a href="#" name="3">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c6">
+   <tbody>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        When you make a graph in Plotly with dates and times, the default labeling picks spacing that fits the graph. Here our dates included both year and month, but as you can see, Plotly displays years on the $x$ axis.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 194.67px;">
+        <img alt="Screen Shot 2014-11-05 at 2.10.20 PM.png" src="images/image01.png" style="width: 298.00px; height: 194.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        To customize, we select
+       </span>
+       <span class="c1 c20">
+        AXES
+       </span>
+       <span class="c3 c1">
+        in the toolbar. In the popover, select the axis you wish to modify.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 142.67px;">
+        <img alt="Screen Shot 2014-11-05 at 2.17.38 PM.png" src="images/image04.png" style="width: 298.00px; height: 142.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        Select the
+       </span>
+       <span class="c1 c20">
+        Labels
+       </span>
+       <span class="c3 c1">
+        tab to reveal options for a “Custom date format” and “Hover format”.
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        We use the time format
+       </span>
+       <span class="c7 c1">
+        <a class="c11" href="https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fmbostock%2Fd3%2Fwiki%2FTime-Formatting&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEM08vrYM1U9bZHYTLpqpGXEWqFrA">
+         here
+        </a>
+       </span>
+       <span class="c1">
+        . For example, in “Custom date format”, `
+       </span>
+       <span class="c1">
+        %b
+       </span>
+       <span class="c1">
+       </span>
+       <span class="c1">
+        %Y
+       </span>
+       <span class="c3 c1">
+        ` tells Plotly to display an abbreviated month and the year with century.
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        One extra option:
+       </span>
+       <span class="c1">
+        `
+       </span>
+       <span class="c1">
+        %{n}f
+       </span>
+       <span class="c1">
+        `
+       </span>
+       <span class="c1">
+        allows you to show fractional seconds, where
+       </span>
+       <span class="c1">
+        “
+       </span>
+       <span class="c1">
+        n
+       </span>
+       <span class="c1">
+        ”
+       </span>
+       <span class="c1">
+        tells us the number of digits to include.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 277.33px;">
+        <img alt="Screen Shot 2014-11-05 at 2.22.21 PM.png" src="images/image02.png" style="width: 298.00px; height: 277.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        The “Hover format”, `
+       </span>
+       <span class="c1">
+        %B %Y
+       </span>
+       <span class="c3 c1">
+        `, tells Plotly to show the full month name and year with century when using the hover feature to explore the data.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 194.67px;">
+        <img alt="Screen Shot 2014-11-05 at 2.21.48 PM.png" src="images/image05.png" style="width: 298.00px; height: 194.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c5">
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c1">
+        To change the number of values displayed on the time axis, use the
+       </span>
+       <span class="c1 c20">
+        Ticks
+       </span>
+       <span class="c1">
+        tab in the
+       </span>
+       <span class="c1 c20">
+        Axes
+       </span>
+       <span class="c3 c1">
+        popover.
+       </span>
+      </p>
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+      <p class="c2">
+       <span class="c3 c1">
+        Pick a “Max #” of dates to display, and Plotly automatically finds the greatest lower bound to be evenly spaced along the axis.
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c2">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 192.00px;">
+        <img alt="" src="images/image03.png" style="width: 298.00px; height: 192.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c4">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="1aebe24dda1b56316fca09844ec7bf63e4290b0d">
+  </a>
+  <a href="#" name="4">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c6">
+   <tbody>
+    <tr class="c5">
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c0">
+       <span class="c3 c1">
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c4">
+   <span class="c24">
+   </span>
+  </p>
+ </body>
+</html>
