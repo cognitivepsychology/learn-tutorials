@@ -157,7 +157,7 @@ process. You just have to keep track of the name of the raw HTML file.
 To unminify the HTML document, from `learn-tutorials/`, run
 
 ```
-$ make unminfiy file=<path-to-raw-html-file>
+$ make unminify file=<path-to-raw-html-file>
 ```
 
 #### C-3. Pick a URL, add a key-value pair in `translate_filename_url.json`
