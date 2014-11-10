@@ -11,7 +11,7 @@ are git commands.*
 - [IPython](http://ipython.org/install.html) (easier with pip)
 
 ```
-$ pip install ipython[all]
+pip install ipython[all]
 ```
 
 - [BeautifulSoup](http://www.pythonforbeginners.com/python-on-the-web/web-scraping-with-beautifulsoup/)
@@ -21,7 +21,7 @@ $ pip install ipython[all]
 From the directory of your choice, clone `learn-tutorials/` by running:
 
 ```
-$ git clone https://github.com/plotly/learn-tutorials.git
+git clone https://github.com/plotly/learn-tutorials.git
 ```
 
 **OR** 
@@ -30,8 +30,8 @@ If you already have a copy of `learn-tutorials/` on your machine, then pull
 in the latest version by running from `learn-tutorials/` with
 
 ```
-$ git checkout master
-$ git pull origin master
+git checkout master
+git pull origin master
 ```
 
 #### 2. Make a new branch in `learn-tutorials/`
@@ -41,13 +41,19 @@ $ git pull origin master
 Form `learn-tutorials/`, run
 
 ```
-$ git branch my-branch
+git branch my-branch
 ```
 
 and then checkout to your new branch with
 
 ```
-$ git checkout my-branch
+git checkout my-branch
+```
+
+Note that you can combine the above two steps with
+
+```
+git checkout -b my-branch
 ```
 
 #### 3. Go to
@@ -94,7 +100,7 @@ in HTML.
 From `learn-tutorials/`, run
 
 ```
-$ make publish folder=web_app_tutorials
+make publish folder=web_app_tutorials
 ```
 
 where "web_app_tutorials" is the content directory name in this case.
@@ -157,7 +163,7 @@ process. You just have to keep track of the name of the raw HTML file.
 To unminify the HTML document, from `learn-tutorials/`, run
 
 ```
-$ make unminify file=<path-to-raw-html-file>
+make unminify file=<path-to-raw-html-file>
 ```
 
 #### C-3. Pick a URL, add a key-value pair in `translate_filename_url.json`
@@ -172,7 +178,7 @@ right-hand side) is the URL of the tutorial page.
 From `learn-tutorials/`, run
 
 ```
-$ make publish folder=web_app_tutorials
+make publish folder=web_app_tutorials
 ```
 
 where "web_app_tutorials" is the content directory name in this case.
@@ -202,9 +208,9 @@ For more info, see [case B](#case-B-update-meta-information-of-an-existing-page)
 From `learn-tutorials/`, run
 
 ```
-$ git add --all
-$ git commit -m "a commit message describing the modifications made"
-$ git push origin my-branch
+git add --all
+git commit -m "a commit message describing the modifications made"
+git push origin my-branch
 ```
 
 where `my-branch` is the name of the branch created [before all
@@ -235,7 +241,7 @@ the `learn-tutorials/` `makefile`.
 So, clone `streambed/` by running:
 
 ```
-$ git clone https://github.com/plotly/streambed.git
+git clone https://github.com/plotly/streambed.git
 ```
 
 **OR** 
@@ -244,8 +250,8 @@ If you already have a copy of `streambed/` on your machine, then pull
 in the latest version by running from `streambed/` with
 
 ```
-$ git checkout master
-$ git pull origin master
+git checkout master
+git pull origin master
 ```
 
 #### 4. Make a new branch in `streambed/`
@@ -255,23 +261,29 @@ $ git pull origin master
 Form `streambed/`, run
 
 ```
-$ git branch sync-learn-tutorials
+git branch sync-learn-tutorials
 ```
 
 and then checkout to your new branch with
 
 ```
-$ git checkout sync-learn-tutorials
+git checkout sync-learn-tutorials
 ```
 
-#### 4. Sync published `learn-tutorials` content with `streambed/` !
+or combining the two above steps with
+
+```
+git checkout -b sync-learn-tutorials
+```
+
+#### 4. Sync published `learn-tutorials/` content with `streambed/` !
 
 From `learn-tutorials/`, run
 
 ```
-$ git checkout master
-$ git pull origin master
-$ make push-to-streambed folder=web_app_tutorials
+git checkout master
+git pull origin master
+make push-to-streambed folder=web_app_tutorials
 ```
 
 where "web_app_tutorials" is an example of a content directory name.
@@ -290,9 +302,9 @@ Use the stage environment by:
 From `streambed/`, run
 
 ```
-$ git add --all
-$ git commit -m "a commit message describing the modifications made"
-$ git push origin sync-learn-tutorials
+git add --all
+git commit -m "a commit message describing the modifications made"
+git push origin sync-learn-tutorials
 ```
 
 2. Deploying to stage, by typing "plot, deploy sync-learn-tutorials to stage" in the Plotly
