@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import json
 import os
+from collections import OrderedDict
 
 import status
 
@@ -25,9 +26,9 @@ def get_translate_static(folder):
 def get_translate_filename_url(folder):
     file_path = os.path.join(folder, 'translate_filename_url.json')
     with open(file_path) as f:
-        translate = json.load(f)
-    translate_filename_url = dict()
-    translate_redirects = dict()
+        translate = json.load(f, object_pairs_hook=OrderedDict)
+    translate_filename_url = OrderedDict()
+    translate_redirects = OrderedDict()
     for k, v in translate.items():
         if isinstance(v, list) and isinstance(v[-1], (str, unicode)):
             translate_filename_url[k] = v[-1]
