@@ -106,8 +106,8 @@ where "web_app_tutorials" is the content directory name in this case.
 
 ### Case B: Update meta information of an existing page
 
-That is, a page's title (seen in browsers' window header), meta description and
-breadcrumb title (and maybe more fields in the future).
+That is (currently), the page's title (seen also in browsers' window header), meta description,
+breadcrumb title (and maybe more fields in the future) and banner image.
 
 #### B-0. Find corresponding `config.json` JSON file
 
@@ -121,7 +121,7 @@ learn-tutorials/<content-directory>/published/includes/<url-of-tutorial-page>/co
 Each `config.json` JSON file has:
 
 - `tutorial_name` : is the name that appears in the header (or breadcrumb)
-- `tags.title` : is the page title that appears at the top of your browser window
+- `tags.title` : is the page title. It also appears at the top of your browser window
 - `tags.meta_description` : is the meta description
 - `banner_image` : (support for `web_app_tutorial/` at the moment) is iframe url
   or static image file name used in the banner (set `banner_image` to `false`
@@ -136,6 +136,8 @@ Each `config.json` JSON file has:
 
 Then, save and close.
 
+- Note also that you can insert Non-Breaking Spaces (i.e. `&nbsp;`) instead of ` ` in `tags.title` to avoid having line breaks between words the should not be separated in the page title. 
+
 #### B-2. Go to
 
 - [After all cases](#after-all-cases)
@@ -147,10 +149,16 @@ Then, save and close.
 Each content directory corresponds to an individual Django template. Each Django
 template inserts breadcrumb, link and layout unique to each content directory.
 
-#### C-2. Export Google document to `raw/` 
+#### C-2. Export and unminify Google document to `raw/` 
 
 Note that the name of the output folder makes no difference in the publish
 process. You just have to keep track of the name of the raw HTML file.
+
+To unminify the HTML document, from `learn-tutorials/`, run
+
+```
+$ make unminfiy file=<path-to-raw-html-file>
+```
 
 #### C-3. Pick a URL, add a key-value pair in `translate_filename_url.json`
 
