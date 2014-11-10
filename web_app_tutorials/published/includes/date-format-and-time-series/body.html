@@ -1,0 +1,457 @@
+
+ <div>
+  <p class="push-half--ends">
+  </p>
+ </div>
+ <h1 class="heading alpha push--ends text--center" id="date-format-and-time-series">
+  <a class="link--impt" href="#date-format-and-time-series">
+   Date format and time series
+  </a>
+ </h1>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Making a graph with dates and times?
+  If you’re uploading data into the grid, our parsing algorithm checks your data against more than 400 date formats to find the best match, even when your dates are in several styles. It takes a bit of extra time, but we think you’ll be happy with the results. Read more below to learn how to enter dates and times in the grid, and how to change the format displayed on your graph.
+  <span>
+  </span>
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Plotly’s date format is `yyyy-mm-dd HH:MM:SS.ssssss`. You can enter this format directly, or depending on your data entry method, use our parsers to convert for you.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  For our API users, we have guides for time series in
+  <a class="link--impt" href="/matlab/time-series/">
+   MATLAB
+  </a>
+  ,
+  <a class="link--impt" href="/python/time-series/">
+   Python
+  </a>
+  ,
+  and
+  <a class="link--impt" href="/r/time-series/">
+   R
+  </a>
+  . If you’re using Python, we accept `
+  datetime.date
+  ` and `
+  datetime.datetime
+  ` formats. For
+  plotly.js
+  , we support JavaScript Date objects. Using MATLAB, you can specify the date format directly so our parser knows what to do. In R, we support R’s classes
+  Date
+  , POSIXlt and POSIXct in our ggplot2 to Plotly conversion. Scroll to the bottom for links to examples.
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+  <span>
+  </span>
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="entering-dates-and-times-in-plotly’s-grid">
+  <a class="link--impt" href="#entering-dates-and-times-in-plotly’s-grid">
+   Entering dates and times in Plotly’s grid
+  </a>
+ </h2>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      To enter dates directly in the grid, you’ll need to use the format
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      yyyy-mm-dd HH:MM:SS.ssssss
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      You can truncate the fractional seconds to any number of digits. All other truncations require you to keep entire fields.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Note that the hour must be a number between 00 and 23, with hours 12 through 23 reserved for PM.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Your entry must include the four-digit year.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <table>
+      <tbody>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+          Correct
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          Incorrect
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy-m
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yy-mm
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-dd HH
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-d
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-dd H:MM
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-dd HH:MM:SS.sss
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy-mm-dd HH:MM:S
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          yyyy/mm
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          mm/yyyy
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          mm-dd
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p class="push-half--ends">
+         </p>
+        </td>
+        <td>
+         <p class="push-half--ends">
+          HH:MM:SS
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <p class="push-half--ends">
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="importing-files-with-dates-and-times">
+  <a class="link--impt" href="#importing-files-with-dates-and-times">
+   Importing files with dates and times
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Uploading a data set into the grid from your computer, Google Drive, or Dropbox?
+      Plotly will parse the data for you into our native format so you’re ready to customize your graph.
+      <span>
+      </span>
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image00.png">
+       <img alt="Date format and time series 00" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image00.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <h2 class="heading alpha push--ends text--center" id="custom-formats-for-your-graph">
+  <a class="link--impt" href="#custom-formats-for-your-graph">
+   Custom formats for your graph
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      When you make a graph in Plotly with dates and times, the default labeling picks spacing that fits the graph. Here our dates included both year and month, but as you can see, Plotly displays years on the $x$ axis.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image01.png">
+       <img alt="Date format and time series 01" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image01.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      To customize, we select
+      AXES
+      in the toolbar. In the popover, select the axis you wish to modify.
+      <span>
+      </span>
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image04" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image04.png">
+       <img alt="Date format and time series 04" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image04.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Select the
+      Labels
+      tab to reveal options for a “Custom date format” and “Hover format”.
+      <span>
+      </span>
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      We use the time format
+      <a class="link--impt" href="https://github.com/mbostock/d3/wiki/Time-Formatting" target="_blank">
+       here
+      </a>
+      . For example, in “Custom date format”, `
+      %b
+      %Y
+      ` tells Plotly to display an abbreviated month and the year with century.
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      One extra option:
+      `
+      %{n}f
+      `
+      allows you to show fractional seconds, where
+      “
+      n
+      ”
+      tells us the number of digits to include.
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image02.png">
+       <img alt="Date format and time series 02" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image02.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      The “Hover format”, `
+      %B %Y
+      `, tells Plotly to show the full month name and year with century when using the hover feature to explore the data.
+      <span>
+      </span>
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.png">
+       <img alt="Date format and time series 05" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      To change the number of values displayed on the time axis, use the
+      Ticks
+      tab in the
+      Axes
+      popover.
+      <span>
+      </span>
+      <span>
+      </span>
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Pick a “Max #” of dates to display, and Plotly automatically finds the greatest lower bound to be evenly spaced along the axis.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image03.png">
+       <img alt="Date format and time series 03" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image03.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>

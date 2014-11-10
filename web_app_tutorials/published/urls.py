@@ -21,6 +21,8 @@ urlpatterns = patterns(
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-box-plot-online)/$",
         learn.views.web_app_tutorials_template),
+    url("(?P<tutorial>how-to-make-a-heatmap-online)/$",
+        learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-bar-chart-online)/$",
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-3d-scatter-plot-online)/$",
@@ -31,7 +33,7 @@ urlpatterns = patterns(
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-make-a-graph-with-multiple-axes-online)/$",
         learn.views.web_app_tutorials_template),
-    url("(?P<tutorial>how-to-make-a-heatmap-online)/$",
+    url("(?P<tutorial>date-format-and-time-series)/$",
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>how-to-sign-up-to-plotly)/$",
         learn.views.web_app_tutorials_template)
