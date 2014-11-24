@@ -1,0 +1,608 @@
+<html>
+ <head>
+  <title>
+   latex
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <style type="text/css">
+   @import url('https://themes.googleusercontent.com/fonts/css?kit=dB3GuSCq0f_LRNaO3opFPA');.lst-kix_ahdtx5kblk1i-1>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-3>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-6>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-0>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-1>li:before{content:"\0025cb  "}.lst-kix_ahdtx5kblk1i-6>li:before{content:"\0025cf  "}.lst-kix_hljnb7pn5yly-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-5>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-2>li:before{content:"\0025a0  "}.lst-kix_ahdtx5kblk1i-7>li:before{content:"\0025cb  "}.lst-kix_hljnb7pn5yly-0>li:before{content:"\0025cf  "}.lst-kix_ahdtx5kblk1i-4>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-0{list-style-type:none}.lst-kix_ahdtx5kblk1i-8>li:before{content:"\0025a0  "}.lst-kix_hljnb7pn5yly-5>li:before{content:"\0025a0  "}ul.lst-kix_hljnb7pn5yly-3{list-style-type:none}ul.lst-kix_hljnb7pn5yly-4{list-style-type:none}ul.lst-kix_hljnb7pn5yly-1{list-style-type:none}ul.lst-kix_hljnb7pn5yly-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-0{list-style-type:none}ul.lst-kix_hljnb7pn5yly-7{list-style-type:none}.lst-kix_hljnb7pn5yly-7>li:before{content:"\0025cb  "}ul.lst-kix_hljnb7pn5yly-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-2{list-style-type:none}ul.lst-kix_hljnb7pn5yly-5{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-1{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-4{list-style-type:none}.lst-kix_hljnb7pn5yly-8>li:before{content:"\0025a0  "}ul.lst-kix_ahdtx5kblk1i-3{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-6{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-5{list-style-type:none}.lst-kix_hljnb7pn5yly-4>li:before{content:"\0025cb  "}ul.lst-kix_ahdtx5kblk1i-8{list-style-type:none}ul.lst-kix_ahdtx5kblk1i-7{list-style-type:none}.lst-kix_ahdtx5kblk1i-3>li:before{content:"\0025cf  "}ol{margin:0;padding:0}.c16{border-bottom-width:1pt;border-top-style:solid;width:133.5pt;border-right-style:solid;padding:5pt 10pt 5pt 10pt;border-bottom-color:#dddddd;border-top-width:1pt;border-bottom-style:solid;vertical-align:top;border-top-color:#dddddd;border-left-color:#dddddd;border-right-color:#dddddd;border-left-style:solid;border-right-width:1pt;border-left-width:1pt}.c0{border-bottom-width:0pt;border-top-style:solid;width:234pt;border-right-style:solid;padding:5pt 5pt 5pt 5pt;border-bottom-color:#ffffff;border-top-width:0pt;border-bottom-style:solid;vertical-align:top;border-top-color:#ffffff;border-left-color:#ffffff;border-right-color:#ffffff;border-left-style:solid;border-right-width:0pt;border-left-width:0pt}.c13{border-bottom-width:1pt;border-top-style:solid;width:148.5pt;border-right-style:solid;padding:5pt 10pt 5pt 10pt;border-bottom-color:#dddddd;border-top-width:1pt;border-bottom-style:solid;vertical-align:top;border-top-color:#dddddd;border-left-color:#dddddd;border-right-color:#dddddd;border-left-style:solid;border-right-width:1pt;border-left-width:1pt}.c4{border-bottom-width:1pt;border-top-style:solid;width:91.5pt;border-right-style:solid;padding:5pt 10pt 5pt 10pt;border-bottom-color:#dddddd;border-top-width:1pt;border-bottom-style:solid;vertical-align:top;border-top-color:#dddddd;border-left-color:#dddddd;border-right-color:#dddddd;border-left-style:solid;border-right-width:1pt;border-left-width:1pt}.c9{border-bottom-width:1pt;border-top-style:solid;width:116.2pt;border-right-style:solid;padding:5pt 10pt 5pt 10pt;border-bottom-color:#dddddd;border-top-width:1pt;border-bottom-style:solid;vertical-align:top;border-top-color:#dddddd;border-left-color:#dddddd;border-right-color:#dddddd;border-left-style:solid;border-right-width:1pt;border-left-width:1pt}.c2{vertical-align:baseline;color:#333333;font-size:11pt;font-style:normal;background-color:#ffffff;font-family:"Arial";text-decoration:none;font-weight:normal}.c8{vertical-align:baseline;color:#333333;font-size:11pt;font-style:normal;background-color:#ffffff;font-family:"Arial";text-decoration:none;font-weight:bold}.c12{vertical-align:baseline;color:#000000;font-size:12pt;font-style:normal;font-family:"Open Sans";text-decoration:none;font-weight:normal}.c7{vertical-align:baseline;color:#000000;font-size:11pt;font-style:normal;font-family:"Arial";text-decoration:none;font-weight:normal}.c6{line-height:1.5272727012634297;padding-top:0pt;widows:2;orphans:2;text-align:left;direction:ltr;padding-bottom:12pt}.c11{line-height:1.0;padding-top:0pt;height:11pt;text-align:left;direction:ltr;padding-bottom:0pt}.c15{line-height:1.0;padding-top:0pt;text-align:left;direction:ltr;padding-bottom:0pt}.c20{line-height:1.5272727012634297;padding-top:0pt;text-align:center;direction:ltr;padding-bottom:12pt}.c21{line-height:1.15;padding-top:0pt;text-align:left;padding-bottom:0pt}.c5{color:#1155cc;font-size:12pt;font-family:"Open Sans";text-decoration:underline}.c10{widows:2;orphans:2;height:11pt;direction:ltr}.c3{color:#447adb;font-size:12pt;font-family:"Open Sans";font-weight:bold}.c28{line-height:1.0;padding-top:0pt;text-align:center;padding-bottom:0pt}.c22{color:#1d3b84;font-size:18pt;font-family:"Open Sans";font-weight:normal}.c18{margin-right:auto;border-collapse:collapse}.c26{color:#1d3b84;font-size:18pt;font-family:"Open Sans"}.c17{color:#333333;background-color:#ffffff;font-weight:bold}.c29{max-width:468pt;background-color:#fcfcfa;padding:0pt 72pt 0pt 72pt}.c30{color:inherit;text-decoration:inherit}.c14{font-size:12pt;font-family:"Open Sans"}.c19{widows:2;orphans:2}.c27{page-break-after:avoid}.c1{height:0pt}.c31{line-height:1.0}.c25{color:#444444}.c24{height:11pt}.c32{padding-top:10pt}.c23{direction:ltr}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}
+  </style>
+ </head>
+ <body class="c29">
+  <div>
+   <p class="c10">
+    <span>
+    </span>
+   </p>
+  </div>
+  <p class="c19 c23">
+   <span class="c14">
+    LaTeX
+   </span>
+   <span class="c14">
+    is a typesetting system used by mathematicians, physicists, computer scientists, economists, and others. If you want to include mathematical symbols, superscripts, subscripts, or equations in your Plotly graph, LaTeX is a great choice. In this tutorial we’ll show you the basics of integrating these features with Plotly using our
+   </span>
+   <span class="c14">
+    Web App
+   </span>
+   <span class="c14">
+    .
+   </span>
+  </p>
+  <h2 class="c19 c27 c23">
+   <a name="h.ahxt6l1y0cin">
+   </a>
+   <span class="c26">
+    Step 1:
+   </span>
+   <span class="c22">
+    Don’t forget the dollar signs
+   </span>
+  </h2>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+  <p class="c19 c23">
+   <span class="c14">
+    To tell Plotly that you want to use LaTeX, you’ll need to put a dollar sign on both sides of the text you enter. For example, to get that fancy looking $\LaTeX$ logo, you have to write &amp;#36; \LaTeX&amp;#36;. We’ll show you many more examples below.
+   </span>
+  </p>
+  <p class="c10">
+   <span class="c14">
+   </span>
+  </p>
+  <p class="c10">
+   <span class="c14">
+   </span>
+  </p>
+  <a href="#" name="855e4721b60632c85c9b5366a5985e1c4f7ce662">
+  </a>
+  <a href="#" name="0">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c18">
+   <tbody>
+    <tr class="c1">
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c21 c19 c23">
+       <span class="c14">
+        For this tutorial, go to:
+       </span>
+       <span class="c5">
+        <a class="c30" href="https://www.google.com/url?q=https%3A%2F%2Fplot.ly%2F~mariahh%2F104&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHDjzl2APtwjWourCSsCMUPmZYXFw">
+         https://plot.ly/~mariahh/104
+        </a>
+       </span>
+       <span class="c12">
+        . This is a version of the Bessel function graph you see above, with the $x$ and $y$ labels deleted. We’ll cover enough $\LaTeX$ to reproduce the annotations.
+       </span>
+      </p>
+      <p class="c21 c10">
+       <span class="c12">
+       </span>
+      </p>
+      <p class="c21 c19 c23">
+       <span class="c14">
+        Click on
+       </span>
+       <span class="c3">
+        Fork &amp; edit
+       </span>
+       <span class="c12">
+        to open this graph in your workspace.
+       </span>
+      </p>
+      <p class="c21 c10">
+       <span class="c12">
+       </span>
+      </p>
+      <p class="c10 c21">
+       <span class="c12">
+       </span>
+      </p>
+     </td>
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c15 c19">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 202.67px;">
+        <img alt="Screen Shot 2014-11-24 at 1.19.06 PM.png" src="images/image02.png" style="width: 298.00px; height: 202.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c15 c19">
+       <span class="c14">
+        We’ll start with the $y$ axis label $J_\alpha(X)$. Move your mouse to where the $y$ axis label should go, and you’ll see
+       </span>
+       <span class="c3">
+        Click to enter y axis title
+       </span>
+       <span class="c12">
+        appear.
+       </span>
+      </p>
+      <p class="c11 c19">
+       <span class="c12">
+       </span>
+      </p>
+      <p class="c15 c19">
+       <span class="c12">
+        In the box, we write &amp;#36;J_\alpha(X)&amp;#36;. Press the enter key, and voilà, $J_\alpha(X)$ appears.
+       </span>
+      </p>
+      <p class="c11 c19">
+       <span class="c12">
+       </span>
+      </p>
+      <p class="c15 c19">
+       <span class="c12">
+        The dollar sign tells Plotly to use LaTeX and the “_” symbol tells LaTeX that we want the $\alpha$ to appear as a subscript.
+       </span>
+      </p>
+     </td>
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c15 c19">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 273.33px;">
+        <img alt="Screen Shot 2014-11-24 at 1.13.31 PM.png" src="images/image01.png" style="width: 298.00px; height: 273.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+  <h2 class="c19 c27 c23 c32">
+   <a name="h.3kph4swjqt2n">
+   </a>
+   <span class="c26">
+    Step 2:
+   </span>
+   <span class="c22">
+    The essentials
+   </span>
+  </h2>
+  <p class="c10">
+   <span class="c14">
+   </span>
+  </p>
+  <p class="c19 c23">
+   <span class="c14">
+    Here we’ll highlight some important LaTeX commands allowing you to use Greek letters, superscripts, subscripts, and fractions. If you’re looking for the code for a symbol that isn’t included below, we love
+   </span>
+   <span class="c5">
+    <a class="c30" href="http://www.google.com/url?q=http%3A%2F%2Fdetexify.kirelabs.org%2Fclassify.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGFFeQOdZ1f2TNizcJUwC4w1JHDLg">
+     Detexify
+    </a>
+   </span>
+   <span class="c14">
+    , where you can draw the symbol you are looking for and a list of possibilities is generated.
+   </span>
+  </p>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+  <p class="c10 c31">
+   <span class="c14">
+   </span>
+  </p>
+  <a href="#" name="b6bd3c7dc4ad23b8497920ac2b5f2b394554171d">
+  </a>
+  <a href="#" name="1">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c18">
+   <tbody>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c20 c19">
+       <span class="c17">
+        Type
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c19 c20">
+       <span class="c8">
+        Code
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c20 c19">
+       <span class="c8">
+        What you’ll see
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c20 c19">
+       <span class="c8">
+        Hints
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Greek letters
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \gamma &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\gamma$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\LaTeX$ is pretty intuitive. You can often guess the code for other symbols.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6 c24">
+       <span class="c2">
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \Gamma &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\Gamma$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6 c24">
+       <span class="c2">
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Superscripts
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; x^{2y + 4} &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $x^{2y+4}$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Make sure to use “{ }” to enclose what you want in the superscript.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Subscripts
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \alpha_{0} &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\alpha_0$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        If you’re only putting one character in a superscript or subscript, you can skip the “{ }”.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6 c24">
+       <span class="c2">
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \beta_{2}^{4} &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\beta_2^4$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        You can easily combine superscripts and subscripts.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Fractions
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \frac{2x + 3}{y + 6}&amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        $\frac{2x+3}{y+6}$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Fractions always take the form “\frac{ }{ }”. Put the numerator in the first pair of curly brackets and the denominator in the second pair.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Text boxes
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; \text{This is an equation }
+       </span>
+       <span>
+        y = 3x + 2
+       </span>
+       <span>
+        &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        $\text{This is the equation } y=3x+2$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        To include text and math in the same field, you’ll need to use a text box.
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c4" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        Line breaks
+       </span>
+      </p>
+     </td>
+     <td class="c16" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        &amp;#36; f(x) = 2x + 1 \\ g(x) = x^{2} - 1 &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c9" colspan="1" rowspan="1">
+      <p class="c6">
+       <span>
+        $f(x)=2x+1 \\ g(x)=x^{2}-1$
+       </span>
+      </p>
+     </td>
+     <td class="c13" colspan="1" rowspan="1">
+      <p class="c6">
+       <span class="c2">
+        You can use a “\\”, followed by a space, to force a line break.
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h2 class="c19 c23 c27">
+   <a name="h.7blyf426lhiy">
+   </a>
+   <span class="c26">
+    Step 3:
+   </span>
+   <span class="c22">
+    Putting it all together
+   </span>
+  </h2>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+  <p class="c19 c23">
+   <span class="c14">
+    Now we’re ready to fill in the $x$ axis label using some of the code featured above.
+   </span>
+  </p>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+  <a href="#" name="5e43aa5f64c06d7963688f40eb733fdc9d06af4f">
+  </a>
+  <a href="#" name="2">
+  </a>
+  <table cellpadding="0" cellspacing="0" class="c18">
+   <tbody>
+    <tr class="c1">
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c15">
+       <span class="c14">
+        Move your mouse to where the $x$ axis label should go, and you’ll see
+       </span>
+       <span class="c3">
+        Click to enter x axis title
+       </span>
+       <span class="c14">
+        appear.
+       </span>
+      </p>
+     </td>
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c15">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 272.00px;">
+        <img alt="Screen Shot 2014-11-24 at 1.14.29 PM.png" src="images/image03.png" style="width: 298.00px; height: 272.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr class="c1">
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c11">
+       <span class="c7">
+       </span>
+      </p>
+      <p class="c15">
+       <span class="c14">
+        The code we need is
+       </span>
+       <span class="c12">
+        :
+       </span>
+      </p>
+      <p class="c23 c28">
+       <span class="c14">
+        &amp;#36;
+       </span>
+       <span class="c14 c25">
+        x^2 \frac{d^2 y}{dx^2} + x \frac{
+       </span>
+       <span class="c14 c25">
+        d
+       </span>
+       <span class="c14 c25">
+        y}{dx} + (x^2 - \alpha^2)y = 0
+       </span>
+       <span class="c12">
+        &amp;#36;
+       </span>
+      </p>
+     </td>
+     <td class="c0" colspan="1" rowspan="1">
+      <p class="c15">
+       <span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 298.00px; height: 273.33px;">
+        <img alt="Screen Shot 2014-11-24 at 1.15.01 PM.png" src="images/image00.png" style="width: 298.00px; height: 273.33px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""/>
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p class="c10">
+   <span>
+   </span>
+  </p>
+ </body>
+</html>
