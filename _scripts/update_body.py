@@ -231,6 +231,17 @@ def get_display_latex_content(body):
     return body
 
 
+# Identify text table and add #text-table
+def id_text_tables(body):
+    for table in body.findAll('table'):
+        if table.findAll('img'):
+            continue
+        if len(table.findAll('tr')) < 2:
+            continue
+        table['id'] = 'text-table'
+    return body
+
+
 # Prettify and remove <body> and </body>
 def prettify(body):
     body = body.prettify().encode('utf8')
@@ -245,6 +256,7 @@ def update_body(body):
     body = add_lightbox(body)
     body = add_header_anchors(body)
     body = get_display_latex_content(body)
+    body = id_text_tables(body)
     body = format_paragraphs(body)
     body = prettify(body)
     return body
