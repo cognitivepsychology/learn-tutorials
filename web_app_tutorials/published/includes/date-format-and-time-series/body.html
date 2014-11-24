@@ -1,4 +1,8 @@
 
+ <div>
+  <p class="push-half--ends">
+  </p>
+ </div>
  <p class="push-half--ends">
   Making a graph with dates and times?
   If you’re uploading data into the grid, our parsing algorithm checks your data against more than 400 date formats to find the best match, even when your dates are in several styles. It takes a bit of extra time, but we think you’ll be happy with the results. Read more below to learn how to enter dates and times in the grid, and how to change the format displayed on your graph.
@@ -41,171 +45,235 @@
    Entering dates and times in Plotly’s grid
   </a>
  </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  To enter dates directly in the grid, you’ll need to use the format:
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  yyyy-mm-dd HH:MM:SS.ssssss
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Note that the hour must be a number between 00 and 23, with hours 12 through 23 reserved for PM. Your entry must include the four-digit year.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
  <table>
   <tbody>
    <tr>
     <td>
      <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-      To enter dates directly in the grid, you’ll need to use the format
-     </p>
-     <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-      yyyy-mm-dd HH:MM:SS.ssssss
-     </p>
-     <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-      You can truncate the fractional seconds to any number of digits. All other truncations require you to keep entire fields.
-     </p>
-     <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-      Note that the hour must be a number between 00 and 23, with hours 12 through 23 reserved for PM.
-     </p>
-     <p class="push-half--ends">
-     </p>
-     <p class="push-half--ends">
-      Your entry must include the four-digit year.
+      Format
      </p>
     </td>
     <td>
      <p class="push-half--ends">
+      Example
      </p>
-     <table>
-      <tbody>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-          Correct
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          Incorrect
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy-m
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yy-mm
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-dd HH
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-d
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-dd H:MM
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-dd HH:MM:SS.sss
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy-mm-dd HH:MM:S
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          yyyy/mm
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          mm/yyyy
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          mm-dd
-         </p>
-        </td>
-       </tr>
-       <tr>
-        <td>
-         <p class="push-half--ends">
-         </p>
-        </td>
-        <td>
-         <p class="push-half--ends">
-          HH:MM:SS
-         </p>
-        </td>
-       </tr>
-      </tbody>
-     </table>
+    </td>
+    <td>
      <p class="push-half--ends">
+      Meaning
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      2014-12
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      December, 2014
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm-dd
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      2014-12-14
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      December 14th, 2014
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm-dd HH
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      2014-12-14 16
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      16:00:00, or 4pm, December 14th, 2014
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm-dd HH:MM:SS
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      2014-12-14 16:34:30
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      16:34:30, or 4:34:30pm, December 14th, 2014
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm-dd HH:MM:SS.ss
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      2014-12-14 16:34:30.50
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      16:34:30 and 500 milliseconds December 14th, 2014
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  You can truncate the fractional seconds to any number of digits. All other truncations require you to keep entire fields. Here are a few common mistakes to avoid.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Format
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Error
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-m
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      The month field must include a two digit month.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yy-mm
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      The year field must include a four digit year.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy-mm-
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      You can’t trucate with a “-”.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      yyyy/mm
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      A “/” can’t be used to separate the year and month. Use “-” instead.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      mm-yyyy
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      The year must be in the first field.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      mm-dd
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Every date must include the year.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      HH:MM:SS
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      To enter a time, you must first enter the date.
      </p>
     </td>
    </tr>
@@ -310,6 +378,7 @@
       <a class="link--impt" href="https://github.com/mbostock/d3/wiki/Time-Formatting" target="_blank">
        here
       </a>
+      (see the table below for some of the most used examples)
       . For example, in “Custom date format”, `
       %b
       %Y
@@ -353,8 +422,8 @@
     </td>
     <td>
      <p class="push-half--ends">
-      <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.png">
-       <img alt="Date format and time series 05" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.png" title=""/>
+      <a data-lightbox="image06" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image06.png">
+       <img alt="Date format and time series 06" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image06.png" title=""/>
       </a>
      </p>
     </td>
@@ -384,6 +453,26 @@
      </p>
     </td>
    </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      If you don’t specify any “Custom date format”, Plotly will choose the format depending on your zoom level. As your viewer zooms in, new levels of detail will be included on the $x$ axis.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image05" href="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.gif">
+       <img alt="Date format and time series 05" src="/static/learn/images/web_app_tutorials/date-format-and-time-series/image05.gif" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
   </tbody>
  </table>
  <p class="push-half--ends">
@@ -393,6 +482,238 @@
    <tr>
     <td>
      <p class="push-half--ends">
+      Some common date and time formats are included in the table below. Can’t find what you’re looking for? Try
+      <a class="link--impt" href="https://github.com/mbostock/d3/wiki/Time-Formatting" target="_blank">
+       here
+      </a>
+      .
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Code
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Meaning
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Example
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %a
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Abbreviated weekday name
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Mon
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %A
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Full weekday name
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Monday
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %b
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Abbreviated month name
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Dec
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %B
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Full month name
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      December
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %m
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Month as number
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      12
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %y
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Year without century
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      94
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %Y
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Year with century
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      1994
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %H
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Hour in 24-hour clock
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      15
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %I
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Hour in 12-hour clock
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      3
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %p
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Shows AM or PM
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      PM
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %x
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Date as “%m/%d/%Y”
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      07/22/2012
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      %{n}f
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Shows n digits for fractional seconds
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      0000
      </p>
     </td>
    </tr>

@@ -1,0 +1,382 @@
+
+ <div>
+  <p class="push-half--ends">
+  </p>
+ </div>
+ <p class="push-half--ends">
+  LaTeX
+  is a typesetting system used by mathematicians, physicists, computer scientists, economists, and others. If you want to include mathematical symbols, superscripts, subscripts, or equations in your Plotly graph, LaTeX is a great choice. In this tutorial we’ll show you the basics of integrating these features with Plotly using our
+  Web App
+  .
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="step-1:-don’t-forget-the-dollar-signs">
+  <a class="link--impt" href="#step-1:-don’t-forget-the-dollar-signs">
+   Step 1: Don’t forget the dollar signs
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  To tell Plotly that you want to use LaTeX, you’ll need to put a dollar sign on both sides of the text you enter. For example, to get that fancy looking $\LaTeX$ logo, you have to write &amp;#36; \LaTeX&amp;#36;. We’ll show you many more examples below.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      For this tutorial, go to:
+      <a class="link--impt" href="https://plot.ly/~mariahh/104" target="_blank">
+       https://plot.ly/~mariahh/104
+      </a>
+      . This is a version of the Bessel function graph you see above, with the $x$ and $y$ labels deleted. We’ll cover enough $\LaTeX$ to reproduce the annotations.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Click on
+      Fork &amp; edit
+      to open this graph in your workspace.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/LaTeX-basics/image02.png">
+       <img alt="Latex basics 02" src="/static/learn/images/web_app_tutorials/LaTeX-basics/image02.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      We’ll start with the $y$ axis label $J_\alpha(X)$. Move your mouse to where the $y$ axis label should go, and you’ll see
+      Click to enter y axis title
+      appear.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      In the box, we write &amp;#36;J_\alpha(X)&amp;#36;. Press the enter key, and voilà, $J_\alpha(X)$ appears.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      The dollar sign tells Plotly to use LaTeX and the “_” symbol tells LaTeX that we want the $\alpha$ to appear as a subscript.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/LaTeX-basics/image01.png">
+       <img alt="Latex basics 01" src="/static/learn/images/web_app_tutorials/LaTeX-basics/image01.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="step-2:-the-essentials">
+  <a class="link--impt" href="#step-2:-the-essentials">
+   Step 2: The essentials
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Here we’ll highlight some important LaTeX commands allowing you to use Greek letters, superscripts, subscripts, and fractions. If you’re looking for the code for a symbol that isn’t included below, we love
+  <a class="link--impt" href="http://detexify.kirelabs.org/classify.html" target="_blank">
+   Detexify
+  </a>
+  , where you can draw the symbol you are looking for and a list of possibilities is generated.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Type
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Code
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      What you’ll see
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Hints
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Greek letters
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \gamma &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\gamma$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\LaTeX$ is pretty intuitive. You can often guess the code for other symbols.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \Gamma &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\Gamma$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Superscripts
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; x^{2y + 4} &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $x^{2y+4}$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Make sure to use “{ }” to enclose what you want in the superscript.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Subscripts
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \alpha_{0} &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\alpha_0$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      If you’re only putting one character in a superscript or subscript, you can skip the “{ }”.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \beta_{2}^{4} &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\beta_2^4$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      You can easily combine superscripts and subscripts.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Fractions
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \frac{2x + 3}{y + 6}&amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\frac{2x+3}{y+6}$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Fractions always take the form “\frac{ }{ }”. Put the numerator in the first pair of curly brackets and the denominator in the second pair.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Text boxes
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; \text{This is an equation }
+      y = 3x + 2
+      &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $\text{This is the equation } y=3x+2$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      To include text and math in the same field, you’ll need to use a text box.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Line breaks
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;#36; f(x) = 2x + 1 \\ g(x) = x^{2} - 1 &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      $f(x)=2x+1 \\ g(x)=x^{2}-1$
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      You can use a “\\”, followed by a space, to force a line break.
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <h2 class="heading alpha push--ends text--center" id="step-3:-putting-it-all-together">
+  <a class="link--impt" href="#step-3:-putting-it-all-together">
+   Step 3: Putting it all together
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Now we’re ready to fill in the $x$ axis label using some of the code featured above.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Move your mouse to where the $x$ axis label should go, and you’ll see
+      Click to enter x axis title
+      appear.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image03" href="/static/learn/images/web_app_tutorials/LaTeX-basics/image03.png">
+       <img alt="Latex basics 03" src="/static/learn/images/web_app_tutorials/LaTeX-basics/image03.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      The code we need is
+      :
+     </p>
+     <p class="push-half--ends">
+      &amp;#36;
+      x^2 \frac{d^2 y}{dx^2} + x \frac{
+      d
+      y}{dx} + (x^2 - \alpha^2)y = 0
+      &amp;#36;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/LaTeX-basics/image00.png">
+       <img alt="Latex basics 00" src="/static/learn/images/web_app_tutorials/LaTeX-basics/image00.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+

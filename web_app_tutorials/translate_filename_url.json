@@ -14,5 +14,6 @@
     "HowtoshareandprintgraphsonPlotly.html" : ["share-print", "how-to-share-and-print-plotly-graphs"],
     "Howtomakea3dlinechart.html" : "how-to-make-a-3d-line-chart-online",
     "Howtomakea3dscatterplot.html" : "how-to-make-a-3d-scatter-plot-online",
-    "Dateformatandtimeseries.html" : "date-format-and-time-series"
+    "Dateformatandtimeseries.html" : "date-format-and-time-series",
+    "latex.html" : "LaTeX-basics"
 }
