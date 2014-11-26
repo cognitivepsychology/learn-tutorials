@@ -4,7 +4,7 @@
   </p>
  </div>
  <p class="push-half--ends">
-  Want to add a link to the data source on one of your graphs? Need superscripts or subscripts in your title? Plotly supports several HTML tags.  In this tutorial we’ll show you the basics of integrating these features with Plotly using our
+  Want to add a link to the data source on one of your graphs? Need superscripts or subscripts in your title? Plotly supports several HTML tags and codes for special characters, like Greek letters.  In this tutorial we’ll show you the basics of integrating these features with Plotly using our
   Web App
   . Looking for even more formatting options? LaTeX offers additional flexibility. Check out our tutorial
   <a class="link--impt" href="/LaTeX-basics/">
@@ -15,7 +15,7 @@
  <p class="push-half--ends">
  </p>
  <p class="push-half--ends">
-  Plotly uses a subset of HTML tags to do things like newline (&amp;lt;br&amp;gt;), bold (&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;), italics (&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;), and hyperlinks (&amp;lt;a href=&amp;rsquo;...&amp;rsquo;&amp;gt;&amp;lt;/a&amp;gt;). Tags &amp;lt;em&amp;gt;, &amp;lt;sup&amp;gt;, and &amp;lt;sub&amp;gt; are also supported. Follow along below for some examples.
+  Plotly uses a subset of HTML tags to do things like newline (&lt;br&gt;), bold (&lt;b&gt;&lt;/b&gt;), italics (&lt;i&gt;&lt;/i&gt;), and hyperlinks (&lt;a href=’...’&gt;&lt;/a&gt;). Tags &lt;em&gt;, &lt;sup&gt;, and &lt;sub&gt; are also supported. Follow along below for some examples.
  </p>
  <h2 class="heading alpha push--ends text--center" id="step-1:-using-html-with-plotly">
   <a class="link--impt" href="#step-1:-using-html-with-plotly">
@@ -47,12 +47,12 @@
      <p class="push-half--ends">
      </p>
      <p class="push-half--ends">
-      To create the line break, all we have to do is enter `&amp;lt;br&amp;gt;` where we want the break to appear:
+      To create the line break, all we have to do is enter `&lt;br&gt;` where we want the break to appear:
      </p>
      <p class="push-half--ends">
      </p>
      <p class="push-half--ends">
-      How Apple’s Stock Reacts to New Product Announcements &amp;lt;br&amp;gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
+      How Apple’s Stock Reacts to New Product Announcements &lt;br&gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
      </p>
      <p class="push-half--ends">
      </p>
@@ -74,13 +74,13 @@
      <p class="push-half--ends">
      </p>
      <p class="push-half--ends">
-      To add bold text, we enclose the text with `&amp;lt;b&amp;gt;...&amp;lt;/b&amp;gt;`
+      To add bold text, we enclose the text with `&lt;b&gt;...&lt;/b&gt;`
       .
      </p>
      <p class="push-half--ends">
      </p>
      <p class="push-half--ends">
-      &amp;lt;b&amp;gt;How Apple&amp;rsquo;s Stock Reacts to New Product Announcements&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
+      &lt;b&gt;How Apple’s Stock Reacts to New Product Announcements&lt;/b&gt;&lt;br&gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
      </p>
     </td>
     <td>
@@ -104,7 +104,7 @@
      <p class="push-half--ends">
      </p>
      <p class="push-half--ends">
-      Source: &amp;lt;a href=&amp;quot;http://www.statista.com/chart/2684/apple-stock-price-after-product-announcements/&amp;quot;&amp;gt;Statista&amp;lt;/a&amp;gt;
+      Source: &lt;a href="http://www.statista.com/chart/2684/apple-stock-price-after-product-announcements/"&gt;Statista&lt;/a&gt;
      </p>
      <p class="push-half--ends">
      </p>
@@ -168,12 +168,15 @@
     </td>
     <td>
      <p class="push-half--ends">
-      We can write &amp;lt;br&amp;gt; a long title on two lines.
+      Forced &lt;br&gt; break.
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      We can write &lt;br&gt; a long title on two lines.
+      Forced
+     </p>
+     <p class="push-half--ends">
+      break.
      </p>
     </td>
     <td>
@@ -194,12 +197,12 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;lt;b&amp;gt;This is bold! &amp;lt;/b&amp;gt;
+      &lt;b&gt;This is bold!&lt;/b&gt;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      &lt;b&gt;This is bold!&lt;/b&gt;
+      This is bold!
      </p>
     </td>
     <td>
@@ -215,14 +218,14 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;lt;i&amp;gt;Italics&amp;lt;/i&amp;gt;
+      &lt;i
+      &gt;
+      Italics&lt;/i&gt;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      &lt;i
-      &gt;
-      Italics&lt;/i&gt;
+      Italics
      </p>
     </td>
     <td>
@@ -238,12 +241,13 @@
     </td>
     <td>
      <p class="push-half--ends">
-      x&amp;lt;sup&amp;gt;2&amp;lt;/sup&amp;gt;
+      x&lt;sup&gt;2&lt;/sup&gt;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      x&lt;sup&gt;2&lt;/sup&gt;
+      x
+      2
      </p>
     </td>
     <td>
@@ -260,12 +264,16 @@
     </td>
     <td>
      <p class="push-half--ends">
-      H&amp;lt;sub&amp;gt;2 &amp;lt;/sub&amp;gt;O
+      H&lt;sub&gt;2&lt;/sub&gt;O
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      H&lt;sub&gt;2&lt;/sub&gt;O
+      H
+      2
+      O
+     </p>
+     <p class="push-half--ends">
      </p>
     </td>
     <td>
@@ -285,16 +293,18 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;lt;a href=&amp;rdquo;http://blog.plot.ly/&amp;rdquo;&amp;gt;The Plotly Blog&amp;lt;/a&amp;gt;
-     </p>
-    </td>
-    <td>
-     <p class="push-half--ends">
       &lt;a href=”
       <a class="link--impt" href="http://blog.plot.ly/" target="_blank">
        http://blog.plot.ly/
       </a>
       ”&gt;The Plotly Blog&lt;/a&gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a class="link--impt" href="http://blog.plot.ly" target="_blank">
+       The Plotly Blog
+      </a>
      </p>
     </td>
     <td>
@@ -351,7 +361,7 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;amp;mu;
+      &amp;mu;
      </p>
      <p class="push-half--ends">
      </p>
@@ -360,7 +370,7 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;mu;
+      μ
      </p>
     </td>
     <td>
@@ -377,12 +387,12 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;amp;euro;
+      &amp;euro;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;euro;
+      €
      </p>
     </td>
     <td>
@@ -398,12 +408,12 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;amp;plusmn;
+      &amp;plusmn;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;plusmn;
+      ±
      </p>
     </td>
     <td>
@@ -419,12 +429,12 @@
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;amp;frac12;
+      &amp;frac12;
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      &amp;frac12;
+      ½
      </p>
     </td>
     <td>
@@ -440,12 +450,12 @@
     </td>
     <td>
      <p class="push-half--ends">
-      17&amp;amp;deg;C
+      17&amp;deg;C
      </p>
     </td>
     <td>
      <p class="push-half--ends">
-      17&amp;deg;C
+      17°C
      </p>
     </td>
     <td>
