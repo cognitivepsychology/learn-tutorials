@@ -1,0 +1,311 @@
+
+ <div>
+  <p class="push-half--ends">
+  </p>
+ </div>
+ <p class="push-half--ends">
+  Want to add a link to the data source on one of your graphs? Need superscripts or subscripts in your title? Plotly supports several HTML tags.  In this tutorial we’ll show you the basics of integrating these features with Plotly using our
+  Web App
+  . Looking for even more formatting options? LaTeX offers additional flexibility. Check out our tutorial
+  <a class="link--impt" href="/LaTeX-basics/">
+   here
+  </a>
+  .
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  Plotly uses a subset of HTML tags to do things like newline (&amp;lt;br&amp;gt;), bold (&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;), italics (&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;), and hyperlinks (&amp;lt;a href=&amp;rsquo;...&amp;rsquo;&amp;gt;&amp;lt;/a&amp;gt;). Tags &amp;lt;em&amp;gt;, &amp;lt;sup&amp;gt;, and &amp;lt;sub&amp;gt; are also supported. Follow along below for some examples.
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="step-1:-using-html-with-plotly">
+  <a class="link--impt" href="#step-1:-using-html-with-plotly">
+   Step 1: Using HTML with Plotly
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+  For this tutorial, we’ll examine some of the styling from the graph:
+  <a class="link--impt" href="https://plot.ly/~Dreamshot/609" target="_blank">
+   https://plot.ly/~Dreamshot/609
+  </a>
+  . If you want to examine the code yourself, you can click
+  Fork and edit
+  just above the graph.
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table>
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      The title of this graph has two features: it’s on two lines, and the first line is bolded.
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      To create the line break, all we have to do is enter `&amp;lt;br&amp;gt;` where we want the break to appear:
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      How Apple’s Stock Reacts to New Product Announcements &amp;lt;br&amp;gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
+     </p>
+     <p class="push-half--ends">
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      <a data-lightbox="image01" href="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image01.png">
+       <img alt="Adding html and links to charts 01" src="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image01.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      To add bold text, we enclose the text with `&amp;lt;b&amp;gt;...&amp;lt;/b&amp;gt;`
+      .
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      &amp;lt;b&amp;gt;How Apple&amp;rsquo;s Stock Reacts to New Product Announcements&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt; Apple’s stock price after product announcements (indexed to closing price on the day of the announcement)
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a data-lightbox="image02" href="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image02.png">
+       <img alt="Adding html and links to charts 02" src="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image02.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      The sources at the bottom of the graph contain hyperlinks so that the reader has a direct link to the source. For example, the line that says “Source:
+      <a class="link--impt" href="http://www.statista.com/chart/2684/apple-stock-price-after-product-announcements/" target="_blank">
+       Statista
+      </a>
+      ”
+      is written as:
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      Source: &amp;lt;a href=&amp;quot;http://www.statista.com/chart/2684/apple-stock-price-after-product-announcements/&amp;quot;&amp;gt;Statista&amp;lt;/a&amp;gt;
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+     <p class="push-half--ends">
+      <a data-lightbox="image00" href="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image00.png">
+       <img alt="Adding html and links to charts 00" src="/static/learn/images/web_app_tutorials/adding-HTML-and-links-to-charts/image00.png" title=""/>
+      </a>
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+ <h2 class="heading alpha push--ends text--center" id="step-2:-the-essentials">
+  <a class="link--impt" href="#step-2:-the-essentials">
+   Step 2: The essentials
+  </a>
+ </h2>
+ <p class="push-half--ends">
+ </p>
+ <p class="push-half--ends">
+ </p>
+ <table id="text-table">
+  <tbody>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Type
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Code
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      What you’ll see
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      Hints
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Newline
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      We can write &amp;lt;br&amp;gt; a long title on two lines.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      We can write &lt;br&gt; a long title on two lines.
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      You can change the alignment in your annotations to fit the space on your graph. Look for the
+      Text
+      tab in the
+      Notes
+      popover.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Bold text
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;lt;b&amp;gt;This is bold! &amp;lt;/b&amp;gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &lt;b&gt;This is bold!&lt;/b&gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Italic text
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;lt;i&amp;gt;Italics&amp;lt;/i&amp;gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &lt;i
+      &gt;
+      Italics&lt;/i&gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Superscripts
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      x&amp;lt;sup&amp;gt;2&amp;lt;/sup&amp;gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      x&lt;sup&gt;2&lt;/sup&gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      You can enclose more than one character in superscripts and subscripts.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Subscripts
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      H&amp;lt;sub&amp;gt;2 &amp;lt;/sub&amp;gt;O
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      H&lt;sub&gt;2&lt;/sub&gt;O
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      <a class="link--impt" href="/LaTeX-basics/">
+       LaTeX
+      </a>
+      is a good alternative method for superscripts and subscripts.
+     </p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <p class="push-half--ends">
+      Hyperlinks
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &amp;lt;a href=&amp;rdquo;http://blog.plot.ly/&amp;rdquo;&amp;gt;The Plotly Blog&amp;lt;/a&amp;gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      &lt;a href=”
+      <a class="link--impt" href="http://blog.plot.ly/" target="_blank">
+       http://blog.plot.ly/
+      </a>
+      ”&gt;The Plotly Blog&lt;/a&gt;
+     </p>
+    </td>
+    <td>
+     <p class="push-half--ends">
+      The general form is
+      &amp;lt;a href=&amp;quot;type URL here&amp;quot;&amp;gt;Type what you want user to see here&amp;lt;/a&amp;gt;
+     </p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="push-half--ends">
+ </p>
+

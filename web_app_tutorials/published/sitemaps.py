@@ -174,6 +174,16 @@ def items():
                 'LaTeX-basics',
                 'body.html'),
             priority=0.5
+        ),
+        dict(
+            location='/adding-HTML-and-links-to-charts/',
+            lmfile=os.path.join(
+                settings.TOP_DIR, 'shelly',
+                'templates', 'learn', 'includes',
+                'web_app_tutorials',
+                'adding-HTML-and-links-to-charts',
+                'body.html'),
+            priority=0.5
         )
     ]
     return items
