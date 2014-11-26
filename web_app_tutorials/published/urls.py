@@ -38,5 +38,7 @@ urlpatterns = patterns(
     url("(?P<tutorial>date-format-and-time-series)/$",
         learn.views.web_app_tutorials_template),
     url("(?P<tutorial>LaTeX-basics)/$",
+        learn.views.web_app_tutorials_template),
+    url("(?P<tutorial>adding-HTML-and-links-to-charts)/$",
         learn.views.web_app_tutorials_template)
 )

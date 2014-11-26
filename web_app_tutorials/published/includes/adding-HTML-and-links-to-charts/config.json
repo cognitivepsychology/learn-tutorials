@@ -1,0 +1,8 @@
+{
+    "tutorial_name": "HTML Basics", 
+    "banner_image": "https://plot.ly/~Dreamshot/609", 
+    "tags": {
+        "meta_description": "A tutorial on how to add HTML tags and hyperlinks with Plotly", 
+        "title": "Adding HTML and Links to Charts"
+    }
+}
