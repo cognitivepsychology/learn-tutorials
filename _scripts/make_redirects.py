@@ -62,5 +62,7 @@ def overwrite_redirects(folder, redirects_py):
 # Make and overwrite redirects.py file (if redirects are presents)
 def make_redirects(folder, translate_redirects):
     redirects = get_redirects(translate_redirects)
+    if redirects == []:
+        return
     redirects_py = get_redirects_py(redirects)
     overwrite_redirects(folder, redirects_py)
